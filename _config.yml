@@ -7,9 +7,9 @@
 
 # Site Settings
 locale                   : "en"
-title                    : 
+title                    : "Erik Enbody"
 title_separator          : "-"
-name                     : "Erik Enbody"
+name                     : 
 description              : "Ph.D. Candidate in Ecology and Evolutionary Biology."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
