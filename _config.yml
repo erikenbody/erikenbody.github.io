@@ -7,10 +7,10 @@
 
 # Site Settings
 locale                   : "en"
-title                    : "Erik Enbody"
-title_separator          : "-"
+title                    : "Home"
+title_separator          : "|"
 name                     : 
-description              : "Ph.D. Candidate in Ecology and Evolutionary Biology."
+description              : 
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -55,7 +55,7 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               :
+  username               : "erikenbody"
 facebook:
   username               :
   app_id                 :
@@ -254,5 +254,5 @@ defaults:
       author_profile: true
       read_time: #true
       comments: # true
-      share: true
+      share: #true
       related: true
