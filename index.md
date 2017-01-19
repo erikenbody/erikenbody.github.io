@@ -1,6 +1,6 @@
 ---
 layout: single
-header: assets/images/ee_header.jpg
+header: assets/images/ee_header2.jpg
 ---
 
 ### Erik Enbody
