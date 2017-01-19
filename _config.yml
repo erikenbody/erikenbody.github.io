@@ -78,7 +78,7 @@ analytics:
 # Site Author
 author:
   name             : "Erik Enbody"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : /assets/images/ee_avatar.jpg
   bio              : "Ph.D. Candidate at Tulane University."
   location         : "New Orleans, LA"
   email            : "eenbody@tulane.edu"
