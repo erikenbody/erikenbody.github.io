@@ -3,7 +3,7 @@ layout: single
 title: "home"
 share: false
 image: 
-  feature: assests/images/ee_header.jpg
+  feature: assets/images/ee_header.jpg
   credit: Erik Enbody
 ---
 
