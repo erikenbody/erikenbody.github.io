@@ -2,7 +2,7 @@
 layout: single
 title: "home"
 share: false
-header: "ssets/images/ee_header.jpg
+header: assets/images/ee_header.jpg
 
 ---
 
