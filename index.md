@@ -1,9 +1,6 @@
 ---
 layout: single
-title: "home"
-share: false
-header: assets/images/ee_header.jpg
-
+header: ee_header.jpg
 ---
 
 ### Erik Enbody
