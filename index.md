@@ -1,9 +1,6 @@
 ---
 layout: single
 title: "home"
-date: 2017-01-18
-modified:
-excerpt: 
 share: false
 image: 
   feature: ee_header.jpg
