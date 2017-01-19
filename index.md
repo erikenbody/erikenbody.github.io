@@ -2,9 +2,8 @@
 layout: single
 title: "home"
 share: false
-image: 
-  feature: "assets/images/ee_header.jpg"
-  credit: Erik Enbody
+header: "ssets/images/ee_header.jpg
+
 ---
 
 ### Erik Enbody
