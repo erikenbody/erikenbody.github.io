@@ -4,7 +4,7 @@ layout: single
 
 ### Erik Enbody
 
-![wsfw](/assets/images/ee_avatar.jpg)
+![wsfw](/assets/images/ee_header2.jpg)
 
 Some text about me
 
