@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: single
 title: "home"
 date: 2017-01-18
 modified:
