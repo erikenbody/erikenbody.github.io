@@ -46,7 +46,7 @@ staticman:
         format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
 atom_feed:
   path                   : # blank (default) uses feed.xml
-font_design_size: 16
+font_design_size: 10
 
 # SEO Related
 google_site_verification :
@@ -79,7 +79,7 @@ analytics:
 # Site Author
 author:
   name             : "Erik Enbody"
-  avatar           : "/assets/images/ee_avatar.jpg"
+  #avatar           : "/assets/images/ee_avatar.jpg"
   bio              : "Ph.D. Candidate at Tulane University"
   location         : "New Orleans, LA"
   email            : "eenbody@tulane.edu"
