@@ -3,4 +3,6 @@ permalink: /research/
 layout: single
 ---
 
-Testing some text here
+![wsfw](/assets/images/_M5A1751.jpg)
+
+Testing text
