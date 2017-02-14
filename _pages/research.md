@@ -5,7 +5,7 @@ layout: single
 
 <img src="/assets/images/research_header2.jpg" width="700">
 
-I am broadly interested in the mechanisms that produce and the ultimate consequences of traits that characterize the vast biodiversity on earth. My dissertation research is focused on understanding how plumage ornaments evolve in female birds, but I am interested in any question relating to how birds and other animals produce color and how that color functions in an ecological and evolutionary framework. 
+###### I am broadly interested in the mechanisms that produce and the ultimate consequences of traits that characterize the vast biodiversity on earth. My dissertation research is focused on understanding how plumage ornaments evolve in female birds, but I am interested in any question relating to how birds and other animals produce color and how that color functions in an ecological and evolutionary framework. 
 
 My dissertation research focuses on how color has evolved in the White-shouldered Fairywren (Malurus alboscapulatus), a species endemic to New Guinea. 
 
