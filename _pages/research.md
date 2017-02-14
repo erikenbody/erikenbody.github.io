@@ -15,7 +15,7 @@ The elaborate coloration of many male animals has inspired biologists to study t
 
 Ornament production in birds
 
-<img src="/assets/images/wsfw_36141_df_edit.jpg" width="600">
+<img src="/assets/images/feather1.jpg" width="700">
 
 Bird feathers are a complex structure that use a relatively limited arsenal of mechanisms to produce the astounding variety of color found in birds. I use photospectroscopy and electron microscopy to characterize color signals in birds and link them to their underlying structural component. I am interested in how different organization of feather tissues produces color, but more importantly how these underlying characteristics can face selective pressures and lead to individual and species level variation. 
 
