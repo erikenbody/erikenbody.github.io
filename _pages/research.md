@@ -3,13 +3,15 @@ permalink: /research/
 layout: single
 ---
 
-![wsfw](/assets/images/research_header2.jpg)
+<img src="/assets/images/research_header2.jpg" width="700">
 
 I am broadly interested in the mechanisms that produce and the ultimate consequences of traits that characterize the vast biodiversity on earth. My dissertation research is focused on understanding how plumage ornaments evolve in female birds, but I am interested in any question relating to how birds and other animals produce color and how that color functions in an ecological and evolutionary framework. 
 
 My dissertation research focuses on how color has evolved in the White-shouldered Fairywren (Malurus alboscapulatus), a species endemic to New Guinea. 
 
 Ornament evolution in males and females
+
+<img src="/assets/images/duet2.jpg" width="700">
 
 The elaborate coloration of many male animals has inspired biologists to study the function of elaborate male ornaments since Darwin and Wallace. That male ornaments face sexual and social selection pressures is now fundamental in evolutionary biology, but what function, if any, female ornaments serve is comparatively less known. For my Ph.D. research, I study a unique species of bird that varies between subspecies by female, but not male, coloration. This provides a system well suited for studying the function of female coloration in driving population divergence. 
 
@@ -25,4 +27,6 @@ Female ornaments are influenced not only by selective forces acting on the trait
 
 Engagement in conservation 
 
-My research is has a strong tropical focus, which often takes place in regions where the local communities have close social and economic ties to the environment where they live. New Guinea is a particularly biodiverse location where more than 5% of the worlds species are present on less than 1% of the world’s landmass. The relatively small populace and remoteness of the country has led to some of the most pristine wilderness in the world, but these are increasingly facing threats from anthropogenic pressure in population growth, climate change, and exploitation for fossil fuels and agriculture. We work closely with local communities where we work to advocate for and develop a locally led group dedicated to grassland conservation. The goal of this project is to support the idea that conservation is not just for the community, but by the community as well.  To read more about our conservation initiatives in PNG, follow this link: 
+<img src="/assets/images/png_school2.jpg" width="700">
+
+My research is has a strong tropical focus, which often takes place in regions where the local communities have close social and economic ties to the environment where they live. New Guinea is a particularly biodiverse location where more than 5% of the worlds species are present on less than 1% of the world’s landmass. The relatively small populace and remoteness of the country has led to some of the most pristine wilderness in the world, but these are increasingly facing threats from anthropogenic pressure in population growth, climate change, and exploitation for fossil fuels and agriculture. We work closely with local communities where we work to advocate for and develop a locally led group dedicated to grassland conservation. The goal of this project is to support the idea that conservation is not just for the community, but by the community as well.  To read more about our conservation initiatives in PNG, follow [this link] (http://karubian.tulane.edu/engagement/papua-new-guinea-engagement/) 
