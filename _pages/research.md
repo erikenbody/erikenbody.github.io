@@ -14,7 +14,8 @@ Ornament evolution in males and females
 The elaborate coloration of many male animals has inspired biologists to study the function of elaborate male ornaments since Darwin and Wallace. That male ornaments face sexual and social selection pressures is now fundamental in evolutionary biology, but what function, if any, female ornaments serve is comparatively less known. For my Ph.D. research, I study a unique species of bird that varies between subspecies by female, but not male, coloration. This provides a system well suited for studying the function of female coloration in driving population divergence. 
 
 Ornament production in birds
-<img src="/assets/images/wsfw_36141_df_edit.jpg" width="200">
+
+<img src="/assets/images/wsfw_36141_df_edit.jpg" width="600">
 
 Bird feathers are a complex structure that use a relatively limited arsenal of mechanisms to produce the astounding variety of color found in birds. I use photospectroscopy and electron microscopy to characterize color signals in birds and link them to their underlying structural component. I am interested in how different organization of feather tissues produces color, but more importantly how these underlying characteristics can face selective pressures and lead to individual and species level variation. 
 
