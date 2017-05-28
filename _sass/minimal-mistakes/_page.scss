@@ -411,10 +411,7 @@
    Custom additions
    ================*/
 
-.article-wrap p {
-  font-size: 5px; /* 16 is the default increase if you want it larger */
-}
-
-.article-wrap ul {
-  font-size: 5px; /* 16 is the default increase if you want it larger */
+.page__lead {
+  font-family: $global-font-family;
+  font-size: $type-size-8;
 }
