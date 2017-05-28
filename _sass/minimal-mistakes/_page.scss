@@ -407,14 +407,14 @@
   text-transform: uppercase;
 }
 
-/* Post content wrapper */
-.article-wrap {
-  p {
-    font-size: 8px;
-  }
-  // Dotted line underlines for links
-  p > a,
-  li > a {
-    text-decoration: underline;
-  }
+/*
+   Custom additions
+   ================*/
+
+.article-wrap p {
+  font-size: 5px; /* 16 is the default increase if you want it larger */
+}
+
+.article-wrap ul {
+  font-size: 5px; /* 16 is the default increase if you want it larger */
 }
