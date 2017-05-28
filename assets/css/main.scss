@@ -2,6 +2,11 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
+.page__lead {
+  font-family: $global-font-family;
+  font-size: $type-size-8;
+}
+
 @charset "utf-8";
 
 @import "minimal-mistakes";
