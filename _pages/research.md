@@ -1,6 +1,10 @@
 ---
 permalink: /research/
 layout: single
+.page__lead {
+  font-family: $global-font-family;
+  font-size: $type-size-4;
+}
 ---
 
 <img src="/assets/images/research_header2.jpg" width="700">
