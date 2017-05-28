@@ -1,7 +1,10 @@
 ---
 permalink: /research/
 layout: single
+font-size: $type-size-8
 ---
+
+font test
 
 <img src="/assets/images/research_header2.jpg" width="700">
 
