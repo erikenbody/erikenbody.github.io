@@ -2,7 +2,7 @@
 title: "Configuration"
 permalink: /docs/configuration/
 excerpt: "Settings for configuring and customizing the theme."
-modified: 2016-11-29T08:44:22-05:00
+last_modified_at: 2016-11-29T08:44:22-05:00
 ---
 
 Settings that affect your entire site can be changed in [Jekyll's configuration file](https://jekyllrb.com/docs/configuration/): `_config.yml`, found in the root of your project. If you don't have this file you'll need to copy or create one using the theme's [default `_config.yml`](https://github.com/mmistakes/minimal-mistakes/blob/master/_config.yml) as a base.
@@ -280,7 +280,7 @@ atom_feed:
   path: "http://feeds.feedburner.com/youFeedname"
 ```
 
-**Note:** By default the site feed is linked in two locations: inside the [`<head>` element]({{ gh_repo }}/master/_includes/head.html) and at the bottom of every page in the [site footer](https://github.com/{{ site.repository }}/master/_includes/footer.html).
+**Note:** By default the site feed is linked in two locations: inside the [`<head>` element](https://github.com/mmistakes/minimal-mistakes/blob/master/_includes/head.html) and at the bottom of every page in the [site footer](https://github.com/mmistakes/minimal-mistakes/blob/master/_includes/footer.html).
 {: .notice--info}
 
 ### SEO, Social Sharing, and Analytics Settings
@@ -424,6 +424,7 @@ For Google Analytics add your Tracking Code:
 ```yaml
 analytics:
   provider: "google-universal"
+  google:
     tracking_id: "UA-1234567-8"
 ```
 
@@ -523,7 +524,13 @@ paginate: 5
 
 You'll also need to include some Liquid and HTML to properly use the paginator, which you can find in the **Layouts** section under [Home Page]({{ "/docs/layouts/#home-page" | absolute_url }}).
 
-**Please note:** [Jekyll's pagination](http://jekyllrb.com/docs/pagination/) may have unexpected results when used on pages other than the home page eg. `<site domain>/blog/index.html`.
+The paginator only works on files with name `index.html`. To use pagination in a subfolder --- for example `/recent/`, create `/recent/index.html` and set the `paginate_path` in `_config.yml` to this:
+
+```yaml
+paginate_path: /recent/page:num/
+```
+
+**Please note:** When using Jekyll's default [pagination plugin](http://jekyllrb.com/docs/pagination/) `paginator.posts` can only be called once. If you're looking for something more powerful that can paginate category, tag, and collection pages I suggest [**jekyll-paginate-v2**](https://github.com/sverrirs/jekyll-paginate-v2).
 {: .notice--info}
 
 ### Timezone
