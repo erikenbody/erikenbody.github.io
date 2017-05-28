@@ -27,6 +27,9 @@ Bird feathers are a complex structure that use a relatively limited arsenal of m
 
 ## Proximate mechanisms of plumage coloration
 
+<img src="/assets/images/plot.jpg" width="700">
+
+
 Female ornaments are influenced not only by selective forces acting on the traits, but also by the genetic mechanisms that produce that phenotype. I use recently available tools for sequencing whole bird genomes and transcriptomes to study the mechanisms that lead to variation in both female coloration and sexual dichromatism. My study using the White-shouldered Fairywren as an exemplar will investigate what genome wide characteristics are associated with population level variation in sexual dichromatism and what genes are differentially expressed when producing color in different female phenotypes. 
 
 ## Engagement in conservation 
