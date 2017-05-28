@@ -2,17 +2,6 @@
 layout: single
 author: Erik Enbody
 permalink: /
-
-/* type scale */
-$type-size-1 : 0.625em;  // ~39.056px
-$type-size-2 : 0.625em;  // ~31.248px
-$type-size-3 : 0.625em;  // ~25.008px
-$type-size-4 : 0.625em;   // ~20px
-$type-size-5 : 0.625em;      // ~16px
-$type-size-6 : 0.625em;   // ~12px
-$type-size-7 : 0.625em; // ~11px
-$type-size-8 : 0.625em;  // ~10px
-/*
 ---
 
 ![wsfw](/assets/images/header_smallish.jpg)
