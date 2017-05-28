@@ -27,13 +27,13 @@ Bird feathers are a complex structure that use a relatively limited arsenal of m
 
 ## Proximate mechanisms of plumage coloration
 
-<img src="/assets/images/plot.jpg" width="700">
+<img src="/assets/images/plot.jpg" width="400">
 
 
 Female ornaments are influenced not only by selective forces acting on the traits, but also by the genetic mechanisms that produce that phenotype. I use recently available tools for sequencing whole bird genomes and transcriptomes to study the mechanisms that lead to variation in both female coloration and sexual dichromatism. My study using the White-shouldered Fairywren as an exemplar will investigate what genome wide characteristics are associated with population level variation in sexual dichromatism and what genes are differentially expressed when producing color in different female phenotypes. 
 
 ## Engagement in conservation 
 
-<img src="/assets/images/png_school2.jpg" width="100">
+<img src="/assets/images/png_school2.jpg" width="700">
 
 My research is has a strong tropical focus, which often takes place in regions where the local communities have close social and economic ties to the environment where they live. New Guinea is a particularly biodiverse location where more than 5% of the worlds species are present on less than 1% of the world’s landmass. The relatively small populace and remoteness of the country has led to some of the most pristine wilderness in the world, but these are increasingly facing threats from anthropogenic pressure in population growth, climate change, and exploitation for fossil fuels and agriculture. We work closely with local communities where we work to advocate for and develop a locally led group dedicated to grassland conservation. The goal of this project is to support the idea that conservation is not just for the community, but by the community as well.  To read more about our conservation initiatives in PNG, follow [this link](http://karubian.tulane.edu/engagement/papua-new-guinea-engagement/) 
