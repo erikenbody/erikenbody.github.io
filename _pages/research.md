@@ -21,6 +21,8 @@ The elaborate coloration of many male animals has inspired biologists to study t
 
 Bird feathers are a complex structure that use a relatively limited arsenal of mechanisms to produce the astounding variety of color found in birds. I use photospectroscopy and electron microscopy to characterize color signals in birds and link them to their underlying structural component. I am interested in how different organization of feather tissues produces color, but more importantly how these underlying characteristics can face selective pressures and lead to individual and species level variation. 
 
+Enbody, E.D., Lantz, Enbody E.D., Lantz S.M., and J. Karubian. 2017. Production of plumage ornaments among males and females of two closely related tropical passerine bird species. Ecology and Evolution. 00:1-11 doi 10.1002/ece3.3000 [link](http://onlinelibrary.wiley.com/doi/10.1002/ece3.3000/full) and [PDF](http://onlinelibrary.wiley.com/doi/10.1002/ece3.3000/epdf)
+
 ### Proximate mechanisms of plumage coloration
 
 Female ornaments are influenced not only by selective forces acting on the traits, but also by the genetic mechanisms that produce that phenotype. I use recently available tools for sequencing whole bird genomes and transcriptomes to study the mechanisms that lead to variation in both female coloration and sexual dichromatism. My study using the White-shouldered Fairywren as an exemplar will investigate what genome wide characteristics are associated with population level variation in sexual dichromatism and what genes are differentially expressed when producing color in different female phenotypes. 
