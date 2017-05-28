@@ -406,3 +406,15 @@
   font-size: $type-size-6;
   text-transform: uppercase;
 }
+
+/* Post content wrapper */
+.article-wrap {
+  p {
+    font-size: 18px;
+  }
+  // Dotted line underlines for links
+  p > a,
+  li > a {
+    text-decoration: underline;
+  }
+}
