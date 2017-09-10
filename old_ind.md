@@ -1,8 +1,8 @@
----
-layout: single
-author: Erik Enbody
-permalink: /
----
+#---
+#layout: single
+#author: Erik Enbody
+#permalink: /
+#---
 
 ![wsfw](/assets/images/header_smallish.jpg)
 
