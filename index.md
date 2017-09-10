@@ -4,20 +4,17 @@ author: Erik Enbody
 permalink: /
 ---
 
-
 <img src="/assets/images/research_header2.jpg" width="700">
 
 I am a Ph.D. Candidate in [Dr. Jordan Karubian’s lab](karubianlab.tulane.edu) in the [Department of Ecology and Evolution](http://www2.tulane.edu/sse/eebio/) at [Tulane University](http://www.tulane.edu).
 
-I am broadly interested in the mechanisms that produce and the ultimate consequences of traits that characterize the vast biodiversity on earth. My dissertation research is focused on understanding how plumage ornaments evolve in female birds, but I am interested in any question relating to how birds and other animals produce color and how that color functions in an ecological and evolutionary framework. 
-
-My dissertation research focuses on how color has evolved in the White-shouldered Fairywren (*Malurus alboscapulatus*), a species endemic to New Guinea. 
+ My dissertation research is focused on understanding how plumage ornaments evolve in female birds, but I am broadly interested in research questions at the intersection of mechanisms of trait evolution and their evolutionary consequences. I am particularly interested in using cutting-edge techniques to investigate wild populations that exhibit properties which are at odds with current theory. My graduate research focuses on how color has evolved in the White-shouldered Fairywren (*Malurus alboscapulatus*), a species of grassland bird endemic to New Guinea. 
 
 ## Ornament evolution in males and females
 
 <img src="/assets/images/duet2.jpg" width="700">
 
-The elaborate coloration of many male animals has inspired biologists to study the function of elaborate male ornaments since Darwin and Wallace. That male ornaments face sexual and social selection pressures is now fundamental in evolutionary biology, but what function, if any, female ornaments serve is comparatively less known. For my Ph.D. research, I study a unique species of bird that varies between subspecies by female, but not male, coloration. This provides a system well suited for studying the function of female coloration in driving population divergence. 
+The elaborate coloration of many male animals has inspired biologists to study the function of elaborate male ornaments since Darwin and Wallace. That male ornaments face sexual and social selection pressures is now fundamental in evolutionary biology, but what function, if any, female ornaments serve is comparatively less known. For my Ph.D. research, I study a unique species of bird that varies between subspecies by female, but not male, coloration. This provides a system well suited for studying the function of female coloration in driving population divergence. I experimentally test the function of female ornaments using controlled song and mount playback trials to free flying birds and compare the role of testosterone in mediating aggression and ornamentatoin between the sexes (*in prep*).  
 
 ## Ornament production in birds
 
@@ -34,7 +31,7 @@ Bird feathers are a complex structure that use a relatively limited arsenal of m
 <img src="/assets/images/plot.jpg" width="400">
 
 
-Female ornaments are influenced not only by selective forces acting on the traits, but also by the genetic mechanisms that produce that phenotype. I use recently available tools for sequencing whole bird genomes and transcriptomes to study the mechanisms that lead to variation in both female coloration and sexual dichromatism. My study using the White-shouldered Fairywren as an exemplar will investigate what genome wide characteristics are associated with population level variation in sexual dichromatism and what genes are differentially expressed when producing color in different female phenotypes. 
+Female ornaments are influenced not only by selective forces acting on the traits, but also by the genetic mechanisms that produce that phenotype. I whole genome sequencing and transcriptomics to study the mechanisms that lead to variation in both female coloration and sexual dichromatism. My study using the White-shouldered Fairywren as an exemplar will investigate what genome wide characteristics are associated with population level variation in sexual dichromatism and what genes are differentially expressed when producing color in different female phenotypes. This research was funded by an NSF Dissertation Improvement Grant and data from the project is currently being analyzed. 
 
 ## Engagement in conservation 
 
