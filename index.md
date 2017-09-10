@@ -1,9 +1,13 @@
 ---
-permalink: /research/
 layout: single
+author: Erik Enbody
+permalink: /
 ---
 
+
 <img src="/assets/images/research_header2.jpg" width="700">
+
+I am a Ph.D. Candidate in [Dr. Jordan Karubian’s lab](karubianlab.tulane.edu) in the [Department of Ecology and Evolution](http://www2.tulane.edu/sse/eebio/) at [Tulane University](http://www.tulane.edu).
 
 I am broadly interested in the mechanisms that produce and the ultimate consequences of traits that characterize the vast biodiversity on earth. My dissertation research is focused on understanding how plumage ornaments evolve in female birds, but I am interested in any question relating to how birds and other animals produce color and how that color functions in an ecological and evolutionary framework. 
 
