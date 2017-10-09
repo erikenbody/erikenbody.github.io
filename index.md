@@ -28,7 +28,7 @@ Bird feathers are a complex structure that use a relatively limited arsenal of m
 
 *Publications:*
 
-**Enbody E.D.**, Lantz S.M., and J. Karubian. 2017. Production of plumage ornaments among males and females of two closely related tropical passerine bird species. *Ecology and Evolution*. 00:1-11 doi 10.1002/ece3.3000 [link](http://onlinelibrary.wiley.com/doi/10.1002/ece3.3000/full) and [PDF](http://onlinelibrary.wiley.com/doi/10.1002/ece3.3000/epdf)
+**Enbody, E.D.**, Lantz S.M., and J. Karubian. 2017. Production of plumage ornaments among males and females of two closely related tropical passerine bird species. *Ecology and Evolution*. 00:1-11 doi 10.1002/ece3.3000 [link](http://onlinelibrary.wiley.com/doi/10.1002/ece3.3000/full) and [PDF](http://onlinelibrary.wiley.com/doi/10.1002/ece3.3000/epdf)
 
 ## Proximate mechanisms of plumage coloration
 
