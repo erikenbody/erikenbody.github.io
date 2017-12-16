@@ -17,9 +17,9 @@ I am a Ph.D. Candidate in [Dr. Jordan Karubian’s lab](karubianlab.tulane.edu) 
 The elaborate coloration of many male animals has inspired biologists to study the function of elaborate male ornaments since Darwin and Wallace. That male ornaments face sexual and social selection pressures is now fundamental in evolutionary biology, but what function, if any, female ornaments serve is comparatively less known. For my Ph.D. research, I study a unique species of bird that varies between subspecies by female, but not male, coloration. This provides a system well suited for studying the function of female coloration in driving population divergence. I experimentally test the function of female ornaments using controlled song and mount playback trials to free flying birds and compare the role of testosterone in mediating aggression and ornamentation between the sexes (*in prep*).  
 
 *Publications:*
-```
-Brouwer, L., M. van de Pol, N. H. Aranzamendi, G. Bain, D. T. Baldassarre, D. Colombelli-Négrel, **E.D. Enbody**, K. Gielow, M. L. Hall, A. E. Johnson, J. Karubian, S. A. Kingma, S. Kleindorfer, M. Louter, R.A. Mulder, A. Peters, S. Pruett-Jones, K. A. Tarvin, D.J. Thrasher, C.W. Varian-Ramos, M.S. Webster, A. Cockburn. 2017. Multiple hypotheses explain variation in extra-pair paternity at different levels in a highly variable avian family. [Molecular Ecology. 26:6717–6729] (http://onlinelibrary.wiley.com/doi/10.1111/mec.14385/full). doi: 10.1111/mec.14385
-```
+
+##### Brouwer, L., M. van de Pol, N. H. Aranzamendi, G. Bain, D. T. Baldassarre, D. Colombelli-Négrel, **E.D. Enbody**, K. Gielow, M. L. Hall, A. E. Johnson, J. Karubian, S. A. Kingma, S. Kleindorfer, M. Louter, R.A. Mulder, A. Peters, S. Pruett-Jones, K. A. Tarvin, D.J. Thrasher, C.W. Varian-Ramos, M.S. Webster, A. Cockburn. 2017. Multiple hypotheses explain variation in extra-pair paternity at different levels in a highly variable avian family. [Molecular Ecology. 26:6717–6729] (http://onlinelibrary.wiley.com/doi/10.1111/mec.14385/full). doi: 10.1111/mec.14385
+
 
 ## Ornament production in birds
 
