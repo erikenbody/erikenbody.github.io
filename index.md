@@ -14,7 +14,7 @@ My dissertation research focused on understanding how plumage ornaments evolve i
 
 <img src="/assets/images/duet2.jpg" width="700">
 
-The elaborate coloration of many male animals has inspired biologists to study the function of elaborate male ornaments since Darwin and Wallace. That male ornaments face sexual and social selection pressures is now fundamental in evolutionary biology, but what function, if any, female ornaments serve is comparatively less known. For my Ph.D. research, I study a unique species of bird that varies between subspecies by female, but not male, coloration. This provides a system well suited for studying the function of female coloration in driving population divergence. I experimentally test the function of female ornaments using controlled song and mount playback trials to free flying birds and compare the role of testosterone in mediating aggression and ornamentation between the sexes (*in prep*).  
+The elaborate coloration of many male animals has inspired biologists to study the function of elaborate male ornaments since Darwin and Wallace. That male ornaments face sexual and social selection pressures is now fundamental in evolutionary biology, but what function, if any, female ornaments serve is comparatively less known. For my Ph.D. research, I study a unique species of bird that varies between subspecies by female, but not male, coloration. This provides a system well suited for studying the function of female coloration in driving population divergence. I experimentally test the function of female ornaments using controlled song and mount playback trials to free flying birds and compare the role of testosterone in mediating aggression and ornamentation between the sexes.  
 
 **Publications:**
 
@@ -38,7 +38,7 @@ Bird feathers are a complex structure that use a relatively limited arsenal of m
 <img src="/assets/images/plot.jpg" width="400">
 
 
-Female ornaments are influenced not only by selective forces acting on the traits, but also by the genetic mechanisms that produce that phenotype. I whole genome sequencing and transcriptomics to study the mechanisms that lead to variation in both female coloration and sexual dichromatism. My study using the White-shouldered Fairywren as an exemplar will investigate what genome wide characteristics are associated with population level variation in sexual dichromatism and what genes are differentially expressed when producing color in different female phenotypes. This research was funded by an NSF Dissertation Improvement Grant and data from the project is currently being analyzed. 
+Female ornaments are influenced not only by selective forces acting on the traits, but also by the genetic mechanisms that produce that phenotype. I use whole genome sequencing and transcriptomics to study the mechanisms that lead to variation in both female coloration and sexual dichromatism. My study using the White-shouldered Fairywren as an exemplar will investigate what genome wide characteristics are associated with population level variation in sexual dichromatism and what genes are differentially expressed when producing color in different female phenotypes. This research was funded by an NSF Dissertation Improvement Grant and data from the project is currently being analyzed. 
 
 ## Engagement in conservation 
 
