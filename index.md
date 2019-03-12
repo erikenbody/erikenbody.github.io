@@ -14,31 +14,30 @@ My dissertation research focused on understanding how plumage ornaments evolve i
 
 <img src="/assets/images/duet2.jpg" width="700">
 
-The elaborate coloration of many male animals has inspired biologists to study the function of elaborate male ornaments since Darwin and Wallace. That male ornaments face sexual and social selection pressures is now fundamental in evolutionary biology, but what function, if any, female ornaments serve is comparatively less known. For my Ph.D. research, I study a unique species of bird that varies between subspecies by female, but not male, coloration. This provides a system well suited for studying the function of female coloration in driving population divergence. I experimentally test the function of female ornaments using controlled song and mount playback trials to free flying birds and compare the role of testosterone in mediating aggression and ornamentation between the sexes.  
+The elaborate coloration of many male animals has inspired biologists to study the function of elaborate male ornaments since Darwin and Wallace. That male ornaments face sexual and social selection pressures is now fundamental in evolutionary biology, but what function, if any, female ornaments serve is comparatively less known. For my Ph.D. research, I study a unique species of bird that varies between subspecies by female, but not male, coloration. This provides a system well suited for studying the function and physiology of female coloration involved in population divergence. I experimentally test the function of female ornaments using controlled song and mount playback trials to free flying birds and compare the role of testosterone in mediating aggression and ornamentation between the sexes.  
 
 **Publications:**
+
+**Enbody, E. D.**, J. Boersma, J. A. Jones, M. W. H. Chatfield, S. Ketaloya, D. Nason, D. T. Baldassarre, J. Hazlehurst, O. Gowen, H. Schwabl, J. Karubian. Accepted manuscript. Social organization and breeding biology of the White-shouldered Fairywren Malurus alboscapulatus. Emu: Austral Ornithology. 
 
 **Enbody, E.D.**, J. Boersma, H. Schwabl, J. Karubian. 2018. Female ornamentation is associated with elevated aggression and testosterone in a tropical songbird. [Behavioral Ecology. early view](https://academic.oup.com/beheco/advance-article-abstract/doi/10.1093/beheco/ary079/5026290). doi: 10.1093/beheco/ary079. 
 
 Brouwer, L., M. van de Pol, N. H. Aranzamendi, G. Bain, D. T. Baldassarre, D. Colombelli-Négrel, **E.D. Enbody**, K. Gielow, M. L. Hall, A. E. Johnson, J. Karubian, S. A. Kingma, S. Kleindorfer, M. Louter, R.A. Mulder, A. Peters, S. Pruett-Jones, K. A. Tarvin, D.J. Thrasher, C.W. Varian-Ramos, M.S. Webster, A. Cockburn. 2017. Multiple hypotheses explain variation in extra-pair paternity at different levels in a highly variable avian family. [Molecular Ecology. 26:6717–6729](http://onlinelibrary.wiley.com/doi/10.1111/mec.14385/full). doi: 10.1111/mec.14385
 
 
-## Ornament production in birds
+## Proximate mechanisms of plumage coloration
+
 
 <img src="/assets/images/feather1.jpg" width="700">
 
 Bird feathers are a complex structure that use a relatively limited arsenal of mechanisms to produce the astounding variety of color found in birds. I use photospectroscopy and electron microscopy to characterize color signals in birds and link them to their underlying structural component. I am interested in how different organization of feather tissues produces color, but more importantly how these underlying characteristics can face selective pressures and lead to individual and species level variation. 
 
+To better understand the evolutionary history of female ornamentation, I use whole genome sequencing and transcriptomics to study the mechanisms that lead to variation in both female coloration and sexual dichromatism. My study using the White-shouldered Fairywren as mode for female ornament evolution investigates what genome wide characteristics are associated with population level variation in sexual dichromatism and what genes are differentially expressed when producing color in different female phenotypes. This research was funded by an NSF Dissertation Improvement Grant and the manuscript is in preperation. 
+
 **Publications:**
 
 **Enbody, E.D.**, Lantz S.M., and J. Karubian. 2017. Production of plumage ornaments among males and females of two closely related tropical passerine bird species. [*Ecology and Evolution*. 00:1-11](http://onlinelibrary.wiley.com/doi/10.1002/ece3.3000/full) and [PDF](http://onlinelibrary.wiley.com/doi/10.1002/ece3.3000/epdf). doi: 10.1002/ece3.3000 
 
-## Proximate mechanisms of plumage coloration
-
-<img src="/assets/images/plot.jpg" width="400">
-
-
-Female ornaments are influenced not only by selective forces acting on the traits, but also by the genetic mechanisms that produce that phenotype. I use whole genome sequencing and transcriptomics to study the mechanisms that lead to variation in both female coloration and sexual dichromatism. My study using the White-shouldered Fairywren as an exemplar will investigate what genome wide characteristics are associated with population level variation in sexual dichromatism and what genes are differentially expressed when producing color in different female phenotypes. This research was funded by an NSF Dissertation Improvement Grant and data from the project is currently being analyzed. 
 
 ## Engagement in conservation 
 
