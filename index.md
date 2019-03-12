@@ -20,7 +20,7 @@ The elaborate coloration of many male animals has inspired biologists to study t
 
 **Enbody, E. D.**, J. Boersma, J. A. Jones, M. W. H. Chatfield, S. Ketaloya, D. Nason, D. T. Baldassarre, J. Hazlehurst, O. Gowen, H. Schwabl, J. Karubian. Accepted manuscript. Social organization and breeding biology of the White-shouldered Fairywren Malurus alboscapulatus. Emu: Austral Ornithology. 
 
-**Enbody, E.D.**, J. Boersma, H. Schwabl, J. Karubian. 2018. Female ornamentation is associated with elevated aggression and testosterone in a tropical songbird. [Behavioral Ecology. early view](https://academic.oup.com/beheco/advance-article-abstract/doi/10.1093/beheco/ary079/5026290). doi: 10.1093/beheco/ary079. 
+**Enbody, E.D.**, J. Boersma, H. Schwabl, J. Karubian. 2018. Female ornamentation is associated with elevated aggression and testosterone in a tropical songbird. [Behavioral Ecology. 29(5): 1056–1066](https://academic.oup.com/beheco/article/29/5/1056/5026290). doi: 10.1093/beheco/ary079. 
 
 Brouwer, L., M. van de Pol, N. H. Aranzamendi, G. Bain, D. T. Baldassarre, D. Colombelli-Négrel, **E.D. Enbody**, K. Gielow, M. L. Hall, A. E. Johnson, J. Karubian, S. A. Kingma, S. Kleindorfer, M. Louter, R.A. Mulder, A. Peters, S. Pruett-Jones, K. A. Tarvin, D.J. Thrasher, C.W. Varian-Ramos, M.S. Webster, A. Cockburn. 2017. Multiple hypotheses explain variation in extra-pair paternity at different levels in a highly variable avian family. [Molecular Ecology. 26:6717–6729](http://onlinelibrary.wiley.com/doi/10.1111/mec.14385/full). doi: 10.1111/mec.14385
 
@@ -47,5 +47,5 @@ My research is has a strong tropical focus, which often takes place in regions w
 
 ### Misc
 
-Image credits (photos featuring people): Maxime Aliaga (https://www.facebook.com/MaximeAliaga/)
+Image credits (photos featuring people): Maxime Aliaga (https://maxime-aliaga.com)
 Other images are copyright Erik D. Enbody
