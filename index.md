@@ -18,7 +18,7 @@ The elaborate coloration of many male animals has inspired biologists to study t
 
 **Publications:**
 
-**Enbody, E. D.**, J. Boersma, J. A. Jones, M. W. H. Chatfield, S. Ketaloya, D. Nason, D. T. Baldassarre, J. Hazlehurst, O. Gowen, H. Schwabl, J. Karubian. Accepted manuscript. Social organization and breeding biology of the White-shouldered Fairywren Malurus alboscapulatus. Emu: Austral Ornithology. 
+**Enbody, E. D.**, J. Boersma, J. A. Jones, M. W. H. Chatfield, S. Ketaloya, D. Nason, D. T. Baldassarre, J. Hazlehurst, O. Gowen, H. Schwabl, J. Karubian. Accepted manuscript. Social organisation and breeding biology of the White-shouldered Fairywren *Malurus alboscapulatus*. [Emu: Austral Ornithology](https://www.tandfonline.com/doi/full/10.1080/01584197.2019.1595663) and [Open Access PDF](https://www.tandfonline.com/doi/pdf/10.1080/01584197.2019.1595663?needAccess=true).doi: 10.1080/01584197.2019.1595663.
 
 **Enbody, E.D.**, J. Boersma, H. Schwabl, J. Karubian. 2018. Female ornamentation is associated with elevated aggression and testosterone in a tropical songbird. [Behavioral Ecology. 29(5): 1056–1066](https://academic.oup.com/beheco/article/29/5/1056/5026290). doi: 10.1093/beheco/ary079. 
 
@@ -36,7 +36,7 @@ To better understand the evolutionary history of female ornamentation, I use who
 
 **Publications:**
 
-**Enbody, E.D.**, Lantz S.M., and J. Karubian. 2017. Production of plumage ornaments among males and females of two closely related tropical passerine bird species. [*Ecology and Evolution*. 00:1-11](http://onlinelibrary.wiley.com/doi/10.1002/ece3.3000/full) and [PDF](http://onlinelibrary.wiley.com/doi/10.1002/ece3.3000/epdf). doi: 10.1002/ece3.3000 
+**Enbody, E.D.**, Lantz S.M., and J. Karubian. 2017. Production of plumage ornaments among males and females of two closely related tropical passerine bird species. [Ecology and Evolution. 00:1-11](http://onlinelibrary.wiley.com/doi/10.1002/ece3.3000/full) and [Open Access PDF](http://onlinelibrary.wiley.com/doi/10.1002/ece3.3000/epdf). doi: 10.1002/ece3.3000 
 
 
 ## Engagement in conservation 
