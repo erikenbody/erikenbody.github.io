@@ -6,7 +6,13 @@ permalink: /
 
 <img src="/assets/images/research_header2.jpg" width="700">
 
-I am a Postdoctoral Researcher in [Dr. Leif Andersson’s lab](https://www.uu.se/en/news-media/researcher-profiles/leif-andersson/) in the [Department of Medical Biochemistry and Microbiology](https://www.imbim.uu.se/) at [Uppsala University](http://www.uu.se/en). I completed my Ph.D. in [Dr. Jordan Karubian’s lab](karubianlab.tulane.edu) in the [Department of Ecology and Evolution](http://www2.tulane.edu/sse/eebio/) at [Tulane University](http://www.tulane.edu).
+#### Welcome! 
+
+I am a biologist currently working as a Postdoctoral Researcher in [Leif Andersson’s lab](https://www.uu.se/en/news-media/researcher-profiles/leif-andersson/) at [Uppsala University](http://www.uu.se/en). My research is driven by my fascination with biodiversity and the evolutionary processes that generate diversity in wild populations. 
+
+My research leverages current technologies in genomic sequencing to study the mechanisms that maintain population and trait diveristy through natural, social, and sexual selection processess. These projects span a diverse group of organisms 
+
+I completed my Ph.D. in [Dr. Jordan Karubian’s lab](karubianlab.tulane.edu) in the [Department of Ecology and Evolution](http://www2.tulane.edu/sse/eebio/) at [Tulane University](http://www.tulane.edu).
 
 My dissertation research focused on understanding how plumage ornaments evolve in female birds, but I am broadly interested in research questions at the intersection of mechanisms of trait evolution and their evolutionary consequences. I am particularly interested in using cutting-edge techniques to investigate wild populations that exhibit properties which are at odds with current theory. My graduate research focused on how color has evolved in the White-shouldered Fairywren (*Malurus alboscapulatus*), a species of grassland bird endemic to New Guinea. My postdoctoral work is focused on improving our understanding of the genomic mechanisms driving adaptive radiations and plumage elaboration. 
 
