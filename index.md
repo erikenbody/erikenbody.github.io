@@ -8,13 +8,13 @@ permalink: /
 
 #### Welcome! 
 
-I am a biologist currently working as a Postdoctoral Researcher in [Leif Andersson’s lab](https://www.uu.se/en/news-media/researcher-profiles/leif-andersson/) at [Uppsala University](http://www.uu.se/en). My research is driven by my fascination with biodiversity and the evolutionary processes that generate diversity in wild populations. 
+I am a biologist currently working as a Postdoctoral Researcher in [Leif Andersson’s lab](https://www.uu.se/en/news-media/researcher-profiles/leif-andersson/) at [Uppsala University](http://www.uu.se/en). My research is driven by my fascination with biodiversity and the evolutionary processes that generate diversity in wild populations. My research leverages current technologies in genomic sequencing to study the mechanisms that maintain population and trait diveristy through natural, social, and sexual selection processess. These projects span a diverse group of organisms 
 
-My research leverages current technologies in genomic sequencing to study the mechanisms that maintain population and trait diveristy through natural, social, and sexual selection processess. These projects span a diverse group of organisms 
+I completed my Ph.D. in [Dr. Jordan Karubian’s lab](karubianlab.tulane.edu) in the [Department of Ecology and Evolution](http://www2.tulane.edu/sse/eebio/) at [Tulane University](http://www.tulane.edu). My dissertation research focused on understanding how plumage ornaments evolve in female birds, but I am broadly interested in research questions at the intersection of mechanisms of trait evolution and their evolutionary consequences. I am particularly interested in using cutting-edge techniques to investigate wild populations that exhibit properties which are at odds with current theory. My graduate research focused on how color has evolved in the White-shouldered Fairywren (*Malurus alboscapulatus*), a species of grassland bird endemic to New Guinea. My postdoctoral work is focused on improving our understanding of the genomic mechanisms driving adaptive radiations and plumage elaboration. 
 
-I completed my Ph.D. in [Dr. Jordan Karubian’s lab](karubianlab.tulane.edu) in the [Department of Ecology and Evolution](http://www2.tulane.edu/sse/eebio/) at [Tulane University](http://www.tulane.edu).
+## The genomics of adaptation
 
-My dissertation research focused on understanding how plumage ornaments evolve in female birds, but I am broadly interested in research questions at the intersection of mechanisms of trait evolution and their evolutionary consequences. I am particularly interested in using cutting-edge techniques to investigate wild populations that exhibit properties which are at odds with current theory. My graduate research focused on how color has evolved in the White-shouldered Fairywren (*Malurus alboscapulatus*), a species of grassland bird endemic to New Guinea. My postdoctoral work is focused on improving our understanding of the genomic mechanisms driving adaptive radiations and plumage elaboration. 
+Hill, J., **E.D. Enbody**, M.E. Pettersson, C.G. Sprehn, D. Bekkevold, A. Folkvord, L. Laikre, G. Kleinau, P. Scheerer, L. Andersson. 2019. Recurrent convergent evolution at amino acid residue 261 in fish rhodopsin. [Proceedings of the National Academy of Sciences. 116(37): 18473-18478](https://www.pnas.org/content/116/37/18473). Press: [Science Daily](https://www.sciencedaily.com/releases/2019/08/190826153632.html), [phys.org](https://phys.org/news/2019-08-herring-environment-baltic-sea.html), [Sveriges Radio](https://sverigesradio.se/sida/artikel.aspx?programid=105&artikel=7287645).
 
 ## Behavioral consequences of elaborate ornamentation in birds
 
@@ -44,6 +44,7 @@ To better understand the evolutionary history of female ornamentation, I use who
 
 **Enbody, E.D.**, Lantz S.M., and J. Karubian. 2017. Production of plumage ornaments among males and females of two closely related tropical passerine bird species. [Ecology and Evolution. 00:1-11](http://onlinelibrary.wiley.com/doi/10.1002/ece3.3000/full) and [Open Access PDF](http://onlinelibrary.wiley.com/doi/10.1002/ece3.3000/epdf). doi: 10.1002/ece3.3000 
 
+Javůrková, V.G., **E.D. Enbody**, J. Kreisinger, K. Chmel, J. Mrázek, Jordan Karubian. 2019. Plumage iridescence is associated with distinct feather microbiota in a tropical passerine. [Scientific Reports (12921)](https://www.nature.com/articles/s41598-019-49220-y).
 
 ## Engagement in conservation 
 
