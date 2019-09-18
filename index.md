@@ -4,8 +4,6 @@ author: Erik Enbody
 permalink: /
 ---
 
-<img src="/assets/images/research_header2.jpg" width="700">
-
 #### Welcome! 
 
 I am a biologist currently working as a Postdoctoral Researcher in [Leif Andersson’s lab](https://www.uu.se/en/news-media/researcher-profiles/leif-andersson/) at [Uppsala University](http://www.uu.se/en). My research is driven by my fascination with biodiversity and the evolutionary processes that generate diversity in wild populations. My research leverages current technologies in genomic sequencing to study the mechanisms that maintain population and trait diveristy through natural, social, and sexual selection processess. These projects span a diverse group of organisms 
