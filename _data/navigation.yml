@@ -5,7 +5,7 @@ main:
 #  - title: "Research"
 #    url: /research/
 - title: "Publications"
-    url: /publications/
+    url: _pages/publications/
   # - title: "Sample Posts"
   ##   url: /year-archive/
   # - title: "Sample Collections"
