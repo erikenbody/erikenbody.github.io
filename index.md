@@ -4,13 +4,13 @@ author: Erik Enbody
 permalink: /
 ---
 
-#### Welcome! 
+### Welcome! 
 
 <img src="/assets/images/header2.png" width="1000">
 
 I am an evolutionary biologist and Postdoctoral Researcher in Genomics and Bioinformatics in [Leif Andersson’s lab](https://www.uu.se/en/news-media/researcher-profiles/leif-andersson/) at [Uppsala University](http://www.uu.se/en). My research is driven by my fascination with biodiversity and the evolutionary processes that generate diversity in wild populations. Projects I work on leverage current technologies in genomic sequencing and experimental behavioral study to describe the mechanisms that maintain population and trait diversity through natural, social, and sexual selection processes. These projects span a diverse range of organisms. 
 
-## Evolution of female ornamentation in the White-shouldered Fairywren (*Malurus alboscapulatus*)
+## Evolution of female ornamentation in the White-shouldered Fairywren
 
 <img src="/assets/images/duet2.jpg" width="700">
 
@@ -18,20 +18,18 @@ The elaborate coloration of many male animals has inspired biologists to study t
 
 Ongoing work in this system is unraveling the evolutionary history of the various White-shouldered Fairywren subspecies, examining evidence for selection on female ornamentation using genomics, and understanding the proximate mechanisms shaping signal production. Much of this work was generously funded by an [NSF Dissertation Improvement Grant](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1701781&HistoricalAwards=false). 
 
-**Publications:**
-
-**Enbody, E.D**, Sin, S.Y.W., Boersma, J., Schwabl, H., Edwards, S.V., Webster, M.S., Karubian, J. *in prep*. Genomic and transcriptional evidence for selection on female ornamentation. 
+##### **Enbody, E.D**, Sin, S.Y.W., Boersma, J., Schwabl, H., Edwards, S.V., Webster, M.S., Karubian, J. *in prep*. Genomic and transcriptional evidence for selection on female ornamentation. 
 
 ##### Javůrková, V.G., **E.D. Enbody**, J. Kreisinger, K. Chmel, J. Mrázek, Jordan Karubian. 2019. Plumage iridescence is associated with distinct feather microbiota in a tropical passerine. [Scientific Reports (12921)](https://www.nature.com/articles/s41598-019-49220-y).
 
 ##### **Enbody, E.D.**, J. Boersma, J. A. Jones, M. W. H. Chatfield, S. Ketaloya \*, D. Nason \*, D. T. Baldassarre, J. Hazlehurst, O. Gowen, H. Schwabl, J. Karubian. 2019. Social organization and breeding biology of the White-shouldered Fairywren *Malurus alboscapulatus*. [Emu: Austral Ornithology. 19(3): 274-285. Special issue: Ornithology of New Guinea and the Indo-Pacific Islands](https://www.tandfonline.com/doi/full/10.1080/01584197.2019.1595663). (invited contribution & cover photo).
+<img src="/assets/images/temu20.v119.i03.cover.jpg">
 
 ##### **Enbody, E.D.**, J. Boersma, H. Schwabl, J. Karubian. 2018. Female ornamentation is associated with elevated aggression and testosterone in a tropical songbird. [Behavioral Ecology. 29(5): 1056–1066](https://academic.oup.com/beheco/article/29/5/1056/5026290).
 
 ##### **Enbody, E.D.**, Lantz S.M., and J. Karubian. 2017. Production of plumage ornaments among males and females of two closely related tropical passerine bird species. [Ecology and Evolution. 00:1-11](http://onlinelibrary.wiley.com/doi/10.1002/ece3.3000/full).
 
 ##### Brouwer, L., M. van de Pol, N. H. Aranzamendi, G. Bain, D. T. Baldassarre, D. Colombelli-Négrel, **E.D. Enbody**, K. Gielow, M. L. Hall, A. E. Johnson, J. Karubian, S. A. Kingma, S. Kleindorfer, M. Louter, R.A. Mulder, A. Peters, S. Pruett-Jones, K. A. Tarvin, D.J. Thrasher, C.W. Varian-Ramos, M.S. Webster, A. Cockburn. 2017. Multiple hypotheses explain variation in extra-pair paternity at different levels in a highly variable avian family. [Molecular Ecology. 26:6717–6729](http://onlinelibrary.wiley.com/doi/10.1111/mec.14385/full).
-
 
 ## Fish rhodopsin evolution
 
@@ -52,10 +50,6 @@ From supergenes in ruffs, to the rapid radiation of plumages in male wagtails an
 ## Engagement in conservation 
 
 <img src="/assets/images/png_school2.jpg" width="700">
+[Maxime Aliaga](https://maxime-aliaga.com)
 
 My research is has a strong tropical focus, which often takes place in regions where the local communities have close social and economic ties to the environment where they live. New Guinea is a particularly biodiverse location where more than 5% of the world's species are present on less than 1% of the world’s landmass. The relatively small populace and remoteness of the country has led to some of the most pristine wilderness in the world, but these are increasingly facing threats from anthropogenic pressure in population growth, climate change, and exploitation for fossil fuels and agriculture. We work closely with local communities where we work to advocate for and develop a locally led group dedicated to grassland conservation. The goal of this project is to support the idea that conservation is not just for the community, but by the community as well.  To read more about our conservation initiatives in PNG, follow [this link](http://karubian.tulane.edu/engagement/papua-new-guinea-engagement/) 
-
-###### Credits
-
-Image credits (photos featuring people): [Maxime Aliaga](https://maxime-aliaga.com)
-Other images are copyright Erik D. Enbody
