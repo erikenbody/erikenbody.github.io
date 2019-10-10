@@ -58,6 +58,6 @@ From supergenes in ruffs, to the rapid radiation of plumages in male wagtails an
 
 <img src="/assets/images/cons_head.png" width="700">
 
-[Maxime Aliaga](https://maxime-aliaga.com)
+[photo: Maxime Aliaga](https://maxime-aliaga.com)
 
 My research is has a strong tropical focus, which often takes place in regions where the local communities have close social and economic ties to the environment where they live. New Guinea is a particularly biodiverse location where more than 5% of the world's species are present on less than 1% of the world’s landmass. The relatively small populace and remoteness of the country has led to some of the most pristine wilderness in the world, but these are increasingly facing threats from anthropogenic pressure in population growth, climate change, and exploitation for fossil fuels and agriculture. We work closely with local communities where we work to advocate for and develop a locally led group dedicated to grassland conservation. The goal of this project is to support the idea that conservation is not just for the community, but by the community as well.  To read more about our conservation initiatives in PNG, follow [this link](http://karubian.tulane.edu/engagement/papua-new-guinea-engagement/) 
