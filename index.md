@@ -56,7 +56,7 @@ From supergenes in ruffs, to the rapid radiation of plumages in male wagtails an
 
 ## Engagement in conservation 
 
-<img src="/assets/images/png_school2.jpg" width="700">
+<img src="/assets/images/cons_head.jpg" width="700">
 
 [Maxime Aliaga](https://maxime-aliaga.com)
 
