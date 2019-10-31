@@ -23,7 +23,7 @@ Ongoing work in this system is unraveling the evolutionary history of the variou
 
 ##### **Enbody, E.D**, Sin, S.Y.W., Boersma, J., Schwabl, H., Edwards, S.V., Webster, M.S., Karubian, J. *in prep*. Genomic and transcriptional evidence for selection on female ornamentation. 
 
-##### Javůrková, V.G., **E.D. Enbody**, J. Kreisinger, K. Chmel, J. Mrázek, Jordan Karubian. 2019. Plumage iridescence is associated with distinct feather microbiota in a tropical passerine. [Scientific Reports (12921)](https://www.nature.com/articles/s41598-019-49220-y).
+##### Javůrková, V.G., **E.D. Enbody**, J. Kreisinger, K. Chmel, J. Mrázek, J. Karubian. 2019. Plumage iridescence is associated with distinct feather microbiota in a tropical passerine. [Scientific Reports (12921)](https://www.nature.com/articles/s41598-019-49220-y).
 
 ##### **Enbody, E.D.**, J. Boersma, J. A. Jones, M. W. H. Chatfield, S. Ketaloya \*, D. Nason \*, D. T. Baldassarre, J. Hazlehurst, O. Gowen, H. Schwabl, J. Karubian. 2019. Social organization and breeding biology of the White-shouldered Fairywren *Malurus alboscapulatus*. [Emu: Austral Ornithology. 19(3): 274-285. Special issue: Ornithology of New Guinea and the Indo-Pacific Islands](https://www.tandfonline.com/doi/full/10.1080/01584197.2019.1595663). (invited contribution & cover photo).
 <img src="/assets/images/temu20.v119.i03.cover.jpg">
