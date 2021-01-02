@@ -21,7 +21,7 @@ The elaborate coloration of many male animals has inspired biologists to study t
 
 Ongoing work in this system is unraveling the evolutionary history of the various White-shouldered Fairywren subspecies, examining evidence for selection on female ornamentation using genomics, and understanding the proximate mechanisms shaping signal production. Much of this work was generously funded by an [NSF Dissertation Improvement Grant](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1701781&HistoricalAwards=false). 
 
-##### **Enbody, E.D**, Sin, S.Y.W., Boersma, J., Schwabl, H., Edwards, S.V., Webster, M.S., Karubian, J. *in prep*. Genomic and transcriptional evidence for selection on female ornamentation. 
+##### **Enbody, E.D**, Sin, S.Y.W., Boersma, J., Schwabl, H., Edwards, S.V., Webster, M.S., Karubian, J. *in review*. Genomic and transcriptional evidence for selection on female ornamentation. 
 
 ##### Javůrková, V.G., **E.D. Enbody**, J. Kreisinger, K. Chmel, J. Mrázek, J. Karubian. 2019. Plumage iridescence is associated with distinct feather microbiota in a tropical passerine. [Scientific Reports (12921)](https://www.nature.com/articles/s41598-019-49220-y).
 
@@ -34,11 +34,21 @@ Ongoing work in this system is unraveling the evolutionary history of the variou
 
 ##### Brouwer, L., M. van de Pol, N. H. Aranzamendi, G. Bain, D. T. Baldassarre, D. Colombelli-Négrel, **E.D. Enbody**, K. Gielow, M. L. Hall, A. E. Johnson, J. Karubian, S. A. Kingma, S. Kleindorfer, M. Louter, R.A. Mulder, A. Peters, S. Pruett-Jones, K. A. Tarvin, D.J. Thrasher, C.W. Varian-Ramos, M.S. Webster, A. Cockburn. 2017. Multiple hypotheses explain variation in extra-pair paternity at different levels in a highly variable avian family. [Molecular Ecology. 26:6717–6729](http://onlinelibrary.wiley.com/doi/10.1111/mec.14385/full).
 
-## Fish rhodopsin evolution
+## Genomics of the Darwin’s Finch radiation
+
+My postdoctoral research primarily focuses on the proximate mechanisms for how selection functions at the population and individual levels in the radiation of Thraupidae finches on the Galapágos Islands. The basis for this research has involved the generation and analysis of 4,000 Darwin's finch genomes derived from individually marked finches collected over 40 years on Daphne Major by Drs. Peter and Rosemary Grant. This project required the development of methods to use low-coverage (2x) data to estimate population allele frequencies from wild populations. Using this dataset, we can identify and track through time functional variants related to natural variation. 
+
+**E. D. Enbody**, C.G. Sprehn, A. Abzhanov, H. Bi, M.P. Dobreva, O.G. Osborne, C.J. Rubin, P.R. Grant, B.R. Grant, L. Andersson. *in review*. Transspecies beak color polymorphism in the Darwin’s finch radiation.
+
+## Adaptation to diverse environments in marine organisms
 
 <img src="/assets/images/rhodopsin3.png" width="700">
 
-Fish occupy a wide range of environments that vary in the local light environment. Within the past 10,000 years the Atlantic herring colonized the brackish Baltic Sea after its formation which was facilitated by adaptation to the red-shifted light environment of the Baltic. We study visual adaptation to this novel environment and characterize a single amino acid mutation in rhodopsin, an important photoreceptor in the retina, that was subject to a rapid selective sweep. In ongoing work, we explore how rhodopsin has been co-opted to facilitate adaptation to different light environments across fish species. 
+In many marine fish systems huge population sizes provide a powerful model for population genomics analysis aimed at understanding how populations adapt to different local environmental conditions. In one study, we described a recent selective sweep driven by a missense mutation in fish rhodopsin that facilitates adaptation to the red-shifted light environment in Baltic Sea herring and has occurred >20 times in other fish transitioning to freshwater environments. In contrast to the Atlantic Herring, the European eel exhibits an unusual life history where breeding occurs in the central Atlantic Ocean, but all adults spend their life in continental Europe in environments ranging from warm to cold and brackish to freshwater. Considerable disagreement in the literature has failed to demonstrate if continental eel populations represent a single panmictic population or consist of populations locally adapted to their environment. We use whole genome analysis from hundreds of individuals to solve this enigma and were able to compellingly demonstrate that the predominant mechanism that allow eels to inhabit diverse environments is plastic and not genetic.
+
+**Publications:**
+
+##### **Erik D. Enbody†**, M.E. Pettersson†, C. Grace Sprehn, S. Palm, H. Wickström, L. Andersson. *in press*. Ecological adaptation in European eels is based on phenotypic plasticity. Proceedings of the National Academy of Sciences. 
 
 ##### Hill, J., **E.D. Enbody**, M.E. Pettersson, C.G. Sprehn, D. Bekkevold, A. Folkvord, L. Laikre, G. Kleinau, P. Scheerer, L. Andersson. 2019. Recurrent convergent evolution at amino acid residue 261 in fish rhodopsin. [Proceedings of the National Academy of Sciences. 116(37): 18473-18478](https://www.pnas.org/content/116/37/18473). Press: [PNAS In This Issue](https://www.pnas.org/content/116/37/18149),  [Science Daily](https://www.sciencedaily.com/releases/2019/08/190826153632.html), [phys.org](https://phys.org/news/2019-08-herring-environment-baltic-sea.html), [Sveriges Radio](https://sverigesradio.se/sida/artikel.aspx?programid=105&artikel=7287645).
 
