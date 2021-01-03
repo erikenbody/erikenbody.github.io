@@ -1,9 +1,9 @@
 ---
 layout: single
-author: Erik Enbody
 permalink: /
+author: Erik Enbody
+author_profile: true
 ---
-
 
 <img src="/assets/images/header2.png" width="1000">
 

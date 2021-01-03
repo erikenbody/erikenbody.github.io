@@ -1,0 +1,15 @@
+Erik Enbody:
+  bio: "Postdoctoral Researcher at Uppsala University."
+  avatar: "assets/images/ee_avatar.jpg"
+  links:
+    - label: "Uppsala, Sweden"
+      icon: "fa-fw fa-map-marker"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:erikenbody@gmail.com"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/erikenbody"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/erikenbody"
