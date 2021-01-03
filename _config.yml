@@ -35,7 +35,6 @@ twitter_username: erikenbody
 github_username:  erikenbody
 
 # Build settings
-theme: minimal-mistakes-jekyll
 plugins:
   - jekyll-feed
 

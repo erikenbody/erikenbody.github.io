@@ -1,4 +1,4 @@
-erik's website. details to come
+Erik's website. details to come
 
 ## Build
 
