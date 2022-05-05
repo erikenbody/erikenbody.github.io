@@ -11,3 +11,11 @@ bundle install
 ```
 bundle exec jekyll serve
 ```
+
+## Create index pages
+
+Built index pages using https://github.com/libthinkpad/apindex
+
+```
+apindex ccgp
+```
