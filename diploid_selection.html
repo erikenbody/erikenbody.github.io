@@ -44,17 +44,33 @@
     .slider-title {
       display: inline-block;
       margin-bottom: 5px;
+      font-size: 1rem; /* Responsive font size */
     }
 
     .slider-value {
       display: inline-block;
       margin-left: 10px;
-      font-size: 14px;
+      font-size: 0.8rem; /* Responsive font size */
     }
 
     #viz {
       flex: 1;
       background-color: #ffffff;
+    }
+
+    @media only screen and (max-width: 600px) {
+      #sidebar {
+        padding: 10px;
+        min-width: 150px;
+      }
+
+      .slider-title {
+        font-size: 0.8rem; /* Adjust font size for small screens */
+      }
+
+      .slider-value {
+        font-size: 0.6rem; /* Adjust font size for small screens */
+      }
     }
   </style>
 </head>
