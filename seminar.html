@@ -72,7 +72,22 @@
         font-size: 0.6rem; /* Adjust font size for small screens */
       }
     }
-  </style>
+  
+@media screen and (max-width: 600px) {
+    #sidebar {
+        min-width: 100%;
+        box-shadow: none;
+    }
+
+    #app {
+        flex-direction: column;
+    }
+
+    input[type="range"], label {
+        font-size: 1.2em;
+    }
+}
+</style>
 </head>
 <body>
 
