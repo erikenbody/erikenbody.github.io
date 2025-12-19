@@ -261,7 +261,7 @@ const Navigation = ({ currentPage, setCurrentPage, scrollY }) => (
           className="hidden lg:block h-8 opacity-90 group-hover:opacity-100 transition-opacity"
         />
       </button>
-      <div className="flex gap-8 font-body text-sm tracking-wide">
+      <div className="flex gap-3 lg:gap-8 font-body text-xs lg:text-sm tracking-wide">
         {[
           { id: 'research', label: 'Research' },
           { id: 'publications', label: 'Publications' },
