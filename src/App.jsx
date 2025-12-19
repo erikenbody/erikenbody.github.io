@@ -333,9 +333,16 @@ const HomePage = ({ setCurrentPage, setResearchSection }) => {
           </AnimatedSection>
 
           <AnimatedSection delay={150}>
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-semibold leading-[0.95] mb-6">
-              {labData.info.name}
-            </h1>
+            <div className="flex items-center gap-4 md:gap-6 mb-6">
+              <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-semibold leading-[0.95]">
+                {labData.info.name}
+              </h1>
+              <img
+                src="/images/cornell_seal_simple_web_white.png"
+                alt="Cornell University"
+                className="h-16 md:h-24 lg:h-28 opacity-90"
+              />
+            </div>
           </AnimatedSection>
 
           <AnimatedSection delay={300}>
