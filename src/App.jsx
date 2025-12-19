@@ -252,7 +252,7 @@ const Navigation = ({ currentPage, setCurrentPage, scrollY }) => (
         onClick={() => setCurrentPage('home')}
         className="flex items-center gap-3 group"
       >
-        <span className="font-display text-lg font-semibold teal-accent group-hover:text-[#b8c4a8] transition-colors">
+        <span className="font-display text-base lg:text-lg font-semibold teal-accent group-hover:text-[#b8c4a8] transition-colors">
           Enbody Lab
         </span>
         <img
@@ -986,7 +986,7 @@ const OpportunitiesPage = () => (
               <p className="font-body text-xs tracking-[0.2em] uppercase text-stone-600 mb-2">Location</p>
               <p className="font-body text-stone-300">
                 Department of Computational Biology<br />
-                Atkinson Hall<br />
+                Atkinson Hall 304B<br />
                 Cornell University<br />
                 Ithaca, New York
               </p>
