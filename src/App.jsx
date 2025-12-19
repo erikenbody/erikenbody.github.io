@@ -108,11 +108,11 @@ const labData = {
         }
       ],
       publications: [
-        { title: "Community-wide genome sequencing reveals 30 years of Darwin's finch evolution", journal: "Science 381(6665)", year: "2023" },
-        { title: "Rapid adaptive radiation of Darwin's finches depends on ancestral genetic modules", journal: "Science Advances 8(27)", year: "2022" },
-        { title: "A multispecies BCO2 beak color polymorphism in the Darwin's finch radiation", journal: "Current Biology", year: "2021" },
-        { title: "Ecological adaptation in European eels is based on phenotypic plasticity", journal: "PNAS 118(4)", year: "2021" },
-        { title: "Recurrent convergent evolution at amino acid residue 261 in fish rhodopsin", journal: "PNAS 116(37)", year: "2019" }
+        { title: "Community-wide genome sequencing reveals 30 years of Darwin's finch evolution", journal: "Science 381(6665)", year: "2023", link: "https://www.science.org/doi/full/10.1126/science.adf6218" },
+        { title: "Rapid adaptive radiation of Darwin's finches depends on ancestral genetic modules", journal: "Science Advances 8(27)", year: "2022", link: "https://www.science.org/doi/10.1126/sciadv.abm0982" },
+        { title: "A multispecies BCO2 beak color polymorphism in the Darwin's finch radiation", journal: "Current Biology", year: "2021", link: "https://www.cell.com/current-biology/fulltext/S0960-9822(21)00542-4" },
+        { title: "Ecological adaptation in European eels is based on phenotypic plasticity", journal: "PNAS 118(4)", year: "2021", link: "https://www.pnas.org/content/118/4/e2022620118" },
+        { title: "Recurrent convergent evolution at amino acid residue 261 in fish rhodopsin", journal: "PNAS 116(37)", year: "2019", link: "https://www.pnas.org/content/116/37/18473" }
       ]
     },
     {
@@ -140,10 +140,10 @@ const labData = {
         { name: "Red-backed Fairywren", species: "Malurus melanocephalus", link: "https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_030028575.1/" }
       ],
       publications: [
-        { title: "Efficient Estimation of Nucleotide Diversity and Divergence using Depth Information", journal: "Molecular Biology and Evolution", year: "2025" },
-        { title: "A fast, reproducible, high-throughput variant calling workflow for evolutionary, ecological, and conservation genomics", journal: "Molecular Biology and Evolution 41(1)", year: "2024" },
-        { title: "Limited genomic signatures of population collapse in the critically endangered black abalone", journal: "Molecular Ecology", year: "2024" },
-        { title: "Patterns of Genetic Diversity Within Three California Quail Species Are Best Explained by Climate and Landscape Changes", journal: "Molecular Ecology 34(20)", year: "2025" }
+        { title: "Efficient Estimation of Nucleotide Diversity and Divergence using Depth Information", journal: "Molecular Biology and Evolution", year: "2025", link: "https://doi.org/10.1093/molbev/msaf282" },
+        { title: "A fast, reproducible, high-throughput variant calling workflow for evolutionary, ecological, and conservation genomics", journal: "Molecular Biology and Evolution 41(1)", year: "2024", link: "https://doi.org/10.1093/molbev/msad270" },
+        { title: "Limited genomic signatures of population collapse in the critically endangered black abalone", journal: "Molecular Ecology", year: "2024", link: "https://doi.org/10.1111/mec.17352" },
+        { title: "Patterns of Genetic Diversity Within Three California Quail Species Are Best Explained by Climate and Landscape Changes", journal: "Molecular Ecology 34(20)", year: "2025", link: "https://doi.org/10.1111/mec.70093" }
       ]
     },
     {
@@ -164,11 +164,11 @@ const labData = {
         },
       ],
       publications: [
-        { title: "The evolutionary history and mechanistic basis of female ornamentation in a tropical songbird", journal: "Evolution 76(8):1720-1736", year: "2022" },
-        { title: "Asymmetric introgression reveals the genetic architecture of a plumage trait", journal: "Nature Communications", year: "2021" },
-        { title: "Introgression underlies phylogenetic uncertainty but not parallel plumage evolution in a recent songbird radiation", journal: "Systematic Biology", year: "2023" },
-        { title: "Genetic basis and evolution of structural color polymorphism in an Australian songbird", journal: "Molecular Biology and Evolution", year: "2024" },
-        { title: "Female ornamentation is associated with elevated aggression and testosterone in a tropical songbird", journal: "Behavioral Ecology 29(5)", year: "2018" }
+        { title: "The evolutionary history and mechanistic basis of female ornamentation in a tropical songbird", journal: "Evolution 76(8):1720-1736", year: "2022", link: "https://doi.org/10.1111/evo.14504" },
+        { title: "Asymmetric introgression reveals the genetic architecture of a plumage trait", journal: "Nature Communications", year: "2021", link: "https://www.nature.com/articles/s41467-021-21340-y" },
+        { title: "Introgression underlies phylogenetic uncertainty but not parallel plumage evolution in a recent songbird radiation", journal: "Systematic Biology", year: "2023", link: "https://doi.org/10.1093/sysbio/syad062" },
+        { title: "Genetic basis and evolution of structural color polymorphism in an Australian songbird", journal: "Molecular Biology and Evolution", year: "2024", link: "https://doi.org/10.1093/molbev/msae014" },
+        { title: "Female ornamentation is associated with elevated aggression and testosterone in a tropical songbird", journal: "Behavioral Ecology 29(5)", year: "2018", link: "https://doi.org/10.1093/beheco/ary090" }
       ]
     }
   ],
@@ -541,7 +541,7 @@ const HomePage = ({ setCurrentPage, setResearchSection }) => {
         <AnimatedSection>
           <p className="font-body text-sm tracking-[0.25em] uppercase text-stone-500 mb-6">Useful Links</p>
           <div className="flex flex-wrap gap-4">
-            <a href="https://www.computationalbiology.cornell.edu/" target="_blank" rel="noopener noreferrer" className="font-body text-sm px-5 py-3 border border-stone-700 text-stone-300 hover:border-[#9CAF88]/50 transition-colors">
+            <a href="https://cals.cornell.edu/computational-biology" target="_blank" rel="noopener noreferrer" className="font-body text-sm px-5 py-3 border border-stone-700 text-stone-300 hover:border-[#9CAF88]/50 transition-colors">
               Cornell Computational Biology
             </a>
             <a href="https://gradschool.cornell.edu/academics/fields-of-study/field/computational-biology/" target="_blank" rel="noopener noreferrer" className="font-body text-sm px-5 py-3 border border-stone-700 text-stone-300 hover:border-[#9CAF88]/50 transition-colors">
