@@ -645,7 +645,18 @@ const ResearchPage = ({ activeSection }) => {
                       <div className="space-y-3">
                         {area.publications.map((pub, i) => (
                           <div key={i} className="pl-4 border-l-2 border-stone-700 hover:border-[#9CAF88]/50 transition-colors">
-                            <p className="font-body text-sm text-stone-200 mb-1">{pub.title}</p>
+                            {pub.link ? (
+                              <a
+                                href={pub.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="font-body text-sm text-stone-200 hover:text-[#9CAF88] transition-colors mb-1 inline-block"
+                              >
+                                {pub.title}
+                              </a>
+                            ) : (
+                              <p className="font-body text-sm text-stone-200 mb-1">{pub.title}</p>
+                            )}
                             <p className="font-body text-xs text-stone-500">
                               <span className="italic">{pub.journal}</span> · {pub.year}
                             </p>
