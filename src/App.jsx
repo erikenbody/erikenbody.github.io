@@ -258,7 +258,7 @@ const Navigation = ({ currentPage, setCurrentPage, scrollY }) => (
         <img
           src="/images/cornell_seal_simple_web_white.png"
           alt="Cornell University"
-          className="h-8 opacity-90 group-hover:opacity-100 transition-opacity"
+          className="hidden lg:block h-8 opacity-90 group-hover:opacity-100 transition-opacity"
         />
       </button>
       <div className="flex gap-8 font-body text-sm tracking-wide">
@@ -387,7 +387,7 @@ const HomePage = ({ setCurrentPage, setResearchSection }) => {
         </AnimatedSection>
 
         <AnimatedSection delay={100}>
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {labData.researchAreas.map((area, index) => {
               return (
                 <button
