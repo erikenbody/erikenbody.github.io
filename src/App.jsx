@@ -47,7 +47,7 @@ const labData = {
       type: "Welcome!",
       title: "Welcome to the lab Amanda!",
       description: "Amanda joins the lab as a PhD student from the GGD field.",
-      image: "public/images/A_Sun.jpg", // Add your image path here
+      image: "/images/A_Sun.jpg",
       link: "team", // Add a link URL here to make the image clickable, or leave empty to disable
       enableLink: true // Set to true to enable the hyperlink
     },
@@ -56,7 +56,7 @@ const labData = {
       type: "News",
       title: "Rachel performs at The Nutcracker",
       description: "In her Ithaca ballet debut, Rachel performed at the 2025 Ithaca Ballet performance of The Nutcracker.",
-      image: "public/images/IMG_5636.jpg", // Add your image path here
+      image: "/images/IMG_5636.jpg",
       link: "https://doi.org/10.1093/molbev/msad270", // Add a link URL here
       enableLink: true // Set to true to enable the hyperlink
     },
@@ -65,7 +65,7 @@ const labData = {
       type: "Publication",
       title: "CLAM is published!",
       description: "Cade's new method for estimating nucleotide diversity and divergence using depth information is published in MBE!",
-      image: "public/images/clam.jpeg", // Add your image path here
+      image: "/images/clam.jpeg",
       link: "https://doi.org/10.1093/molbev/msaf282", // Add a link URL here
       enableLink: true // Set to true to enable the hyperlink
     },
@@ -74,7 +74,7 @@ const labData = {
       type: "Welcome",
       title: "Welcome to the lab Rachel!",
       description: "Rachel joins the lab as a PhD student co-advised with Philipp Messer.",
-      image: "public/images/Rachel_G_crop.jpg", // Add your image path here
+      image: "/images/Rachel_G_crop.jpg",
       link: "team", // Add a link URL here
       enableLink: true // Set to true to enable the hyperlink
     },
@@ -83,7 +83,7 @@ const labData = {
       type: "Lab opening",
       title: "The Enbody Lab is Open!",
       description: "The Enbody Lab is officially open at Cornell University! Erik is joining the faculty in the Department of Computational Biology.",
-      image: "public/images/atkinson.png", // Add your image path here
+      image: "/images/atkinson.png",
       link: "team", // Add a link URL here
       enableLink: true // Set to true to enable the hyperlink
     }
@@ -94,8 +94,8 @@ const labData = {
       id: "evolutionary-genomics",
       title: "Evolutionary Genomics",
       subtitle: "Studying evolutionary processes through large-scale genomic data",
-      image: "public/images/daphne_admx.png",
-      homeImage: "public/images/LGF.jpg",
+      image: "/images/daphne_admx.png",
+      homeImage: "/images/LGF.jpg",
       description: "Our research program investigates the evolutionary processes that generate diversity in wild populations using large-scale genomic approaches. By combining population genomics with long-term field studies, we can directly observe evolution in action.",
       sections: [
         {
@@ -119,8 +119,8 @@ const labData = {
       id: "conservation-genomics",
       title: "Conservation Genomics",
       subtitle: "Applying genomic tools to protect biodiversity",
-      image: "public/images/ca_hotspot_map.png",
-      homeImage: "public/images/otter.png",
+      image: "/images/ca_hotspot_map.png",
+      homeImage: "/images/otter.png",
       description: "I lead population genomic projects to develop scalable, reproducible pipelines and viable metrics for conservation genomics. By making high-throughput genomic analysis accessible, we can better understand and protect biodiversity in the face of climate change.",
       sections: [
         {
@@ -150,8 +150,8 @@ const labData = {
       id: "plumage-evolution",
       title: "Plumage Evolution",
       subtitle: "The genomic basis of color variation in birds",
-      image: "public/images/feather.jpg",
-      homeImage: "public/images/wsfw.jpg",
+      image: "/images/feather.jpg",
+      homeImage: "/images/wsfw.jpg",
       description: "I use genomics and field research to understand how plumage coloration evolves in birds. This work spans from the evolution of female ornamentation to the genetic architecture of color polymorphisms across species.",
       sections: [
         {
@@ -219,7 +219,7 @@ publications: [
       name: "Dr. Erik D. Enbody",
       role: "Principal Investigator",
       title: "Susan E. Lynch Assistant Professor",
-      image: "public/images/enbody_waterfall.jpg",
+      image: "/images/enbody_waterfall.jpg",
       bio: "I am an evolutionary biologist trained in population genomics, field ecology, and behavioral research. My research is driven by my fascination with the evolutionary processes that generate diversity in wild populations. This research includes projects on birds, mammals, and fish from the Americas, Eurasia, and Oceania.",
       education: [
         { years: "2025-", place: "Cornell University", role: "Susan E. Lynch Assistant Professor, Dept. of Computational Biology" },
@@ -230,8 +230,8 @@ publications: [
       ]
     },
     members: [
-      { name: "Rachel Goodridge", role: "Ph.D. Student", status: "current", years: "2025-", note: "Co-advised with Philipp Messer", image: "public/images/Rachel_G_crop.jpg" },
-      { name: "Amanda Sun", role: "Ph.D. Student", status: "current", years: "2025-", note: "Working on evolutionary genomics with pangenomes", image: "public/images/A_Sun.jpg" }
+      { name: "Rachel Goodridge", role: "Ph.D. Student", status: "current", years: "2025-", note: "Co-advised with Philipp Messer", image: "/images/Rachel_G_crop.jpg" },
+      { name: "Amanda Sun", role: "Ph.D. Student", status: "current", years: "2025-", note: "Working on evolutionary genomics with pangenomes", image: "/images/A_Sun.jpg" }
     ],
     alumni: [
       { name: "Cade Mirchandani", role: "Ph.D. Student", years: "2022-", note: "Developed snpArcher variant calling workflow, now Ph.D. candidate at UCSC" },

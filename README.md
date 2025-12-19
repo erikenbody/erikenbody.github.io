@@ -58,26 +58,11 @@ Put images in `public/images/` and reference them as `/images/filename.jpg`.
 
 The hero image is at `public/images/hero.jpg` - just replace this file to change it.
 
-## Building for Production
-
-```bash
-npm run build
-```
-
-This creates a `dist/` folder with the optimized static site.
-
 ## Deploying to GitHub Pages
 
 ### Automatic (Recommended)
 
 Push to the `main` branch and GitHub Actions will automatically build and deploy.
-
-### Manual
-
-```bash
-npm run build
-# Copy contents of dist/ to your erikenbody.github.io repo
-```
 
 ## Project Structure
 
