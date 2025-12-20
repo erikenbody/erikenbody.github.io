@@ -125,13 +125,15 @@ const labData = {
       sections: [
         {
           title: "California Conservation Genomics Project",
-          content: "We work closely with the California Conservation Genomics Project to implement conservation genomic applications. This consortium aims to produce the most comprehensive multispecies genomic dataset ever assembled to help manage and protect regional biodiversity in the face of climate change. Erik worked with Russ Corbett-Detig to lead the bioinformatics team and carry out comparative genomics analyses for conservation applications and workflows for high throughput analysis in the cloud of massive genomic datasets.",
-          link: "https://www.ccgproject.org/"
+          content: "We work closely with the California Conservation Genomics Project to implement conservation genomic applications. This consortium aims to produce the most comprehensive multispecies genomic dataset ever assembled to help manage and protect regional biodiversity in the face of climate change. Erik worked with Russ Corbett-Detig to lead the bioinformatics team and carry out comparative genomics analyses for conservation applications and workflows for high throughput analysis in the cloud of massive genomic datasets."
         },
         {
           title: "Genome Assemblies",
           content: "We have contributed to the generation of novel resources for genomic studies on various non-model species. These state-of-the-art genome assemblies are chromosome scale and include high quality genome annotations."
         }
+      ],
+      projects: [
+        { name: "California Conservation Genomics Project", link: "https://www.ccgproject.org/" }
       ],
       genomes: [
         { name: "White Wagtail", species: "Motacilla alba", link: "https://www.ncbi.nlm.nih.gov/assembly/GCF_015832195.1" },
@@ -625,21 +627,29 @@ const ResearchPage = ({ activeSection }) => {
                       
                       {area.sections.map((section, i) => (
                         <div key={i} className="mb-8">
-                          {section.link ? (
-                            <a
-                              href={section.link}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="font-display text-xl font-medium mb-3 inline-block hover:text-[#9CAF88] transition-colors"
-                            >
-                              {section.title} →
-                            </a>
-                          ) : (
-                            <h3 className="font-display text-xl font-medium mb-3">{section.title}</h3>
-                          )}
+                          <h3 className="font-display text-xl font-medium mb-3">{section.title}</h3>
                           <p className="font-body text-stone-400 leading-relaxed text-sm">{section.content}</p>
                         </div>
                       ))}
+
+                      {area.projects && (
+                        <div className="mb-8">
+                          <h4 className="font-body text-xs tracking-[0.2em] uppercase text-stone-500 mb-4">Related Projects</h4>
+                          <div className="flex flex-wrap gap-2">
+                            {area.projects.map((project, i) => (
+                              <a
+                                key={i}
+                                href={project.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="font-body text-xs px-3 py-2 bg-stone-800/50 text-stone-300 border border-stone-700 hover:border-[#9CAF88]/40 transition-colors"
+                              >
+                                {project.name}
+                              </a>
+                            ))}
+                          </div>
+                        </div>
+                      )}
 
                       {area.genomes && (
                         <div className="mb-8">
