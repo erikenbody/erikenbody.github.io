@@ -125,11 +125,12 @@ const labData = {
       sections: [
         {
           title: "California Conservation Genomics Project",
-          content: "I am the bioinformatics lead on the California Conservation Genomics Project. This consortium aims to produce the most comprehensive multispecies genomic dataset ever assembled to help manage and protect regional biodiversity in the face of climate change. I lead the bioinformatics team to carry out comparative genomics analyses for conservation applications and workflows for high throughput analysis in the cloud of massive genomic datasets."
+          content: "We work closely with the California Conservation Genomics Project to implement conservation genomic applications. This consortium aims to produce the most comprehensive multispecies genomic dataset ever assembled to help manage and protect regional biodiversity in the face of climate change. Erik worked with Russ Corbett-Detig to lead the bioinformatics team and carry out comparative genomics analyses for conservation applications and workflows for high throughput analysis in the cloud of massive genomic datasets.",
+          link: "https://www.ccgproject.org/"
         },
         {
           title: "Genome Assemblies",
-          content: "I have contributed to the generation of novel resources for genomic studies on various non-model species. These state-of-the-art genome assemblies are chromosome scale and include high quality genome annotations."
+          content: "We have contributed to the generation of novel resources for genomic studies on various non-model species. These state-of-the-art genome assemblies are chromosome scale and include high quality genome annotations."
         }
       ],
       genomes: [
@@ -156,11 +157,11 @@ const labData = {
       sections: [
         {
           title: "White-shouldered Fairywren",
-          content: "Erik has worked for many years studying the role of selection in the evolution of female plumage ornamentation in the White-shouldered Fairywren of New Guinea. In this species, different populations vary in the degree of ornamentation in female but not male plumage. We use the White-shouldered Fairywren as a model to test hypotheses for the evolution of female ornamentation, because the degree to which selection (sexual or otherwise) acts on female ornamentation is both poorly understood and controversial. In this international collaboration, we have described the evolutionary history of the various subspecies, examined evidence for selection on female ornamentation using genomics, and the proximate mechanisms shaping signal production."
+          content: "We study the role of selection in the evolution of female plumage ornamentation in the White-shouldered Fairywren of New Guinea. In this species, different populations vary in the degree of ornamentation in female but not male plumage. We use the White-shouldered Fairywren as a model to test hypotheses for the evolution of female ornamentation, because the degree to which selection (sexual or otherwise) acts on female ornamentation is both poorly understood and controversial. In this international collaboration, we have described the evolutionary history of the various subspecies, examined evidence for selection on female ornamentation using genomics, and the proximate mechanisms shaping signal production."
         },
         {
           title: "Wagtail Plumage Diversification",
-          content: "I work with Per Alström and other collaborators to study the evolution of plumage coloration in Motacilla wagtails. The wagtails group of colorful passerine birds are common across Europe, Asia, and Africa. Several species are characterized by large variation in plumage coloration, but little genetic divergence. We leverage these features to study the processes that have generated such dramatic variation in plumage signals."
+          content: "We work with Per Alström to study the evolution of plumage coloration in Motacilla wagtails. The wagtails group of colorful passerine birds are common across Europe, Asia, and Africa. Several species are characterized by large variation in plumage coloration, but little genetic divergence. We leverage these features to study the processes that have generated such dramatic variation in plumage signals."
         },
       ],
       publications: [
@@ -624,7 +625,18 @@ const ResearchPage = ({ activeSection }) => {
                       
                       {area.sections.map((section, i) => (
                         <div key={i} className="mb-8">
-                          <h3 className="font-display text-xl font-medium mb-3">{section.title}</h3>
+                          {section.link ? (
+                            <a
+                              href={section.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="font-display text-xl font-medium mb-3 inline-block hover:text-[#9CAF88] transition-colors"
+                            >
+                              {section.title} →
+                            </a>
+                          ) : (
+                            <h3 className="font-display text-xl font-medium mb-3">{section.title}</h3>
+                          )}
                           <p className="font-body text-stone-400 leading-relaxed text-sm">{section.content}</p>
                         </div>
                       ))}
