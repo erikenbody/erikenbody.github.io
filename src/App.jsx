@@ -121,7 +121,7 @@ const labData = {
       subtitle: "Applying genomic tools to protect biodiversity",
       image: "/images/ca_hotspot_map.png",
       homeImage: "/images/otter.png",
-      description: "I lead population genomic projects to develop scalable, reproducible pipelines and viable metrics for conservation genomics. By making high-throughput genomic analysis accessible, we can better understand and protect biodiversity in the face of climate change.",
+      description: "We carry out population genomic projects to develop scalable, reproducible pipelines and viable metrics for conservation genomics. By making high-throughput genomic analysis accessible, we can better understand and protect biodiversity in the face of climate change.",
       sections: [
         {
           title: "California Conservation Genomics Project",
@@ -155,7 +155,7 @@ const labData = {
       subtitle: "The genomic basis of color variation in birds",
       image: "/images/feather.jpg",
       homeImage: "/images/wsfw.jpg",
-      description: "I use genomics and field research to understand how plumage coloration evolves in birds. This work spans from the evolution of female ornamentation to the genetic architecture of color polymorphisms across species.",
+      description: "We use genomics and field research to understand how plumage coloration evolves in birds. This work spans from the evolution of female ornamentation to the genetic architecture of color polymorphisms across species.",
       sections: [
         {
           title: "White-shouldered Fairywren",
@@ -223,7 +223,7 @@ publications: [
       role: "Principal Investigator",
       title: "Susan E. Lynch Assistant Professor",
       image: "/images/enbody_waterfall.jpg",
-      bio: "I am an evolutionary biologist trained in population genomics, field ecology, and behavioral research. My research is driven by my fascination with the evolutionary processes that generate diversity in wild populations. This research includes projects on birds, mammals, and fish from the Americas, Eurasia, and Oceania.",
+      bio: "I am an evolutionary biologist trained in population genomics, field ecology, and behavioral research. My research is driven by my fascination with the evolutionary processes that generate diversity in wild populations. I have been captivated by birds by most of my life and this has been a motivator for many of the studies we carry out. Nevertheless, work in the group ranges from projects on birds, mammals, to fish from the Americas, Eurasia, and Oceania.",
       education: [
         { years: "2025-", place: "Cornell University", role: "Susan E. Lynch Assistant Professor, Dept. of Computational Biology" },
         { years: "2021-24", place: "UC Santa Cruz", role: "Postdoctoral Scholar with Dr. Russ Corbett-Detig" },
