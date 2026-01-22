@@ -242,9 +242,9 @@ publications: [
       ]
     },
     members: [
-      { name: "Luke Anderson", role: "Rose Postdoctoral Fellow", status: "current", years: "2025-", note: "Luke is a Rose Postdoctoral Fellow at the Cornell Lab of Ornithology. He completed his PhD in Ecology & Evolutionary Biology at Tulane University. Luke is working in the Enbody Lab to investigate the genomics of adaptation, speciation, and hybridization in Darwin's finches on the Galápagos Islands.", image: "/images/Luke_A.jpeg" },
+      { name: "Luke Anderson", role: "Postdoctoral Fellow", status: "current", years: "2025-", note: "Luke is a Rose Postdoctoral Fellow at the Cornell Lab of Ornithology. He completed his PhD in Ecology & Evolutionary Biology at Tulane University. Luke is working in the Enbody Lab to investigate the genomics of adaptation, speciation, and hybridization in Darwin's finches on the Galápagos Islands.", image: "/images/Luke_A.jpeg" },
       { name: "Rachel Goodridge", role: "Ph.D. Student", status: "current", years: "2025-", note: "Co-advised with Philipp Messer", image: "/images/Rachel_G_crop.jpg" },
-      { name: "Amanda Sun", role: "Ph.D. Student", status: "current", years: "2025-", note: "Working on evolutionary genomics with pangenomes", image: "/images/A_Sun.jpg" }
+      { name: "Amanda Sun", role: "Ph.D. Student", status: "current", years: "2025-", note: "Amanda is a PhD student in the field of Genetics, Genomics, and Development. She earned her undergraduate degree in Computational Biology at Cornell University. She is broadly interested in the genetic basis of complex traits, with a particular focus on quantitative and evolutionary genomics. Currently, she uses pangenomic approaches to study genetic variation and genome architecture in Darwin's finches on the Galápagos Islands.", image: "/images/A_Sun.jpg" }
     ],
     alumni: [
       { name: "Cade Mirchandani", role: "Ph.D. Student", years: "2022-", note: "Developed snpArcher variant calling workflow, now Ph.D. candidate at UCSC" },
