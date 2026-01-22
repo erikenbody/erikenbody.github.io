@@ -45,11 +45,20 @@ const labData = {
     {
       date: "2025",
       type: "Welcome!",
+      title: "Welcome Luke!",
+      description: "Luke Anderson joins the lab as a Rose Postdoctoral Fellow.",
+      image: "/images/Luke_A.jpeg",
+      link: "team",
+      enableLink: true
+    },
+    {
+      date: "2025",
+      type: "Welcome!",
       title: "Welcome to the lab Amanda!",
       description: "Amanda joins the lab as a PhD student from the GGD field.",
       image: "/images/A_Sun.jpg",
-      link: "team", // Add a link URL here to make the image clickable, or leave empty to disable
-      enableLink: true // Set to true to enable the hyperlink
+      link: "team",
+      enableLink: true
     },
     {
       date: "2025",
@@ -233,6 +242,7 @@ publications: [
       ]
     },
     members: [
+      { name: "Luke Anderson", role: "Rose Postdoctoral Fellow", status: "current", years: "2025-", note: "Luke is a Rose Postdoctoral Fellow at the Cornell Lab of Ornithology. He completed his PhD in Ecology & Evolutionary Biology at Tulane University. Luke is working in the Enbody Lab to investigate the genomics of adaptation, speciation, and hybridization in Darwin's finches on the Galápagos Islands.", image: "/images/Luke_A.jpeg" },
       { name: "Rachel Goodridge", role: "Ph.D. Student", status: "current", years: "2025-", note: "Co-advised with Philipp Messer", image: "/images/Rachel_G_crop.jpg" },
       { name: "Amanda Sun", role: "Ph.D. Student", status: "current", years: "2025-", note: "Working on evolutionary genomics with pangenomes", image: "/images/A_Sun.jpg" }
     ],
