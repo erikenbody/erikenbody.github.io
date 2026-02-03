@@ -1,4 +1,4 @@
-const CACHE_NAME = 'finch-observer-v2';
+const CACHE_NAME = 'geospy-v1';
 const urlsToCache = [
   './finch.html',
   './finch-manifest.json',

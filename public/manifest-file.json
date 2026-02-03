@@ -1,6 +1,6 @@
 {
-  "name": "Finch Field Observer",
-  "short_name": "Finch Obs",
+  "name": "GeoSpy",
+  "short_name": "GeoSpy",
   "start_url": "./finch.html",
   "display": "standalone",
   "background_color": "#f3f4f6",

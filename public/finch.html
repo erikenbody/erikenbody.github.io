@@ -62,7 +62,7 @@
   <div id="entry-view" class="container">
     <div class="header">
       <button class="gear-btn" onclick="showSettings()">⚙️</button>
-      <span class="header-title">Finch Observer</span>
+      <span class="header-title">GeoSpy</span>
       <button class="count-btn" onclick="showList()"><span id="obs-count">0</span> obs</button>
     </div>
     
@@ -70,6 +70,7 @@
       <div>
         <span class="observer-display" id="observer-display">XX</span>
         <span class="date-display" id="date-display"></span>
+        <span class="date-display" id="time-display"></span>
       </div>
       <button class="settings-link" onclick="showSettings()" id="set-initials-btn">Set initials</button>
     </div>
@@ -180,6 +181,10 @@
       observer = localStorage.getItem('finch-observer') || '';
       
       document.getElementById('date-display').textContent = getDate();
+      document.getElementById('time-display').textContent = getTime();
+      setInterval(() => {
+        document.getElementById('time-display').textContent = getTime();
+      }, 1000);
       updateObserverDisplay();
       renderButtons();
       updateCount();
