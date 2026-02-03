@@ -1,8 +1,9 @@
-const CACHE_NAME = 'finch-observer-v1';
+const CACHE_NAME = 'finch-observer-v2';
 const urlsToCache = [
   './finch.html',
   './finch-manifest.json',
-  './finch-sw.js'
+  './finch-sw.js',
+  './sector-map.jpg'
 ];
 
 // Install: cache all files
