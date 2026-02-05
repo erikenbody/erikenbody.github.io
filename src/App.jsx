@@ -45,6 +45,15 @@ const labData = {
     {
       date: "2025",
       type: "Welcome!",
+      title: "Welcome Gerardo!",
+      description: "Gerardo Cendejas Mendoza joins the lab as a PhD student in Computational Biology and Fulbright Scholar.",
+      image: "/images/gerardo.jpg",
+      link: "team",
+      enableLink: true
+    },
+    {
+      date: "2025",
+      type: "Welcome!",
       title: "Welcome Luke!",
       description: "Luke Anderson joins the lab as a Rose Postdoctoral Fellow.",
       image: "/images/Luke_A.jpeg",
@@ -243,7 +252,8 @@ publications: [
     },
     members: [
       { name: "Luke Anderson", role: "Postdoctoral Fellow", status: "current", years: "2025-", note: "Luke is a Rose Postdoctoral Fellow at the Cornell Lab of Ornithology. He completed his PhD in Ecology & Evolutionary Biology at Tulane University. Luke is working in the Enbody Lab to investigate the genomics of adaptation, speciation, and hybridization in Darwin's finches on the Galápagos Islands.", image: "/images/Luke_A.jpeg" },
-      { name: "Rachel Goodridge", role: "Ph.D. Student", status: "current", years: "2025-", note: "Rachel is a PhD student in Computational Biology, co-advised by Philipp Messer. She completed her bachelor’s degree in General Biology with a minor in Mathematics, as well as a master’s degree in Ecology, Behavior, and Evolution at UC San Diego. Following graduation, she spent several years working in R&D at Illumina on the Surface Chemistry and Electrochemistry teams. Rachel’s research interests span population genetics and evolutionary biology, combining empirical genomic data with simulation-based approaches. In the Enbody Lab, she studies patterns of introgressive hybridization in Darwin’s finches on Daphne Major, a small island in the Galápagos, and investigates the genetic consequences of rare immigration events.", image: "/images/Rachel_G_crop.jpg" },
+      { name: "Gerardo Cendejas Mendoza", role: "Ph.D. Student", status: "current", years: "2025-", note: "Gerardo is a PhD student in Computational Biology and a Fulbright Scholar. He completed his undergraduate degree in Biology at Universidad Nacional Autónoma de México (UNAM). He focuses on evolutionary biology and phylogenetics. Currently, he studies the phylogenetic relationships of Darwin's finches and the hybridization dynamics between distinct populations and species across the Galápagos archipelago.", image: "/images/gerardo.jpg" },
+      { name: "Rachel Goodridge", role: "Ph.D. Student", status: "current", years: "2025-", note: "Rachel is a PhD student in Computational Biology, co-advised by Philipp Messer. She completed her bachelor's degree in General Biology with a minor in Mathematics, as well as a master's degree in Ecology, Behavior, and Evolution at UC San Diego. Following graduation, she spent several years working in R&D at Illumina on the Surface Chemistry and Electrochemistry teams. Rachel's research interests span population genetics and evolutionary biology, combining empirical genomic data with simulation-based approaches. In the Enbody Lab, she studies patterns of introgressive hybridization in Darwin's finches on Daphne Major, a small island in the Galápagos, and investigates the genetic consequences of rare immigration events.", image: "/images/Rachel_G_crop.jpg" },
       { name: "Amanda Sun", role: "Ph.D. Student", status: "current", years: "2025-", note: "Amanda is a PhD student in the field of Genetics, Genomics, and Development. She earned her undergraduate degree in Computational Biology at Cornell University. She is broadly interested in the genetic basis of complex traits, with a particular focus on quantitative and evolutionary genomics. Currently, she uses pangenomic approaches to study genetic variation and genome architecture in Darwin's finches on the Galápagos Islands.", image: "/images/A_Sun.jpg" }
     ],
     alumni: [
