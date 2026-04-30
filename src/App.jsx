@@ -43,6 +43,15 @@ const labData = {
   
   news: [
     {
+      date: "2026",
+      type: "Award",
+      title: "Amanda receives GRFP!",
+      description: "PhD student Amanda Sun received a competitive NSF GRF this year for her work on finch pangenomes. Congrats Amanda!",
+      image: "/images/ice_cream_2026.JPG",
+      link: "team",
+      enableLink: true
+    },
+    {
       date: "2025",
       type: "Welcome!",
       title: "Welcome Gerardo!",
