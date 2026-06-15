@@ -76,9 +76,9 @@ const labData = {
       cardImageAspect: "standard",
       cardImagePosition: "50% 35%",
       
-      heroImageAspect: "natural",
-      heroImageFit: "contain",
-      heroImagePosition: "50% 50%",
+      heroImageAspect: "landscape",
+      heroImageFit: "cover",
+      heroImagePosition: "50% 35%",
     
       content: [
         {
