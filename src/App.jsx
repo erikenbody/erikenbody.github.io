@@ -232,7 +232,7 @@ const labData = {
       date: "2026",
       type: "Award",
       title: "Amanda receives GRFP!",
-      description: "PhD student Amanda Sun received a competitive NSF GRF this year for her work on finch pangenomes. Congrats Amanda!",
+      description: "PhD student Amanda Sun received a competitive NSF GRFP this year for her work on finch pangenomes. Congrats Amanda!",
       image: "/images/ice_cream_2026.JPG",
       content: [
         "PhD student Amanda Sun received a National Science Foundation Graduate Research Fellowship for her work on Darwin's finch pangenomes.",
