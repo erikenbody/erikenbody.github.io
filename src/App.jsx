@@ -659,44 +659,61 @@ const HomePage = () => {
     <section className="py-20 bg-stone-900/40">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <AnimatedSection>
-          <p className="font-body text-sm tracking-[0.25em] uppercase teal-accent mb-3">Latest</p>
-          <h2 className="font-display text-3xl md:text-4xl font-semibold mb-12">News & Updates</h2>
+          <p className="font-body text-sm tracking-[0.25em] uppercase teal-accent mb-3">
+            Latest
+          </p>
+          <h2 className="font-display text-3xl md:text-4xl font-semibold mb-12">
+            News & Updates
+          </h2>
         </AnimatedSection>
 
         <div className="grid md:grid-cols-3 gap-6 mb-8">
-          {visibleNews.map((item, index) => (
-            <AnimatedSection key={item.slug} delay={index * 100}>
-              <Link to={`/news/${item.slug}`} className="group block h-full">
-                <article className="bg-stone-900/50 border border-stone-800 group-hover:border-[#9CAF88]/40 transition-colors h-full flex flex-col">
-                  {item.image && (
-                    <div className="aspect-[4/3] overflow-hidden bg-stone-800">
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full h-full object-cover transition-all duration-500 group-hover:scale-[1.02] group-hover:opacity-85"
-                      />
-                    </div>
-                  )}
-
-                  <div className="p-6 flex-1 flex flex-col">
-                    <div className="flex items-center gap-3 mb-3">
-                      <span className="font-body text-xs px-2 py-1 bg-[#9CAF88]/10 text-[#9CAF88] tracking-wide uppercase">
-                        {item.type}
-                      </span>
-                      <span className="font-body text-xs text-stone-500">{item.date}</span>
-                    </div>
-
-                    <h3 className="font-display text-lg font-semibold mb-2 group-hover:text-[#9CAF88] transition-colors">
-                      {item.title}
-                    </h3>
-                    <p className="font-body text-sm text-stone-400 leading-relaxed">
-                      {item.description}
-                    </p>
-                    <span className="font-body text-sm teal-accent mt-5">Read more →</span>
+          {visibleNews.map((item) => (
+            <Link
+              key={item.slug}
+              to={`/news/${item.slug}`}
+              className="group block h-full"
+            >
+              <article className="bg-stone-900/50 border border-stone-800 group-hover:border-[#9CAF88]/40 transition-colors h-full flex flex-col">
+                {item.image && (
+                  <div className="aspect-[4/3] overflow-hidden bg-stone-800">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      decoding="async"
+                      className="w-full h-full object-cover transition-[transform,opacity] duration-300 group-hover:scale-[1.02] group-hover:opacity-85"
+                      style={{
+                        objectPosition: item.cardImagePosition || "50% 50%"
+                      }}
+                    />
                   </div>
-                </article>
-              </Link>
-            </AnimatedSection>
+                )}
+
+                <div className="p-6 flex-1 flex flex-col">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="font-body text-xs px-2 py-1 bg-[#9CAF88]/10 text-[#9CAF88] tracking-wide uppercase">
+                      {item.type}
+                    </span>
+
+                    <span className="font-body text-xs text-stone-500">
+                      {item.date}
+                    </span>
+                  </div>
+
+                  <h3 className="font-display text-lg font-semibold mb-2 group-hover:text-[#9CAF88] transition-colors">
+                    {item.title}
+                  </h3>
+
+                  <p className="font-body text-sm text-stone-400 leading-relaxed">
+                    {item.description}
+                  </p>
+
+                  <span className="font-body text-sm teal-accent mt-5">
+                    Read more →
+                  </span>
+                </div>
+              </article>
+            </Link>
           ))}
         </div>
 
