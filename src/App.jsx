@@ -15,22 +15,42 @@ const AnimatedSection = ({ children, className = "", delay = 0 }) => {
   const ref = useRef(null);
 
   useEffect(() => {
+    const element = ref.current;
+    let timeoutId;
+
+    if (!element) return undefined;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setTimeout(() => setIsVisible(true), delay);
+          timeoutId = window.setTimeout(() => {
+            setIsVisible(true);
+          }, delay);
+
+          observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.1 }
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px 80px 0px"
+      }
     );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
+
+    observer.observe(element);
+
+    return () => {
+      observer.disconnect();
+
+      if (timeoutId) {
+        window.clearTimeout(timeoutId);
+      }
+    };
   }, [delay]);
 
   return (
     <div
       ref={ref}
-      className={`transition-all duration-1000 ease-out ${
+      className={`transition-[opacity,transform] duration-700 ease-out ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       } ${className}`}
     >
@@ -289,20 +309,8 @@ const labData = {
       date: "2025",
       type: "Welcome",
       title: "Welcome to the lab Rachel!",
-      description:
-        "Rachel joins the lab as a PhD student co-advised with Philipp Messer.",
-    
+      description: "Rachel joins the lab as a PhD student co-advised with Philipp Messer.",
       image: "/images/Rachel_G_crop.jpg",
-    
-      // Crop shown on the homepage news card
-      cardImageAspect: "standard",
-      cardImagePosition: "50% 25%",
-    
-      // Crop shown after opening the blog post
-      heroImageAspect: "landscape",
-      heroImageFit: "cover",
-      heroImagePosition: "50% 20%",
-    
       content: [
         "Rachel joined the Enbody Lab as a PhD student co-advised by Erik Enbody and Philipp Messer.",
         "She studies patterns of introgressive hybridization in Darwin's finches on Daphne Major, a small island in the Galápagos.",
@@ -487,7 +495,7 @@ publications: [
 };
 
 // Navigation Component
-const Navigation = ({ scrollY }) => {
+const Navigation = ({ isScrolled }) => {
   const location = useLocation();
 
   const navItems = [
@@ -499,7 +507,7 @@ const Navigation = ({ scrollY }) => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      scrollY > 80 ? 'nav-blur bg-stone-950/85 py-3' : 'py-5'
+      isScrolled ? 'nav-blur bg-stone-950/85 py-3' : 'py-5'
     }`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-3 group">
@@ -573,6 +581,9 @@ const HomePage = () => {
         <img
           src="/images/hero.jpg"
           alt="Daphne Major, Galápagos Islands"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
           className="w-full h-full object-cover"
         />
         <div className="hero-gradient absolute inset-0" />
@@ -656,6 +667,8 @@ const HomePage = () => {
                     <img
                       src={area.homeImage}
                       alt={area.title}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-80"
                     />
                   </div>
@@ -671,12 +684,8 @@ const HomePage = () => {
     <section className="py-20 bg-stone-900/40">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <AnimatedSection>
-          <p className="font-body text-sm tracking-[0.25em] uppercase teal-accent mb-3">
-            Latest
-          </p>
-          <h2 className="font-display text-3xl md:text-4xl font-semibold mb-12">
-            News & Updates
-          </h2>
+          <p className="font-body text-sm tracking-[0.25em] uppercase teal-accent mb-3">Latest</p>
+          <h2 className="font-display text-3xl md:text-4xl font-semibold mb-12">News & Updates</h2>
         </AnimatedSection>
 
         <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -686,45 +695,39 @@ const HomePage = () => {
               to={`/news/${item.slug}`}
               className="group block h-full"
             >
-              <article className="bg-stone-900/50 border border-stone-800 group-hover:border-[#9CAF88]/40 transition-colors h-full flex flex-col">
-                {item.image && (
-                  <div className="aspect-[4/3] overflow-hidden bg-stone-800">
-                    <img
+                <article className="bg-stone-900/50 border border-stone-800 group-hover:border-[#9CAF88]/40 transition-colors h-full flex flex-col">
+                  {item.image && (
+                    <div className="aspect-[4/3] overflow-hidden bg-stone-800">
+                      <img
                       src={item.image}
                       alt={item.title}
+                      loading="lazy"
                       decoding="async"
                       className="w-full h-full object-cover transition-[transform,opacity] duration-300 group-hover:scale-[1.02] group-hover:opacity-85"
                       style={{
                         objectPosition: item.cardImagePosition || "50% 50%"
                       }}
                     />
+                    </div>
+                  )}
+
+                  <div className="p-6 flex-1 flex flex-col">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="font-body text-xs px-2 py-1 bg-[#9CAF88]/10 text-[#9CAF88] tracking-wide uppercase">
+                        {item.type}
+                      </span>
+                      <span className="font-body text-xs text-stone-500">{item.date}</span>
+                    </div>
+
+                    <h3 className="font-display text-lg font-semibold mb-2 group-hover:text-[#9CAF88] transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="font-body text-sm text-stone-400 leading-relaxed">
+                      {item.description}
+                    </p>
+                    <span className="font-body text-sm teal-accent mt-5">Read more →</span>
                   </div>
-                )}
-
-                <div className="p-6 flex-1 flex flex-col">
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="font-body text-xs px-2 py-1 bg-[#9CAF88]/10 text-[#9CAF88] tracking-wide uppercase">
-                      {item.type}
-                    </span>
-
-                    <span className="font-body text-xs text-stone-500">
-                      {item.date}
-                    </span>
-                  </div>
-
-                  <h3 className="font-display text-lg font-semibold mb-2 group-hover:text-[#9CAF88] transition-colors">
-                    {item.title}
-                  </h3>
-
-                  <p className="font-body text-sm text-stone-400 leading-relaxed">
-                    {item.description}
-                  </p>
-
-                  <span className="font-body text-sm teal-accent mt-5">
-                    Read more →
-                  </span>
-                </div>
-              </article>
+                </article>
             </Link>
           ))}
         </div>
@@ -1065,27 +1068,29 @@ const NewsDetailPage = () => {
           </AnimatedSection>
         )}
 
-        <div className="mt-14 space-y-7">
-          {article.content?.map((block, index) => (
-            <NewsContentBlock
-              key={`${typeof block === 'object' ? block.type : 'paragraph'}-${index}`}
-              block={block}
-            />
-          ))}
+        <AnimatedSection delay={200}>
+          <div className="mt-14 space-y-7">
+            {article.content?.map((block, index) => (
+              <NewsContentBlock
+                key={`${typeof block === 'object' ? block.type : 'paragraph'}-${index}`}
+                block={block}
+              />
+            ))}
 
-          {article.externalLink && (
-            <div className="max-w-3xl mx-auto pt-4">
-              <a
-                href={article.externalLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block font-body text-sm px-6 py-3 border teal-border text-stone-100 hover:bg-[#9CAF88]/10 transition-colors"
-              >
-                View publication →
-              </a>
-            </div>
-          )}
-        </div>
+            {article.externalLink && (
+              <div className="max-w-3xl mx-auto pt-4">
+                <a
+                  href={article.externalLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block font-body text-sm px-6 py-3 border teal-border text-stone-100 hover:bg-[#9CAF88]/10 transition-colors"
+                >
+                  View publication →
+                </a>
+              </div>
+            )}
+          </div>
+        </AnimatedSection>
       </article>
     </main>
   );
@@ -1589,13 +1594,36 @@ const OpportunitiesPage = () => (
 
 // MAIN APP
 export default function EnbodyLabWebsite() {
-  const [scrollY, setScrollY] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const isScrolledRef = useRef(false);
   const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    let ticking = false;
+
+    const handleScroll = () => {
+      if (ticking) return;
+
+      ticking = true;
+
+      window.requestAnimationFrame(() => {
+        const nextIsScrolled = window.scrollY > 80;
+
+        if (nextIsScrolled !== isScrolledRef.current) {
+          isScrolledRef.current = nextIsScrolled;
+          setIsScrolled(nextIsScrolled);
+        }
+
+        ticking = false;
+      });
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   useEffect(() => {
@@ -1657,8 +1685,8 @@ export default function EnbodyLabWebsite() {
         }
       `}</style>
 
-      <div className="grain" />
-      <Navigation scrollY={scrollY} />
+      {/* Disabled fixed grain overlay for smoother scrolling. */}
+      <Navigation isScrolled={isScrolled} />
 
       <Routes>
         <Route path="/" element={<HomePage />} />
