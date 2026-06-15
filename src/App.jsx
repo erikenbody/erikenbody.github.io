@@ -1,4 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
+import {
+  Routes,
+  Route,
+  Link,
+  NavLink,
+  useNavigate,
+  useLocation,
+  useParams
+} from 'react-router-dom';
 
 // Animated section component
 const AnimatedSection = ({ children, className = "", delay = 0 }) => {
@@ -41,81 +50,267 @@ const labData = {
     email: "enbody@cornell.edu"
   },
   
+  // News article content supports both simple paragraph strings and structured blocks.
+  // Examples:
+  // { type: "paragraph", text: "Article paragraph..." }
+  // { type: "heading", text: "Section heading" }
+  // { type: "image", src: "/images/news/photo.jpg", alt: "Description", caption: "Optional caption", aspect: "landscape", objectPosition: "50% 40%" }
+  // Image aspect options: "wide", "landscape", "standard", "square", "portrait", or "natural".
+  // Optional image controls: fit: "cover" | "contain", objectPosition: "50% 50%", height: "520px".
+  // { type: "gallery", images: [{ src: "/images/news/photo-1.jpg", alt: "Description", caption: "Optional caption", aspect: "standard" }] }
+  // { type: "quote", text: "Quoted text", attribution: "Optional name" }
+  // { type: "list", items: ["First item", "Second item"] }
+  // { type: "link", href: "https://example.com", label: "Read more" }
   news: [
     {
+      slug: "enbody-lab-at-peqg-2026",
+      date: "June 2026",
+      type: "Conference",
+      title: "The Enbody Lab at PEQG 2026",
+    
+      description:
+        "The Enbody Lab attended PEQG 2026 at Asilomar.",
+    
+      image: "/images/enbody_lab.jpg",
+
+      cardImageAspect: "standard",
+      cardImagePosition: "50% 35%",
+      
+      heroImageAspect: "natural",
+      heroImageFit: "contain",
+      heroImagePosition: "50% 50%",
+    
+      content: [
+        {
+          type: "paragraph",
+          text:
+            "Members of the Enbody Lab recently attended the 2026 Population, Evolutionary, and Quantitative Genetics Conference at the Asilomar Conference Grounds in Pacific Grove, California."
+        },
+    
+        {
+          type: "heading",
+          text: "Sharing our Darwin's finch research"
+        },
+    
+        {
+          type: "paragraph",
+          text:
+            "Rachel presented her recent work on the Big Bird hybrid lineage on Daphne."
+        },
+        
+        {
+          type: "image",
+          src: "/images/rachel_talk.jpg",
+          alt: "Rachel presenting the Big Bird research at PEQG 2026",
+          caption:
+            "Rachel presenting recent work on the Big Bird hybrid lineage.",
+          aspect: "landscape",
+          fit: "cover",
+          objectPosition: "50% 30%"
+        },
+        
+        {
+          type: "heading",
+          text: "Poster presentations"
+        },
+        
+        {
+          type: "paragraph",
+          text:
+            "Members of the Enbody Lab presented posters highlighting ongoing research across evolutionary genomics, hybridization, adaptation, and Darwin's finch biology."
+        },
+        
+        {
+          type: "gallery",
+          columns: 3,
+          gap: "gap-3",
+          images: [
+            {
+              src: "/images/erik_poster.jpg",
+              alt: "Erik presenting his poster at PEQG 2026",
+              caption: "Erik presenting his research at PEQG 2026.",
+              aspect: "portrait",
+              objectPosition: "50% 35%"
+            },
+            {
+              src: "/images/amanda_poster.jpg",
+              alt: "Amanda presenting her poster at PEQG 2026",
+              caption: "Amanda presenting her research at PEQG 2026.",
+              aspect: "portrait",
+              objectPosition: "50% 35%"
+            },
+            {
+              src: "/images/luke_poster.jpg",
+              alt: "Luke presenting his poster at PEQG 2026",
+              caption: "Luke presenting his research at PEQG 2026.",
+              aspect: "portrait",
+              objectPosition: "50% 35%"
+            },
+            {
+              src: "/images/gerardo_poster.jpg",
+              alt: "Gerardo presenting his poster at PEQG 2026",
+              caption: "Gerardo presenting his research at PEQG 2026.",
+              aspect: "portrait",
+              objectPosition: "50% 35%"
+            },
+            {
+              src: "/images/rachel_poster.jpg",
+              alt: "Rachel presenting her poster at PEQG 2026",
+              caption: "Rachel presenting her research at PEQG 2026.",
+              aspect: "portrait",
+              objectPosition: "50% 35%"
+            },
+            {
+              src: "/images/mara_poster.jpg",
+              alt: "Mara presenting her poster at PEQG 2026",
+              caption: "Mara presenting her research at PEQG 2026.",
+              aspect: "portrait",
+              objectPosition: "50% 35%"
+            }
+          ]
+        },
+        {
+          type: "heading",
+          text: "The Enbody Lab at Asilomar"
+        },
+    
+        {
+          type: "paragraph",
+          text:
+            "Gloomy weather never stops the Enbody Lab."
+        },
+        
+        {
+          type: "image",
+          src: "/images/enbody_lab_fun.jpg",
+          alt: "Luke making everyone laugh at the Asilomar Beach",
+          caption:
+            "Luke making everyone laugh at the Asilomar Beach.",
+          aspect: "landscape",
+          fit: "cover",
+          objectPosition: "50% 30%"
+        },
+        {
+          type: "image",
+          src: "/images/enbody_lab_fun2.jpg",
+          alt: "Luke making everyone laugh at the Asilomar Beach",
+          caption:
+            "All smiles:)",
+          aspect: "landscape",
+          fit: "cover",
+          objectPosition: "50% 30%"
+        },
+        {
+          type: "paragraph",
+          text:
+            "We are returning from Asilomar with many new ideas, conversations, and directions for the research ahead!"
+        }
+      ],
+    },
+    {
+      slug: "amanda-receives-grfp",
       date: "2026",
       type: "Award",
       title: "Amanda receives GRFP!",
       description: "PhD student Amanda Sun received a competitive NSF GRF this year for her work on finch pangenomes. Congrats Amanda!",
       image: "/images/ice_cream_2026.JPG",
-      link: "team",
-      enableLink: true
+      content: [
+        "PhD student Amanda Sun received a National Science Foundation Graduate Research Fellowship for her work on Darwin's finch pangenomes.",
+        "Amanda's research uses population genomics and pangenome approaches to investigate structural variation and the genetic basis of phenotypic diversity in Darwin's finches.",
+        "The fellowship will support Amanda's graduate research in the Enbody Lab and Cornell's Genetics, Genomics and Development graduate field."
+      ]
     },
     {
+      slug: "welcome-gerardo",
       date: "2025",
       type: "Welcome!",
       title: "Welcome Gerardo!",
       description: "Gerardo Cendejas Mendoza joins the lab as a PhD student in Computational Biology and Fulbright Scholar.",
       image: "/images/gerardo.jpg",
-      link: "team",
-      enableLink: true
+      content: [
+        "Gerardo Cendejas Mendoza joined the Enbody Lab as a PhD student in Computational Biology and as a Fulbright Scholar.",
+        "His work focuses on evolutionary biology and phylogenetics.",
+        "We are excited to welcome Gerardo to Cornell and to the growing Enbody Lab community.",
+      ]
     },
     {
+      slug: "welcome-luke",
       date: "2025",
       type: "Welcome!",
       title: "Welcome Luke!",
       description: "Luke Anderson joins the lab as a Rose Postdoctoral Fellow.",
       image: "/images/Luke_A.jpeg",
-      link: "team",
-      enableLink: true
+      content: [
+        "Luke Anderson joined the Enbody Lab as a Rose Postdoctoral Fellow.",
+        "Luke is investigating the genomics of adaptation, speciation, and hybridization in Darwin's finches on the Galápagos Islands.",
+        "We are delighted to welcome Luke to the lab and look forward to the research he will develop at Cornell.",
+      ]
     },
     {
+      slug: "welcome-amanda",
       date: "2025",
       type: "Welcome!",
       title: "Welcome to the lab Amanda!",
       description: "Amanda joins the lab as a PhD student from the GGD field.",
       image: "/images/A_Sun.jpg",
-      link: "team",
-      enableLink: true
+      content: [
+        "Amanda Sun joined the Enbody Lab as a PhD student in Cornell's Genetics, Genomics and Development graduate field.",
+        "Her work focuses on evolutionary and population genomics, with an emphasis on understanding complex traits and structural variation in Darwin's finches.",
+        "We are excited to welcome Amanda to the lab."
+      ]
     },
     {
+      slug: "rachel-performs-nutcracker",
       date: "2025",
       type: "News",
       title: "Rachel performs at The Nutcracker",
       description: "In her Ithaca ballet debut, Rachel performed at the 2025 Ithaca Ballet performance of The Nutcracker.",
       image: "/images/IMG_5636.jpg",
-      link: "https://doi.org/10.1093/molbev/msad270", // Add a link URL here
-      enableLink: true // Set to true to enable the hyperlink
+      content: [
+        "Rachel made her Ithaca ballet debut in the 2025 Ithaca Ballet production of The Nutcracker.",
+      ]
     },
     {
+      slug: "clam-is-published",
       date: "2025",
       type: "Publication",
       title: "CLAM is published!",
       description: "Cade's new method for estimating nucleotide diversity and divergence using depth information is published in MBE!",
       image: "/images/clam.jpeg",
-      link: "https://doi.org/10.1093/molbev/msaf282", // Add a link URL here
-      enableLink: true // Set to true to enable the hyperlink
+      externalLink: "https://doi.org/10.1093/molbev/msaf282",
+      content: [
+        "Cade's new method, CLAM, for estimating nucleotide diversity and divergence using sequencing depth information has been published in Molecular Biology and Evolution.",
+        "The method provides a new approach for extracting population-genetic information from sequencing data.",
+        "Follow the publication link below to read the article."
+      ]
     },
     {
+      slug: "welcome-rachel",
       date: "2025",
       type: "Welcome",
       title: "Welcome to the lab Rachel!",
       description: "Rachel joins the lab as a PhD student co-advised with Philipp Messer.",
       image: "/images/Rachel_G_crop.jpg",
-      link: "team", // Add a link URL here
-      enableLink: true // Set to true to enable the hyperlink
+      content: [
+        "Rachel joined the Enbody Lab as a PhD student co-advised by Erik Enbody and Philipp Messer.",
+        "She studies patterns of introgressive hybridization in Darwin's finches on Daphne Major, a small island in the Galápagos.",
+        "We are excited to welcome Rachel to the lab!"
+      ]
     },
     {
+      slug: "enbody-lab-opens",
       date: "2025",
       type: "Lab opening",
       title: "The Enbody Lab is Open!",
       description: "The Enbody Lab is officially open at Cornell University! Erik is joining the faculty in the Department of Computational Biology.",
       image: "/images/atkinson.png",
-      link: "team", // Add a link URL here
-      enableLink: true // Set to true to enable the hyperlink
+      content: [
+        "The Enbody Lab officially opened at Cornell University in 2025.",
+        "Erik joined the faculty in the Department of Computational Biology, where the lab studies evolutionary genomics, adaptation, speciation and conservation.",
+        "We look forward to building a collaborative lab community that combines field biology with computational genomics."
+      ]
     }
   ],
-
   researchAreas: [
     {
       id: "evolutionary-genomics",
@@ -245,6 +440,11 @@ publications: [
 ],
 
   team: {
+    groupPhoto: {
+      image: "/images/enbody_lab.jpg",
+      alt: "Members of the Enbody Lab",
+      caption: "The Enbody Lab"
+    },
     pi: {
       name: "Dr. Erik D. Enbody",
       role: "Principal Investigator",
@@ -275,45 +475,54 @@ publications: [
 };
 
 // Navigation Component
-const Navigation = ({ currentPage, setCurrentPage, scrollY }) => (
-  <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-    scrollY > 80 ? 'nav-blur bg-stone-950/85 py-3' : 'py-5'
-  }`}>
-    <div className="max-w-7xl mx-auto px-6 lg:px-12 flex justify-between items-center">
-      <button
-        onClick={() => setCurrentPage('home')}
-        className="flex items-center gap-3 group"
-      >
-        <span className="font-display text-base lg:text-lg font-semibold teal-accent group-hover:text-[#b8c4a8] transition-colors">
-          Enbody Lab
-        </span>
-        <img
-          src="/images/cornell_seal_simple_web_white.png"
-          alt="Cornell University"
-          className="hidden lg:block h-8 opacity-90 group-hover:opacity-100 transition-opacity"
-        />
-      </button>
-      <div className="flex gap-3 lg:gap-8 font-body text-xs lg:text-sm tracking-wide">
-        {[
-          { id: 'research', label: 'Research' },
-          { id: 'publications', label: 'Publications' },
-          { id: 'team', label: 'Team' },
-          { id: 'opportunities', label: 'Opportunities' }
-        ].map((item) => (
-          <button
-            key={item.id}
-            onClick={() => setCurrentPage(item.id)}
-            className={`link-underline transition-colors ${
-              currentPage === item.id ? 'text-stone-100' : 'text-stone-400 hover:text-stone-100'
-            }`}
-          >
-            {item.label}
-          </button>
-        ))}
+const Navigation = ({ scrollY }) => {
+  const location = useLocation();
+
+  const navItems = [
+    { path: '/research', label: 'Research' },
+    { path: '/publications', label: 'Publications' },
+    { path: '/team', label: 'Team' },
+    { path: '/opportunities', label: 'Opportunities' }
+  ];
+
+  return (
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      scrollY > 80 ? 'nav-blur bg-stone-950/85 py-3' : 'py-5'
+    }`}>
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex justify-between items-center">
+        <Link to="/" className="flex items-center gap-3 group">
+          <span className="font-display text-base lg:text-lg font-semibold teal-accent group-hover:text-[#b8c4a8] transition-colors">
+            Enbody Lab
+          </span>
+          <img
+            src="/images/cornell_seal_simple_web_white.png"
+            alt="Cornell University"
+            className="hidden lg:block h-8 opacity-90 group-hover:opacity-100 transition-opacity"
+          />
+        </Link>
+
+        <div className="flex gap-3 lg:gap-8 font-body text-xs lg:text-sm tracking-wide">
+          {navItems.map((item) => {
+            const isActive = location.pathname === item.path ||
+              (item.path === '/research' && location.pathname.startsWith('/research/'));
+
+            return (
+              <NavLink
+                key={item.path}
+                to={item.path}
+                className={`link-underline transition-colors ${
+                  isActive ? 'text-stone-100' : 'text-stone-400 hover:text-stone-100'
+                }`}
+              >
+                {item.label}
+              </NavLink>
+            );
+          })}
+        </div>
       </div>
-    </div>
-  </nav>
-);
+    </nav>
+  );
+};
 
 // Footer Component
 const Footer = () => (
@@ -336,7 +545,8 @@ const Footer = () => (
 );
 
 // HOME PAGE
-const HomePage = ({ setCurrentPage, setResearchSection }) => {
+const HomePage = () => {
+  const navigate = useNavigate();
   const [newsStartIndex, setNewsStartIndex] = useState(0);
   const newsPerPage = 3;
   const visibleNews = labData.news.slice(newsStartIndex, newsStartIndex + newsPerPage);
@@ -389,13 +599,13 @@ const HomePage = ({ setCurrentPage, setResearchSection }) => {
           <AnimatedSection delay={450}>
             <div className="flex flex-wrap gap-4">
               <button
-                onClick={() => setCurrentPage('research')}
+                onClick={() => navigate('/research')}
                 className="font-body text-sm tracking-wide px-7 py-3.5 teal-bg text-stone-950 font-medium hover:bg-[#b8c4a8] transition-colors"
               >
                 Explore Research
               </button>
               <button
-                onClick={() => setCurrentPage('opportunities')}
+                onClick={() => navigate('/opportunities')}
                 className="font-body text-sm tracking-wide px-7 py-3.5 border teal-border text-stone-100 hover:bg-[#9CAF88]/10 transition-colors"
               >
                 Join the Lab
@@ -424,10 +634,7 @@ const HomePage = ({ setCurrentPage, setResearchSection }) => {
               return (
                 <button
                   key={area.id}
-                  onClick={() => {
-                    setResearchSection(area.id);
-                    setCurrentPage('research');
-                  }}
+                  onClick={() => navigate(`/research/${area.id}`)}
                   className="group text-center"
                 >
                   <h3 className="font-display text-xl md:text-2xl font-semibold mb-4 group-hover:text-[#9CAF88] transition-colors">
@@ -457,71 +664,40 @@ const HomePage = ({ setCurrentPage, setResearchSection }) => {
         </AnimatedSection>
 
         <div className="grid md:grid-cols-3 gap-6 mb-8">
-          {visibleNews.map((item, index) => {
-            // Check if link is internal (starts with # or is a page name)
-            const isInternalLink = item.link && (item.link.startsWith('#') || ['team', 'research', 'publications', 'opportunities'].includes(item.link));
-            const isExternalLink = item.link && item.link.startsWith('http');
-
-            return (
-            <AnimatedSection key={newsStartIndex + index} delay={index * 100}>
-              <article className="bg-stone-900/50 border border-stone-800 hover:border-[#9CAF88]/30 transition-colors h-full flex flex-col">
-                {/* Image */}
-                {item.image && (
-                  <div className="aspect-[4/3] overflow-hidden bg-stone-800">
-                    {item.enableLink && item.link ? (
-                      isInternalLink ? (
-                        <button
-                          onClick={() => {
-                            if (item.link.startsWith('#')) {
-                              // For hash links, just use the href behavior
-                              window.location.hash = item.link;
-                            } else {
-                              // For page names like 'team', 'research', etc.
-                              setCurrentPage(item.link);
-                            }
-                          }}
-                          className="block w-full h-full cursor-pointer"
-                        >
-                          <img
-                            src={item.image}
-                            alt={item.title}
-                            className="w-full h-full object-cover transition-opacity duration-300 hover:opacity-80"
-                          />
-                        </button>
-                      ) : isExternalLink ? (
-                        <a href={item.link} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
-                          <img
-                            src={item.image}
-                            alt={item.title}
-                            className="w-full h-full object-cover transition-opacity duration-300 hover:opacity-80"
-                          />
-                        </a>
-                      ) : null
-                    ) : (
+          {visibleNews.map((item, index) => (
+            <AnimatedSection key={item.slug} delay={index * 100}>
+              <Link to={`/news/${item.slug}`} className="group block h-full">
+                <article className="bg-stone-900/50 border border-stone-800 group-hover:border-[#9CAF88]/40 transition-colors h-full flex flex-col">
+                  {item.image && (
+                    <div className="aspect-[4/3] overflow-hidden bg-stone-800">
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover transition-all duration-500 group-hover:scale-[1.02] group-hover:opacity-85"
                       />
-                    )}
-                  </div>
-                )}
+                    </div>
+                  )}
 
-                {/* Content */}
-                <div className="p-6 flex-1">
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="font-body text-xs px-2 py-1 bg-[#9CAF88]/10 text-[#9CAF88] tracking-wide uppercase">
-                      {item.type}
-                    </span>
-                    <span className="font-body text-xs text-stone-500">{item.date}</span>
+                  <div className="p-6 flex-1 flex flex-col">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="font-body text-xs px-2 py-1 bg-[#9CAF88]/10 text-[#9CAF88] tracking-wide uppercase">
+                        {item.type}
+                      </span>
+                      <span className="font-body text-xs text-stone-500">{item.date}</span>
+                    </div>
+
+                    <h3 className="font-display text-lg font-semibold mb-2 group-hover:text-[#9CAF88] transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="font-body text-sm text-stone-400 leading-relaxed">
+                      {item.description}
+                    </p>
+                    <span className="font-body text-sm teal-accent mt-5">Read more →</span>
                   </div>
-                  <h3 className="font-display text-lg font-semibold mb-2">{item.title}</h3>
-                  <p className="font-body text-sm text-stone-400 leading-relaxed">{item.description}</p>
-                </div>
-              </article>
+                </article>
+              </Link>
             </AnimatedSection>
-            );
-          })}
+          ))}
         </div>
 
         {/* Navigation buttons for older news */}
@@ -564,7 +740,7 @@ const HomePage = ({ setCurrentPage, setResearchSection }) => {
               Reach out if you're interested in computational genomics, evolutionary biology, or conservation.
             </p>
             <button
-              onClick={() => setCurrentPage('opportunities')}
+              onClick={() => navigate('/opportunities')}
               className="font-body text-sm tracking-wide px-7 py-3 teal-bg text-stone-950 font-medium hover:bg-[#b8c4a8] transition-colors"
             >
               View Opportunities
@@ -603,8 +779,294 @@ const HomePage = ({ setCurrentPage, setResearchSection }) => {
   );
 };
 
+// NEWS DETAIL PAGE
+const NotFoundPage = () => (
+  <main className="min-h-screen flex items-center justify-center px-6">
+    <div className="text-center">
+      <p className="font-body text-sm tracking-[0.25em] uppercase teal-accent mb-4">404</p>
+      <h1 className="font-display text-5xl font-semibold mb-5">Page not found</h1>
+      <p className="font-body text-stone-400 mb-8">
+        The page or news article you requested could not be found.
+      </p>
+      <Link
+        to="/"
+        className="inline-block font-body text-sm px-7 py-3 teal-bg text-stone-950 font-medium"
+      >
+        Return home
+      </Link>
+    </div>
+  </main>
+);
+
+const BLOG_IMAGE_ASPECT_CLASSES = {
+  wide: 'aspect-[2/1]',
+  landscape: 'aspect-[16/9]',
+  standard: 'aspect-[4/3]',
+  square: 'aspect-square',
+  portrait: 'aspect-[3/4]',
+  natural: ''
+};
+
+// Shared image renderer for individual blog images and gallery images.
+// `aspectRatio` remains supported for older posts that already use a raw
+// Tailwind aspect class such as "aspect-[3/2]".
+const BlogImageFrame = ({ image, defaultAspect = 'standard' }) => {
+  const selectedAspect = image.aspect || defaultAspect;
+  const aspectClass =
+    image.aspectRatio ||
+    BLOG_IMAGE_ASPECT_CLASSES[selectedAspect] ||
+    BLOG_IMAGE_ASPECT_CLASSES[defaultAspect];
+
+  const hasCustomHeight = Boolean(image.height);
+  const useNaturalDimensions =
+    selectedAspect === 'natural' && !image.aspectRatio && !hasCustomHeight;
+
+  const fitClass = image.fit === 'contain' ? 'object-contain' : 'object-cover';
+  const frameStyle = hasCustomHeight ? { height: image.height } : undefined;
+  const imageStyle = {
+    objectPosition: image.objectPosition || '50% 50%'
+  };
+
+  return (
+    <div
+      className={`w-full overflow-hidden bg-stone-900 ${
+        useNaturalDimensions ? '' : aspectClass
+      }`}
+      style={frameStyle}
+    >
+      <img
+        src={image.src}
+        alt={image.alt || ''}
+        loading="lazy"
+        className={
+          useNaturalDimensions
+            ? 'block w-full h-auto'
+            : `block w-full h-full ${fitClass}`
+        }
+        style={imageStyle}
+      />
+    </div>
+  );
+};
+
+const NewsContentBlock = ({ block }) => {
+  // Keep existing string-only content working as normal paragraphs.
+  if (typeof block === 'string') {
+    return (
+      <p className="max-w-3xl mx-auto font-body text-lg text-stone-300 leading-8 whitespace-pre-line">
+        {block}
+      </p>
+    );
+  }
+
+  if (!block || typeof block !== 'object') {
+    return null;
+  }
+
+  switch (block.type) {
+    case 'heading':
+      return (
+        <h2 className="max-w-3xl mx-auto font-display text-3xl md:text-4xl font-semibold text-stone-100 pt-8">
+          {block.text}
+        </h2>
+      );
+
+    case 'image':
+      return (
+        <figure className="my-10">
+          <BlogImageFrame image={block} defaultAspect="landscape" />
+
+          {block.caption && (
+            <figcaption className="max-w-3xl mx-auto font-body text-sm text-stone-500 mt-3 leading-relaxed">
+              {block.caption}
+            </figcaption>
+          )}
+        </figure>
+      );
+
+      case 'gallery':
+        return (
+          <div
+            className={`grid ${block.gap || 'gap-5'} my-10 ${
+              block.columns === 1
+                ? 'grid-cols-1'
+                : block.columns === 3
+                  ? 'md:grid-cols-3'
+                  : 'md:grid-cols-2'
+            }`}
+          >
+            {block.images?.map((image, index) => (
+              <figure key={`${image.src}-${index}`}>
+                <BlogImageFrame image={image} defaultAspect="standard" />
+      
+                {image.caption && (
+                  <figcaption className="font-body text-sm text-stone-500 mt-3 leading-relaxed">
+                    {image.caption}
+                  </figcaption>
+                )}
+              </figure>
+            ))}
+          </div>
+        );
+
+    case 'quote':
+      return (
+        <blockquote className="max-w-3xl mx-auto my-12 border-l-2 border-[#9CAF88] pl-6">
+          <p className="font-display text-2xl md:text-3xl italic text-stone-200 leading-relaxed">
+            “{block.text}”
+          </p>
+
+          {block.attribution && (
+            <footer className="font-body text-sm text-stone-500 mt-4">
+              — {block.attribution}
+            </footer>
+          )}
+        </blockquote>
+      );
+
+    case 'list':
+      return (
+        <ul className="max-w-3xl mx-auto font-body text-lg text-stone-300 leading-8 list-disc pl-6 space-y-2">
+          {block.items?.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+      );
+
+    case 'link':
+      return (
+        <div className="max-w-3xl mx-auto">
+          <a
+            href={block.href}
+            target={block.newTab === false ? undefined : '_blank'}
+            rel={block.newTab === false ? undefined : 'noopener noreferrer'}
+            className="inline-block font-body text-sm px-6 py-3 border teal-border text-stone-100 hover:bg-[#9CAF88]/10 transition-colors"
+          >
+            {block.label || 'Read more'} →
+          </a>
+        </div>
+      );
+
+    case 'paragraph':
+    default:
+      return (
+        <p className="max-w-3xl mx-auto font-body text-lg text-stone-300 leading-8 whitespace-pre-line">
+          {block.text}
+        </p>
+      );
+  }
+};
+
+const NewsDetailPage = () => {
+  const { slug } = useParams();
+  const article = labData.news.find((item) => item.slug === slug);
+
+  if (!article) {
+    return <NotFoundPage />;
+  }
+
+  return (
+    <main className="min-h-screen">
+      <article className="max-w-4xl mx-auto px-6 lg:px-12 pt-36 pb-24">
+        <AnimatedSection>
+          <Link
+            to="/"
+            className="inline-block font-body text-sm teal-accent hover:text-[#b8c4a8] transition-colors mb-10"
+          >
+            ← Back to all news
+          </Link>
+
+          <div className="flex items-center gap-3 mb-5">
+            <span className="font-body text-xs px-2 py-1 bg-[#9CAF88]/10 text-[#9CAF88] tracking-wide uppercase">
+              {article.type}
+            </span>
+            <span className="font-body text-sm text-stone-500">{article.date}</span>
+          </div>
+
+          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-semibold leading-[1.05] mb-8">
+            {article.title}
+          </h1>
+          <p className="font-body text-xl text-stone-400 leading-relaxed">
+            {article.description}
+          </p>
+        </AnimatedSection>
+
+        {article.image && (
+          <AnimatedSection delay={100}>
+            {(() => {
+              const aspectClasses = {
+                wide: "aspect-[2/1]",
+                landscape: "aspect-[16/9]",
+                standard: "aspect-[4/3]",
+                square: "aspect-square",
+                portrait: "aspect-[3/4]",
+                natural: ""
+              };
+
+              const isNatural = article.heroImageAspect === "natural";
+
+              const aspectClass =
+                aspectClasses[article.heroImageAspect] || "aspect-[16/9]";
+
+              const fitClass =
+                article.heroImageFit === "contain"
+                  ? "object-contain"
+                  : "object-cover";
+
+              return (
+                <div
+                  className={`mt-12 overflow-hidden bg-stone-900 ${aspectClass}`}
+                >
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className={
+                      isNatural
+                        ? "w-full h-auto"
+                        : `w-full h-full ${fitClass}`
+                    }
+                    style={{
+                      objectPosition:
+                        article.heroImagePosition || "50% 50%"
+                    }}
+                  />
+                </div>
+              );
+            })()}
+          </AnimatedSection>
+        )}
+
+        <AnimatedSection delay={200}>
+          <div className="mt-14 space-y-7">
+            {article.content?.map((block, index) => (
+              <NewsContentBlock
+                key={`${typeof block === 'object' ? block.type : 'paragraph'}-${index}`}
+                block={block}
+              />
+            ))}
+
+            {article.externalLink && (
+              <div className="max-w-3xl mx-auto pt-4">
+                <a
+                  href={article.externalLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block font-body text-sm px-6 py-3 border teal-border text-stone-100 hover:bg-[#9CAF88]/10 transition-colors"
+                >
+                  View publication →
+                </a>
+              </div>
+            )}
+          </div>
+        </AnimatedSection>
+      </article>
+    </main>
+  );
+};
+
 // RESEARCH PAGE
-const ResearchPage = ({ activeSection }) => {
+const ResearchPage = () => {
+  const { section: activeSection } = useParams();
   const sectionRefs = useRef({});
 
   useEffect(() => {
@@ -845,9 +1307,9 @@ const PublicationsPage = () => {
 };
 
 // TEAM PAGE
-const TeamPage = ({ setCurrentPage }) => (
+const TeamPage = () => (
   <>
-    <section className="pt-32 pb-16 bg-stone-900/40">
+    <section className="pt-32 pb-8 bg-stone-900/40">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <AnimatedSection>
           <p className="font-body text-sm tracking-[0.25em] uppercase teal-accent mb-4">Research group at Cornell University</p>
@@ -855,6 +1317,48 @@ const TeamPage = ({ setCurrentPage }) => (
           <p className="font-body text-xl text-stone-400 max-w-3xl leading-relaxed">
           </p>
         </AnimatedSection>
+      </div>
+    </section>
+
+    {/* LAB GROUP PHOTO SECTION */}
+    <section className="pt-12 pb-20 md:pt-16 md:pb-24 bg-stone-950">
+      <div className="max-w-5xl mx-auto px-6 lg:px-12">
+
+        <AnimatedSection>
+          <div className="mt-6 md:mt-8 mb-10 text-center">
+            <p className="font-body text-sm tracking-[0.25em] uppercase teal-accent mb-4">
+              Our Research Community
+            </p>
+
+            <h2 className="font-display text-3xl md:text-5xl font-semibold">
+              The Enbody Lab
+            </h2>
+          </div>
+        </AnimatedSection>
+
+        <AnimatedSection delay={120}>
+          <figure>
+            <div className="group aspect-[5/3] overflow-hidden bg-stone-900">
+              <img
+                src={labData.team.groupPhoto.image}
+                alt={labData.team.groupPhoto.alt}
+                className="w-full h-full object-cover transition-transform duration-700 ease-out"
+                style={{
+                  objectPosition: "55% 40%"
+                }}
+              />
+            </div>
+
+            {labData.team.groupPhoto.caption && (
+              <AnimatedSection delay={220}>
+                <figcaption className="font-body text-sm text-stone-500 mt-4 text-center">
+                  {labData.team.groupPhoto.caption}
+                </figcaption>
+              </AnimatedSection>
+            )}
+          </figure>
+        </AnimatedSection>
+
       </div>
     </section>
 
@@ -1058,9 +1562,8 @@ const OpportunitiesPage = () => (
 
 // MAIN APP
 export default function EnbodyLabWebsite() {
-  const [currentPage, setCurrentPage] = useState('home');
   const [scrollY, setScrollY] = useState(0);
-  const [researchSection, setResearchSection] = useState(null);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -1070,17 +1573,7 @@ export default function EnbodyLabWebsite() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [currentPage]);
-
-  const renderPage = () => {
-    switch (currentPage) {
-      case 'research': return <ResearchPage activeSection={researchSection} />;
-      case 'publications': return <PublicationsPage />;
-      case 'team': return <TeamPage setCurrentPage={setCurrentPage} />;
-      case 'opportunities': return <OpportunitiesPage />;
-      default: return <HomePage setCurrentPage={setCurrentPage} setResearchSection={setResearchSection} />;
-    }
-  };
+  }, [location.pathname]);
 
   return (
     <div className="min-h-screen bg-stone-950 text-stone-100 overflow-x-hidden">
@@ -1138,13 +1631,21 @@ export default function EnbodyLabWebsite() {
       `}</style>
 
       <div className="grain" />
-      <Navigation currentPage={currentPage} setCurrentPage={setCurrentPage} scrollY={scrollY} />
-      
-      <main>
-        {renderPage()}
-      </main>
-      
+      <Navigation scrollY={scrollY} />
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/research" element={<ResearchPage />} />
+        <Route path="/research/:section" element={<ResearchPage />} />
+        <Route path="/publications" element={<PublicationsPage />} />
+        <Route path="/team" element={<TeamPage />} />
+        <Route path="/opportunities" element={<OpportunitiesPage />} />
+        <Route path="/news/:slug" element={<NewsDetailPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+
       <Footer />
     </div>
   );
 }
+
