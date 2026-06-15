@@ -289,8 +289,20 @@ const labData = {
       date: "2025",
       type: "Welcome",
       title: "Welcome to the lab Rachel!",
-      description: "Rachel joins the lab as a PhD student co-advised with Philipp Messer.",
+      description:
+        "Rachel joins the lab as a PhD student co-advised with Philipp Messer.",
+    
       image: "/images/Rachel_G_crop.jpg",
+    
+      // Crop shown on the homepage news card
+      cardImageAspect: "standard",
+      cardImagePosition: "50% 25%",
+    
+      // Crop shown after opening the blog post
+      heroImageAspect: "landscape",
+      heroImageFit: "cover",
+      heroImagePosition: "50% 20%",
+    
       content: [
         "Rachel joined the Enbody Lab as a PhD student co-advised by Erik Enbody and Philipp Messer.",
         "She studies patterns of introgressive hybridization in Darwin's finches on Daphne Major, a small island in the Galápagos.",
