@@ -1036,29 +1036,27 @@ const NewsDetailPage = () => {
           </AnimatedSection>
         )}
 
-        <AnimatedSection delay={150}>
-          <div className="mt-14 space-y-7">
-            {article.content?.map((block, index) => (
-              <NewsContentBlock
-                key={`${typeof block === 'object' ? block.type : 'paragraph'}-${index}`}
-                block={block}
-              />
-            ))}
+        <div className="mt-14 space-y-7">
+          {article.content?.map((block, index) => (
+            <NewsContentBlock
+              key={`${typeof block === 'object' ? block.type : 'paragraph'}-${index}`}
+              block={block}
+            />
+          ))}
 
-            {article.externalLink && (
-              <div className="max-w-3xl mx-auto pt-4">
-                <a
-                  href={article.externalLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block font-body text-sm px-6 py-3 border teal-border text-stone-100 hover:bg-[#9CAF88]/10 transition-colors"
-                >
-                  View publication →
-                </a>
-              </div>
-            )}
-          </div>
-        </AnimatedSection>
+          {article.externalLink && (
+            <div className="max-w-3xl mx-auto pt-4">
+              <a
+                href={article.externalLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block font-body text-sm px-6 py-3 border teal-border text-stone-100 hover:bg-[#9CAF88]/10 transition-colors"
+              >
+                View publication →
+              </a>
+            </div>
+          )}
+        </div>
       </article>
     </main>
   );
