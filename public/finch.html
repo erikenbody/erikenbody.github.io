@@ -6,7 +6,11 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Finch Obs">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#2563eb">
   <link rel="manifest" href="finch-manifest.json">
+  <link rel="apple-touch-icon" href="finch-icon-180.png">
+  <link rel="icon" type="image/png" href="finch-icon-180.png">
   <title>Finch Field Observer</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -55,6 +59,15 @@
     .gear-btn { font-size: 20px; background: none; border: none; cursor: pointer; }
     .count-btn { background: #f3f4f6; padding: 6px 12px; border-radius: 8px; font-size: 13px; border: none; cursor: pointer; }
     .danger-btn { width: 100%; padding: 16px; background: #fef2f2; color: #dc2626; border: none; border-radius: 12px; font-weight: 500; cursor: pointer; margin-top: 12px; }
+    .toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: 96px; background: #111827; color: white; padding: 12px 20px; border-radius: 24px; font-size: 15px; font-weight: 600; z-index: 100; opacity: 0; transition: opacity 0.2s; pointer-events: none; }
+    .toast.show { opacity: 0.95; }
+    .toast.error { background: #b91c1c; }
+    .status-row { display: flex; align-items: center; gap: 8px; font-size: 14px; padding: 4px 0; }
+    .status-dot { width: 10px; height: 10px; border-radius: 50%; background: #d1d5db; flex-shrink: 0; }
+    .status-dot.ok { background: #16a34a; }
+    .status-dot.warn { background: #f59e0b; }
+    .status-note { font-size: 12px; color: #9ca3af; margin-top: 6px; line-height: 1.4; }
+    .csv-out { width: 100%; height: 220px; font-family: 'SF Mono', Monaco, monospace; font-size: 11px; white-space: pre; }
   </style>
 </head>
 <body>
@@ -139,8 +152,47 @@
       <div class="label">Observer Initials</div>
       <input type="text" id="observer-input" placeholder="e.g. LA" maxlength="4" oninput="this.value=this.value.toUpperCase();saveObserver();">
     </div>
+
+    <div class="card">
+      <div class="label">Offline Status</div>
+      <div class="status-row"><span class="status-dot" id="sw-dot"></span><span id="sw-status">Checking…</span></div>
+      <div class="status-row"><span class="status-dot" id="map-dot"></span><span id="map-status">Checking map…</span></div>
+      <div class="status-row"><span class="status-dot" id="data-dot"></span><span id="data-status">Checking storage…</span></div>
+      <div class="status-row"><span class="status-dot" id="persist-dot"></span><span id="persist-status">Checking durability…</span></div>
+      <p class="status-note" id="sw-note"></p>
+      <div class="btn-grid" style="margin-top:12px;">
+        <button class="btn btn-small" onclick="checkOffline()">Re-check</button>
+        <button class="btn btn-small" onclick="forceUpdate()">Update app</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="label">Backup</div>
+      <p class="status-note" style="margin-top:0;">Observations live only on this phone until exported. Export at the end of every field day.</p>
+      <div class="btn-grid" style="margin-top:12px;">
+        <button class="btn btn-small" onclick="exportCSV()">Export CSV</button>
+        <button class="btn btn-small" onclick="showRawCSV()">Show raw CSV</button>
+      </div>
+    </div>
+
     <div style="padding:0 12px;">
       <button class="danger-btn" onclick="clearAll()">Clear All Observations</button>
+    </div>
+    <p class="status-note" style="text-align:center;padding:16px;" id="version-line"></p>
+  </div>
+
+  <!-- Raw CSV Modal: last-resort export that needs no download or share sheet -->
+  <div id="csv-modal" class="modal hidden" onclick="hideRawCSV()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <span style="font-weight:bold;">Raw CSV</span>
+        <button class="close-btn" onclick="hideRawCSV()">✕</button>
+      </div>
+      <div class="modal-body">
+        <p class="status-note" style="margin-top:0;">Tap the box, Select All, Copy — then paste into Notes, Mail, or Numbers.</p>
+        <textarea id="csv-out" class="csv-out" readonly onclick="this.select()"></textarea>
+        <button class="btn" style="width:100%;margin-top:12px;" onclick="copyRawCSV()">Copy to clipboard</button>
+      </div>
     </div>
   </div>
 
@@ -157,7 +209,14 @@
     </div>
   </div>
 
+  <div id="toast" class="toast"></div>
+
   <script>
+    const APP_VERSION = '2026-08-19a';
+    const KEY_OBS = 'finch-observations';
+    const KEY_OBS_BACKUP = 'finch-observations-backup';
+    const KEY_OBSERVER = 'finch-observer';
+
     let observations = [];
     let observer = '';
     let sector = '';
@@ -175,19 +234,84 @@
       {code:'Seeds on plant',label:'Seeds/plant'},{code:'No',label:'No'}
     ];
 
+    // ---- Storage -------------------------------------------------------
+    // Everything is written twice. A half-finished write or corrupt value in
+    // one key must never be able to lose a field day's data.
+
+    function loadKey(key) {
+      try {
+        const raw = localStorage.getItem(key);
+        if (!raw) return null;
+        const parsed = JSON.parse(raw);
+        return Array.isArray(parsed) ? parsed : null;
+      } catch (e) {
+        return null;
+      }
+    }
+
+    function loadObservations() {
+      const primary = loadKey(KEY_OBS);
+      const backup = loadKey(KEY_OBS_BACKUP);
+      if (primary && backup) return primary.length >= backup.length ? primary : backup;
+      if (primary) return primary;
+      if (backup) {
+        toast('Recovered data from backup', true);
+        return backup;
+      }
+      return [];
+    }
+
+    function saveObservations() {
+      const json = JSON.stringify(observations);
+      try {
+        localStorage.setItem(KEY_OBS, json);
+        localStorage.setItem(KEY_OBS_BACKUP, json);
+        return true;
+      } catch (e) {
+        // Quota or private-mode failure: the observation is in memory only.
+        toast('SAVE FAILED - export now!', true);
+        return false;
+      }
+    }
+
     function init() {
-      const saved = localStorage.getItem('finch-observations');
-      if (saved) observations = JSON.parse(saved);
-      observer = localStorage.getItem('finch-observer') || '';
-      
+      // Wrapped so a single failure can never leave a blank, dead screen.
+      try {
+        observations = loadObservations();
+      } catch (e) {
+        observations = [];
+      }
+      try {
+        observer = localStorage.getItem(KEY_OBSERVER) || '';
+      } catch (e) {
+        observer = '';
+      }
+
       document.getElementById('date-display').textContent = getDate();
       document.getElementById('time-display').textContent = getTime();
       setInterval(() => {
         document.getElementById('time-display').textContent = getTime();
-      }, 1000);
+      }, 10000);
       updateObserverDisplay();
       renderButtons();
       updateCount();
+      document.getElementById('version-line').textContent = 'Finch Observer ' + APP_VERSION;
+      checkOffline();
+    }
+
+    let toastTimer = null;
+    function toast(msg, isError) {
+      const el = document.getElementById('toast');
+      el.textContent = msg;
+      el.classList.toggle('error', !!isError);
+      el.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => el.classList.remove('show'), isError ? 3500 : 1200);
+    }
+
+    function esc(v) {
+      return String(v == null ? '' : v).replace(/[&<>"']/g, c =>
+        ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
     }
 
     function getDate() {
@@ -273,7 +397,7 @@
 
     function saveObserver() {
       observer = document.getElementById('observer-input').value;
-      localStorage.setItem('finch-observer', observer);
+      try { localStorage.setItem(KEY_OBSERVER, observer); } catch (e) {}
       updateObserverDisplay();
     }
 
@@ -289,7 +413,7 @@
       const notes = document.getElementById('notes-input').value;
       
       observations.unshift({
-        id: Date.now(),
+        id: nextId(),
         observer: observer || 'XX',
         date: getDate(),
         time: getTime(),
@@ -298,8 +422,12 @@
         notes
       });
       
-      localStorage.setItem('finch-observations', JSON.stringify(observations));
-      
+      const saved = saveObservations();
+      if (saved) {
+        toast('Saved #' + observations.length);
+        if (navigator.vibrate) navigator.vibrate(30);
+      }
+
       // Reset form
       species = ''; plumage = ''; food = '';
       document.getElementById('bands-input').value = '';
@@ -313,8 +441,8 @@
     }
 
     function deleteObs(id) {
-      observations = observations.filter(o => o.id !== id);
-      localStorage.setItem('finch-observations', JSON.stringify(observations));
+      observations = observations.filter(o => String(o.id) !== String(id));
+      saveObservations();
       updateCount();
       renderList();
     }
@@ -329,43 +457,209 @@
         <div class="obs-item">
           <div class="obs-header">
             <div>
-              <span class="obs-species">${o.species}</span>
-              <span class="obs-plumage">${o.plumage}</span>
-              <span class="obs-sector">S${o.sector}</span>
+              <span class="obs-species">${esc(o.species)}</span>
+              <span class="obs-plumage">${esc(o.plumage)}</span>
+              <span class="obs-sector">S${esc(o.sector)}</span>
             </div>
-            <span class="obs-time">${o.time}</span>
+            <span class="obs-time">${esc(o.time)}</span>
           </div>
           <div class="obs-details">
-            <span class="obs-bands">${o.bands}</span>
-            ${o.food ? `<span style="margin-left:8px">${o.food}</span>` : ''}
+            <span class="obs-bands">${esc(o.bands)}</span>
+            ${o.food ? `<span style="margin-left:8px">${esc(o.food)}</span>` : ''}
           </div>
-          ${o.notes ? `<p class="obs-notes">${o.notes}</p>` : ''}
-          <button class="delete-btn" onclick="deleteObs(${o.id})">Delete</button>
+          ${o.notes ? `<p class="obs-notes">${esc(o.notes)}</p>` : ''}
+          <button class="delete-btn" onclick="deleteObs('${esc(o.id)}')">Delete</button>
         </div>
       `).join('');
     }
 
-    function exportCSV() {
+    function buildCSV() {
       const headers = ['Obs','Date','Time','Sector','Species','Plumage','Bands','Food items','Notes'];
-      const rows = observations.map(o => 
+      const rows = observations.map(o =>
         [o.observer,o.date,o.time,o.sector,o.species,o.plumage,o.bands,o.food,o.notes]
-        .map(v => `"${(v||'').replace(/"/g,'""')}"`)
+        .map(v => `"${String(v == null ? '' : v).replace(/"/g,'""')}"`)
         .join(',')
       );
-      const csv = [headers.join(','), ...rows].join('\n');
-      const blob = new Blob([csv], {type:'text/csv'});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `finch_obs_${getDate().replace(/\//g,'-')}.csv`;
-      a.click();
+      return [headers.join(','), ...rows].join('\r\n');
+    }
+
+    function csvFilename() {
+      return `finch_obs_${getDate().replace(/\//g,'-')}_${observer || 'XX'}.csv`;
+    }
+
+    async function exportCSV() {
+      if (observations.length === 0) { toast('Nothing to export', true); return; }
+      const csv = buildCSV();
+      const name = csvFilename();
+
+      // 1. Share sheet - works offline and inside a standalone home-screen app.
+      //    Gives Save to Files / Mail / AirDrop.
+      try {
+        if (navigator.canShare && typeof File === 'function') {
+          const file = new File([csv], name, {type: 'text/csv'});
+          if (navigator.canShare({files: [file]})) {
+            await navigator.share({files: [file], title: name});
+            return;
+          }
+        }
+      } catch (e) {
+        if (e && e.name === 'AbortError') return;  // user cancelled
+      }
+
+      // 2. Classic download - works in Safari tabs and on desktop.
+      try {
+        const blob = new Blob([csv], {type: 'text/csv'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = name;
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(url); }, 2000);
+        toast('Exported ' + observations.length + ' obs');
+        return;
+      } catch (e) { /* fall through */ }
+
+      // 3. Last resort that cannot fail: show the text to copy by hand.
+      showRawCSV();
+    }
+
+    function showRawCSV() {
+      document.getElementById('csv-out').value = buildCSV();
+      document.getElementById('csv-modal').classList.remove('hidden');
+    }
+
+    function hideRawCSV() {
+      document.getElementById('csv-modal').classList.add('hidden');
+    }
+
+    async function copyRawCSV() {
+      const text = document.getElementById('csv-out').value;
+      try {
+        await navigator.clipboard.writeText(text);
+        toast('Copied');
+      } catch (e) {
+        const ta = document.getElementById('csv-out');
+        ta.focus(); ta.select();
+        toast('Press Copy in the popup menu', true);
+      }
     }
 
     function clearAll() {
       if (confirm('Delete all observations? This cannot be undone.')) {
         observations = [];
-        localStorage.removeItem('finch-observations');
+        saveObservations();
+        try { localStorage.removeItem(KEY_OBS); localStorage.removeItem(KEY_OBS_BACKUP); } catch (e) {}
         updateCount();
+        renderList();
+      }
+    }
+
+    // Date.now() alone repeats if two taps land in the same millisecond.
+    let idCounter = 0;
+    function nextId() {
+      idCounter += 1;
+      return String(Date.now()) + '-' + idCounter;
+    }
+
+    function setStatus(dotId, textId, state, text) {
+      const dot = document.getElementById(dotId);
+      dot.classList.remove('ok', 'warn');
+      if (state) dot.classList.add(state);
+      document.getElementById(textId).textContent = text;
+    }
+
+    // Answers the only question that matters before walking out of signal:
+    // is this app actually cached on the phone?
+    async function checkOffline() {
+      if (!('serviceWorker' in navigator)) {
+        setStatus('sw-dot', 'sw-status', 'warn', 'No offline support in this browser');
+        document.getElementById('sw-note').textContent =
+          'Open finch.html in Safari (not an in-app browser) and add it to the Home Screen.';
+      } else {
+        try {
+          const reg = await navigator.serviceWorker.getRegistration();
+          if (!reg) {
+            setStatus('sw-dot', 'sw-status', 'warn', 'Not installed - reload with wifi');
+          } else if (!navigator.serviceWorker.controller) {
+            setStatus('sw-dot', 'sw-status', 'warn', 'Installing - reload once more');
+          } else {
+            setStatus('sw-dot', 'sw-status', 'ok', 'App cached - works offline');
+          }
+        } catch (e) {
+          setStatus('sw-dot', 'sw-status', 'warn', 'Offline status unknown');
+        }
+      }
+
+      // Confirm the map image is really in the cache, not just in memory.
+      try {
+        const keys = await caches.keys();
+        let found = false;
+        for (const k of keys) {
+          const c = await caches.open(k);
+          if (await c.match('./sector-map.jpg') || await c.match('sector-map.jpg')) { found = true; break; }
+        }
+        setStatus('map-dot', 'map-status', found ? 'ok' : 'warn',
+          found ? 'Sector map cached' : 'Sector map not cached');
+      } catch (e) {
+        setStatus('map-dot', 'map-status', 'warn', 'Sector map status unknown');
+      }
+
+      // Prove localStorage actually persists on this device/mode.
+      try {
+        localStorage.setItem('finch-write-test', '1');
+        localStorage.removeItem('finch-write-test');
+        setStatus('data-dot', 'data-status', 'ok', observations.length + ' obs stored on device');
+      } catch (e) {
+        setStatus('data-dot', 'data-status', 'warn', 'STORAGE BLOCKED - export often!');
+      }
+
+      const persisted = await requestPersistence();
+      if (persisted === true) {
+        setStatus('persist-dot', 'persist-status', 'ok', 'Storage is durable');
+      } else if (persisted === false) {
+        setStatus('persist-dot', 'persist-status', 'warn', 'Storage not marked durable - export daily');
+      } else {
+        setStatus('persist-dot', 'persist-status', '', 'Durability not reportable');
+      }
+
+      let room = '';
+      try {
+        if (navigator.storage && navigator.storage.estimate) {
+          const {usage, quota} = await navigator.storage.estimate();
+          if (quota) room = ' · ' + (usage / 1048576).toFixed(1) + ' MB used of ' +
+            (quota / 1048576).toFixed(0) + ' MB';
+        }
+      } catch (e) {}
+
+      document.getElementById('version-line').textContent =
+        'Finch Observer ' + APP_VERSION + (navigator.onLine ? ' · online' : ' · offline') + room;
+    }
+
+    // Asks the browser to mark this origin's storage as persistent, which
+    // exempts it from eviction when the device runs low on space. Safari
+    // generally grants this automatically for home-screen web apps.
+    async function requestPersistence() {
+      try {
+        if (!navigator.storage || !navigator.storage.persist) return null;
+        if (await navigator.storage.persisted()) return true;
+        return await navigator.storage.persist();
+      } catch (e) {
+        return null;
+      }
+    }
+
+    async function forceUpdate() {
+      if (!navigator.onLine) { toast('No connection - update later', true); return; }
+      try {
+        const reg = await navigator.serviceWorker.getRegistration();
+        if (!reg) { location.reload(); return; }
+        await reg.update();
+        toast('Checked for update - reopening');
+        setTimeout(() => location.reload(), 800);
+      } catch (e) {
+        toast('Update check failed', true);
       }
     }
 
@@ -383,6 +677,7 @@
     }
 
     function showSettings() {
+      checkOffline();
       document.getElementById('entry-view').classList.add('hidden');
       document.getElementById('list-view').classList.add('hidden');
       document.getElementById('settings-view').classList.remove('hidden');
@@ -393,11 +688,24 @@
 
     init();
     
-    // Register Service Worker for offline support
+    // Register the service worker: this is what makes the app launch with no
+    // signal at all. Without it every launch needs to reach the network.
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('finch-sw.js').then(() => {
-        console.log('Service Worker registered');
-      }).catch(err => console.log('SW registration failed:', err));
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./finch-sw.js', {scope: './'})
+          .then(reg => {
+            console.log('Service Worker registered', reg.scope);
+            // First install: claim control now so the cache is populated
+            // before the phone leaves wifi.
+            if (!navigator.serviceWorker.controller) reg.update().catch(() => {});
+            navigator.serviceWorker.ready.then(() => checkOffline());
+          })
+          .catch(err => {
+            console.log('SW registration failed:', err);
+            toast('Offline mode unavailable', true);
+            checkOffline();
+          });
+      });
     }
   </script>
 </body>
