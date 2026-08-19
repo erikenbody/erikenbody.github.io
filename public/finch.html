@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="Finch Obs">
+  <meta name="apple-mobile-web-app-title" content="GeoSpy">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#2563eb">
   <link rel="manifest" href="finch-manifest.json">
   <link rel="apple-touch-icon" href="finch-icon-180.png">
   <link rel="icon" type="image/png" href="finch-icon-180.png">
-  <title>Finch Observer</title>
+  <title>GeoSpy</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f3f4f6; min-height: 100vh; }
@@ -75,7 +75,7 @@
   <div id="entry-view" class="container">
     <div class="header">
       <button class="gear-btn" onclick="showSettings()">⚙️</button>
-      <span class="header-title">Finch Observer</span>
+      <span class="header-title">GeoSpy</span>
       <button class="count-btn" onclick="showList()"><span id="obs-count">0</span> obs</button>
     </div>
     
@@ -212,7 +212,7 @@
   <div id="toast" class="toast"></div>
 
   <script>
-    const APP_VERSION = '2026-08-19b';
+    const APP_VERSION = '2026-08-19c';
     // These key names are deliberately NOT renamed to match the app name:
     // they address data already sitting on field phones, and changing them
     // would orphan every existing observation.
@@ -298,7 +298,7 @@
       updateObserverDisplay();
       renderButtons();
       updateCount();
-      document.getElementById('version-line').textContent = 'Finch Observer ' + APP_VERSION;
+      document.getElementById('version-line').textContent = 'GeoSpy ' + APP_VERSION;
       checkOffline();
     }
 
@@ -637,7 +637,7 @@
       } catch (e) {}
 
       document.getElementById('version-line').textContent =
-        'Finch Observer ' + APP_VERSION + (navigator.onLine ? ' · online' : ' · offline') + room;
+        'GeoSpy ' + APP_VERSION + (navigator.onLine ? ' · online' : ' · offline') + room;
     }
 
     // Asks the browser to mark this origin's storage as persistent, which

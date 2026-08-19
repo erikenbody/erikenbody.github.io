@@ -1,7 +1,7 @@
 {
   "id": "/finch.html",
-  "name": "Finch Observer",
-  "short_name": "Finch Obs",
+  "name": "GeoSpy",
+  "short_name": "GeoSpy",
   "description": "Offline field data entry for Darwin's finch observations",
   "start_url": "./finch.html",
   "scope": "./",

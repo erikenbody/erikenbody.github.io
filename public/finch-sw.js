@@ -1,6 +1,6 @@
-// Finch Observer service worker.
+// GeoSpy service worker.
 // Goal: once installed, the app must launch with zero network access.
-const CACHE_NAME = 'finch-obs-v3';
+const CACHE_NAME = 'geospy-v4';
 
 // Must be cached or the app cannot start offline.
 const CRITICAL = ['./finch.html'];
