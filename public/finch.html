@@ -33,6 +33,17 @@
     .bottom-bar { position: fixed; bottom: 0; left: 0; right: 0; padding: 16px; background: white; border-top: 1px solid #e5e7eb; }
     .btn-primary { width: 100%; padding: 16px; background: #2563eb; color: white; border: none; border-radius: 12px; font-size: 17px; font-weight: bold; cursor: pointer; }
     .btn-primary:active { background: #1d4ed8; }
+    .bottom-row { display: flex; gap: 8px; align-items: stretch; }
+    .bottom-row .btn-primary { flex: 1; }
+    .btn-clear { flex-shrink: 0; padding: 16px 18px; background: #f3f4f6; color: #6b7280; border: none; border-radius: 12px; font-size: 15px; font-weight: 600; cursor: pointer; }
+    .btn-clear:active { background: #e5e7eb; }
+    .edit-banner { background: #fef3c7; border-bottom: 1px solid #fcd34d; color: #92400e; padding: 10px 16px; font-size: 14px; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .edit-banner-text { font-weight: 600; }
+    .edit-banner-sub { font-size: 12px; font-weight: 400; color: #b45309; }
+    .obs-item-tap { cursor: pointer; }
+    .obs-edited { font-size: 11px; color: #b45309; background: #fef3c7; padding: 2px 6px; border-radius: 4px; margin-left: 8px; }
+    .obs-actions { display: flex; gap: 16px; align-items: center; margin-top: 8px; }
+    .edit-btn { font-size: 12px; color: #2563eb; background: none; border: none; cursor: pointer; padding: 0; }
     .obs-item { background: white; border-radius: 12px; padding: 12px; margin: 8px 12px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
     .obs-header { display: flex; justify-content: space-between; align-items: flex-start; }
     .obs-species { font-weight: bold; color: #2563eb; }
@@ -77,6 +88,14 @@
       <button class="gear-btn" onclick="showSettings()">⚙️</button>
       <span class="header-title">GeoSpy</span>
       <button class="count-btn" onclick="showList()"><span id="obs-count">0</span> obs</button>
+    </div>
+
+    <div id="edit-banner" class="edit-banner hidden">
+      <div>
+        <div class="edit-banner-text">Editing an observation</div>
+        <div class="edit-banner-sub" id="edit-banner-sub"></div>
+      </div>
+      <button class="btn btn-small" onclick="cancelEdit()">Cancel</button>
     </div>
     
     <div class="card" style="display:flex;justify-content:space-between;align-items:center;">
@@ -127,7 +146,10 @@
     </div>
 
     <div class="bottom-bar">
-      <button class="btn-primary" onclick="addObservation()">+ Add Observation</button>
+      <div class="bottom-row">
+        <button class="btn-clear" id="secondary-btn" onclick="secondaryAction()">Clear</button>
+        <button class="btn-primary" id="primary-btn" onclick="submitEntry()">+ Add Observation</button>
+      </div>
     </div>
   </div>
 
@@ -212,7 +234,7 @@
   <div id="toast" class="toast"></div>
 
   <script>
-    const APP_VERSION = '2026-08-19c';
+    const APP_VERSION = '2026-08-24b';
     // These key names are deliberately NOT renamed to match the app name:
     // they address data already sitting on field phones, and changing them
     // would orphan every existing observation.
@@ -221,6 +243,11 @@
     const KEY_OBSERVER = 'finch-observer';
 
     let observations = [];
+    // Id of the observation being edited, or null for a normal new entry.
+    let editingId = null;
+    // Sector selected before an edit started, restored when the edit ends so
+    // the next new bird is not silently filed under the edited bird's sector.
+    let sectorBeforeEdit = '';
     let observer = '';
     let sector = '';
     let species = '';
@@ -344,6 +371,15 @@
       ).join('');
     }
 
+    // Marks a button selected without assuming one exists: an observation saved
+    // by an older version can hold a value no longer in the list.
+    function markSelected(attr, value) {
+      document.querySelectorAll('[data-' + attr + ']').forEach(b => b.classList.remove('selected'));
+      if (!value) return;
+      const btn = document.querySelector('[data-' + attr + '="' + String(value).replace(/"/g, '\\"') + '"]');
+      if (btn) btn.classList.add('selected');
+    }
+
     function selectSector(n) {
       sector = String(n);
       document.querySelectorAll('[data-sector]').forEach(b => b.classList.remove('selected'));
@@ -431,7 +467,14 @@
         if (navigator.vibrate) navigator.vibrate(30);
       }
 
-      // Reset form
+      resetEntryForm();
+      updateCount();
+    }
+
+    // Clears ONLY the bird currently being entered on screen.
+    // Never touches `observations`, localStorage, or the selected sector -
+    // sector is sticky on purpose so it survives from one bird to the next.
+    function resetEntryForm() {
       species = ''; plumage = ''; food = '';
       document.getElementById('bands-input').value = '';
       document.getElementById('food-input').value = '';
@@ -439,13 +482,133 @@
       document.querySelectorAll('[data-species],[data-plumage],[data-food]').forEach(b => b.classList.remove('selected'));
       document.getElementById('unbanded-btn').classList.remove('selected');
       document.getElementById('metal-btn').classList.remove('selected');
-      
+    }
+
+    function entryHasContent() {
+      return !!(species || plumage || food
+        || document.getElementById('bands-input').value
+        || document.getElementById('food-input').value
+        || document.getElementById('notes-input').value);
+    }
+
+    // "Clear" button next to Add Observation. Discards the unsaved entry only.
+    function clearEntry() {
+      if (!entryHasContent()) { toast('Nothing to clear'); return; }
+      if (!confirm('Clear this entry? Saved observations are not affected.')) return;
+      resetEntryForm();
+      toast('Entry cleared');
+      if (navigator.vibrate) navigator.vibrate(20);
+    }
+
+    // The bottom bar drives two different actions depending on edit mode.
+    function submitEntry() {
+      if (editingId !== null) updateObservation(); else addObservation();
+    }
+
+    function secondaryAction() {
+      if (editingId !== null) cancelEdit(); else clearEntry();
+    }
+
+    function setEditMode(obs) {
+      editingId = obs ? obs.id : null;
+      const banner = document.getElementById('edit-banner');
+      const primary = document.getElementById('primary-btn');
+      const secondary = document.getElementById('secondary-btn');
+      if (obs) {
+        document.getElementById('edit-banner-sub').textContent =
+          [obs.species, obs.plumage, 'S' + obs.sector, obs.time].filter(Boolean).join(' · ');
+        banner.classList.remove('hidden');
+        primary.textContent = 'Save Changes';
+        secondary.textContent = 'Cancel';
+      } else {
+        banner.classList.add('hidden');
+        primary.textContent = '+ Add Observation';
+        secondary.textContent = 'Clear';
+      }
+    }
+
+    // Loads a saved observation back into the entry form. The stored record is
+    // left in place until Save Changes, so an interrupted edit loses nothing.
+    function startEdit(id) {
+      const obs = observations.find(o => String(o.id) === String(id));
+      if (!obs) { toast('Observation not found', true); return; }
+      if (editingId === null && entryHasContent() &&
+          !confirm('Discard the entry in progress and edit this observation?')) return;
+
+      if (editingId === null) sectorBeforeEdit = sector;
+
+      sector = String(obs.sector || '');
+      species = obs.species || '';
+      plumage = obs.plumage || '';
+      food = obs.food || '';
+      markSelected('sector', sector);
+      markSelected('species', species);
+      markSelected('plumage', plumage);
+      markSelected('food', food);
+      document.getElementById('bands-input').value = obs.bands || '';
+      document.getElementById('food-input').value = obs.food || '';
+      document.getElementById('notes-input').value = obs.notes || '';
+      updateBandBtns();
+
+      setEditMode(obs);
+      showEntry();
+      window.scrollTo(0, 0);
+    }
+
+    function cancelEdit() {
+      setEditMode(null);
+      resetEntryForm();
+      sector = sectorBeforeEdit;
+      markSelected('sector', sector);
+      sectorBeforeEdit = '';
+      toast('Edit cancelled');
+    }
+
+    // Replaces the stored observation in place. Observer, date, time and id are
+    // the record's identity and never change; editedAt records that it changed.
+    function updateObservation() {
+      const idx = observations.findIndex(o => String(o.id) === String(editingId));
+      if (idx === -1) { toast('Observation no longer exists', true); cancelEdit(); return; }
+      if (!species) { alert('Please select a species'); return; }
+
+      const previous = observations[idx];
+      observations[idx] = Object.assign({}, previous, {
+        sector, species, plumage,
+        bands: document.getElementById('bands-input').value || 'Unbanded',
+        food: document.getElementById('food-input').value,
+        notes: document.getElementById('notes-input').value,
+        editedAt: getDate() + ' ' + getTime()
+      });
+
+      if (saveObservations()) {
+        toast('Changes saved');
+        if (navigator.vibrate) navigator.vibrate(30);
+      } else {
+        observations[idx] = previous;  // keep memory matching what is on disk
+        return;
+      }
+
+      setEditMode(null);
+      resetEntryForm();
+      sector = sectorBeforeEdit;
+      markSelected('sector', sector);
+      sectorBeforeEdit = '';
       updateCount();
+      showList();
     }
 
     function deleteObs(id) {
       observations = observations.filter(o => String(o.id) !== String(id));
       saveObservations();
+      // The record behind an open edit is gone; drop the edit rather than let
+      // Save Changes resurrect it.
+      if (editingId !== null && String(editingId) === String(id)) {
+        setEditMode(null);
+        resetEntryForm();
+        sector = sectorBeforeEdit;
+        markSelected('sector', sector);
+        sectorBeforeEdit = '';
+      }
       updateCount();
       renderList();
     }
@@ -458,28 +621,34 @@
       }
       list.innerHTML = observations.map(o => `
         <div class="obs-item">
-          <div class="obs-header">
-            <div>
-              <span class="obs-species">${esc(o.species)}</span>
-              <span class="obs-plumage">${esc(o.plumage)}</span>
-              <span class="obs-sector">S${esc(o.sector)}</span>
+          <div class="obs-item-tap" onclick="startEdit('${esc(o.id)}')">
+            <div class="obs-header">
+              <div>
+                <span class="obs-species">${esc(o.species)}</span>
+                <span class="obs-plumage">${esc(o.plumage)}</span>
+                <span class="obs-sector">S${esc(o.sector)}</span>
+                ${o.editedAt ? `<span class="obs-edited">edited</span>` : ''}
+              </div>
+              <span class="obs-time">${esc(o.time)}</span>
             </div>
-            <span class="obs-time">${esc(o.time)}</span>
+            <div class="obs-details">
+              <span class="obs-bands">${esc(o.bands)}</span>
+              ${o.food ? `<span style="margin-left:8px">${esc(o.food)}</span>` : ''}
+            </div>
+            ${o.notes ? `<p class="obs-notes">${esc(o.notes)}</p>` : ''}
           </div>
-          <div class="obs-details">
-            <span class="obs-bands">${esc(o.bands)}</span>
-            ${o.food ? `<span style="margin-left:8px">${esc(o.food)}</span>` : ''}
+          <div class="obs-actions">
+            <button class="edit-btn" onclick="startEdit('${esc(o.id)}')">Edit</button>
+            <button class="delete-btn" style="margin-top:0;" onclick="deleteObs('${esc(o.id)}')">Delete</button>
           </div>
-          ${o.notes ? `<p class="obs-notes">${esc(o.notes)}</p>` : ''}
-          <button class="delete-btn" onclick="deleteObs('${esc(o.id)}')">Delete</button>
         </div>
       `).join('');
     }
 
     function buildCSV() {
-      const headers = ['Obs','Date','Time','Sector','Species','Plumage','Bands','Food items','Notes'];
+      const headers = ['Obs','Date','Time','Sector','Species','Plumage','Bands','Food items','Notes','Edited'];
       const rows = observations.map(o =>
-        [o.observer,o.date,o.time,o.sector,o.species,o.plumage,o.bands,o.food,o.notes]
+        [o.observer,o.date,o.time,o.sector,o.species,o.plumage,o.bands,o.food,o.notes,o.editedAt]
         .map(v => `"${String(v == null ? '' : v).replace(/"/g,'""')}"`)
         .join(',')
       );

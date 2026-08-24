@@ -1,6 +1,6 @@
 // GeoSpy service worker.
 // Goal: once installed, the app must launch with zero network access.
-const CACHE_NAME = 'geospy-v4';
+const CACHE_NAME = 'geospy-v6';
 
 // Must be cached or the app cannot start offline.
 const CRITICAL = ['./finch.html'];
