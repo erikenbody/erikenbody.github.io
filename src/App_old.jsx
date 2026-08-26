@@ -83,107 +83,6 @@ const labData = {
   // { type: "link", href: "https://example.com", label: "Read more" }
   news: [
     {
-      slug: "enbody-lab-at-aos-2026",
-      date: "August 2026",
-      type: "Conference",
-      title: "The Enbody Lab at AOS 2026",
-
-      description:
-        "The Enbody Lab at AOS 2026 in Amherst, Massachusetts.",
-
-      image: "/images/Amanda_AOS.jpg", // image shown on News & Updates card
-
-      cardImageAspect: "standard",
-      cardImagePosition: "50% 40%",
-
-      heroImage: "/images/AOS_2026_logo.png", // different image after clicking in
-      heroImageAspect: "standard",
-      heroImageFit: "cover",
-      heroImagePosition: "50% 40%",
-      heroImageCaption: "The Enbody Lab at AOS 2026.",
-
-      content: [
-        {
-          type: "paragraph",
-          text:
-            "The Enbody Lab attended the 144th Annual Meeting of the American Ornithological Society, held August 3–7, 2026 at the University of Massachusetts Amherst."
-        },
-
-        {
-          type: "heading",
-          text: "California Conservation Genomics Project"
-        },
-
-        {
-          type: "paragraph",
-          text:
-            "Dr. Erik Enbody presented his work with the California Conservation Genomics Project, using genomic data from bird species across California to understand population health and identify populations that may be most at risk."
-        },
-
-        {
-          type: "image",
-          src: "/images/Erik_AOS_2026.jpeg",
-          alt: "Erik presenting the California Conservation Genomics Project project at AOS 2026",
-          caption:
-            "Erik presenting the California Conservation Genomics Project project at AOS 2026.",
-          aspect: "standard",
-          fit: "cover",
-          objectPosition: "50% 35%"
-        },
-
-        {
-          type: "heading",
-          text: "Pangenomes and avian evolution"
-        },
-
-        {
-          type: "paragraph",
-          text:
-            "As part of the symposium “Pangenomes and population-scale long-read sequencing in avian evolutionary studies,” Amanda presented her work on the Pangenome Architecture of Quantitative Trait Loci in Darwin’s Finches."
-        },
-
-        {
-          type: "image",
-          src: "/images/Amanda_AOS.jpg",
-          alt: "Amanda presenting the Darwin's finch pangenome project at AOS 2026",
-          caption:
-            "Amanda presenting the Darwin's finch pangenome project at AOS 2026.",
-          aspect: "landscape",
-          fit: "cover",
-          objectPosition: "50% 35%"
-        },
-
-                {
-          type: "heading",
-          text: "The Lek Paradox in the white-bearded manakin"
-        },
-
-        {
-          type: "paragraph",
-          text:
-            "Luke presented his work on white-bearded manakins, investigating how heterozygosity and environmental variation influence male display effort and mating success, and how these interactions may help maintain genetic variation."
-        },
-
-        {
-          type: "image",
-          src: "/images/Luke_AOS.jpg",
-          alt: "Luke presenting on the white-bearded manakins project at AOS 2026",
-          caption:
-            "Luke presenting on the white-bearded manakins project at AOS 2026.",
-          aspect: "landscape",
-          fit: "cover",
-          objectPosition: "50% 35%"
-        },
-
-
-        {
-          type: "paragraph",
-          text:
-            "It was a wonderful week of bird genomics, new ideas, and conversations with ornithologists working across many different systems!"
-        }
-      ],
-    },
-    {
       slug: "enbody-lab-at-peqg-2026",
       date: "June 2026",
       type: "Conference",
@@ -1124,7 +1023,7 @@ const NewsDetailPage = () => {
           </p>
         </AnimatedSection>
 
-        {(article.heroImage || article.image) && (
+        {article.image && (
           <AnimatedSection delay={100}>
             {(() => {
               const aspectClasses = {
@@ -1150,9 +1049,9 @@ const NewsDetailPage = () => {
                 <div
                   className={`mt-12 overflow-hidden bg-stone-900 ${aspectClass}`}
                 >
-                <img
-                  src={article.heroImage || article.image}
-                  alt={article.title}
+                  <img
+                    src={article.image}
+                    alt={article.title}
                     className={
                       isNatural
                         ? "w-full h-auto"
