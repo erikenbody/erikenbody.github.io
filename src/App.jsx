@@ -82,6 +82,62 @@ const labData = {
   // { type: "list", items: ["First item", "Second item"] }
   // { type: "link", href: "https://example.com", label: "Read more" }
   news: [
+      {
+      slug: "enbody-lab-meet-the-grants",
+      date: "September 2026",
+      type: "Events",
+      title: "The Enbody Lab meets the Grants",
+
+      description:
+        "Drs. Peter and Rosemary Grants visited the Enbody Lab at Cornell University to discuss Darwin's finches and their long-term research on Daphne Major.",
+
+      image: "/images/meeting_grants1.jpg", // image shown on News & Updates card
+
+      cardImageAspect: "standard",
+      cardImagePosition: "50% 40%",
+
+      heroImage: "/images/meeting_grants1.jpg", // different image after clicking in
+      heroImageAspect: "standard",
+      heroImageFit: "cover",
+      heroImagePosition: "50% 40%",
+      heroImageCaption: "The Enbody Lab meets the Grants.",
+
+      content: [
+        {
+          type: "paragraph",
+          text:
+            "We all got to meet Drs. Peter and Rosemary Grants, who have been studying Darwin's finches on Daphne Major for decades. It was a wonderful opportunity to discuss our ongoing research and learn from their extensive experience in the field."
+        },
+
+        {
+          type: "heading",
+          text: "The Grants on Stage at Cornell" 
+        },
+
+        {
+          type: "paragraph",
+          text:
+            "The Grants presented to the Cornell community about their 40+ years of research on Darwin's finches, sharing insights into the evolutionary processes they have observed over the years."
+        },
+
+        {
+          type: "image",
+          src: "/images/grants_stage.png",
+          alt: "Drs. Peter and Rosemary Grants presenting at Cornell",
+          caption:
+            "Drs. Peter and Rosemary Grants presenting at Cornell.",
+          aspect: "portrait",
+          fit: "cover",
+          objectPosition: "50% 35%"
+        },
+
+        {
+          type: "paragraph",
+          text:
+            "It was an inspiring day for the Enbody Lab, and we are grateful for the opportunity to learn from and work with such legendary researchers in the field of evolutionary biology."
+        }
+      ],
+    },
     {
       slug: "enbody-lab-at-aos-2026",
       date: "August 2026",
