@@ -1,0 +1,6 @@
+Validation performed during refactor:
+- All extracted data modules passed Node JavaScript syntax checks.
+- All relative imports were checked and resolve to files in the refactored tree.
+- Delimiter/static structure checks were run on the refactored source.
+- Current repository Tailwind configuration was verified to scan ./src/**/*.{js,ts,jsx,tsx}, so moving JSX into subdirectories does not require a Tailwind config change.
+- A full `npm run build` was not run in the isolated workspace because the uploaded files did not include the installed node_modules/build environment. Run `npm run build` in the repository after replacing src/.

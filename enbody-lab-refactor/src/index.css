@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-display {
+  font-family: 'freight-sans-pro', sans-serif;
+}
+
+.font-body {
+  font-family: 'freight-sans-pro', sans-serif;
+}
+
+.hero-gradient {
+  background: linear-gradient(
+    160deg,
+    rgba(28, 25, 23, 0.55) 0%,
+    rgba(41, 37, 36, 0.45) 40%,
+    rgba(28, 25, 23, 0.60) 100%
+  );
+}
+
+.teal-accent {
+  color: #9caf88;
+}
+
+.teal-bg {
+  background-color: #9caf88;
+}
+
+.teal-border {
+  border-color: #9caf88;
+}
+
+.sage-accent {
+  color: #9caf88;
+}
+
+.nav-blur {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.float-animation {
+  animation: float 5s ease-in-out infinite;
+}
+
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #9caf88;
+  transition: width 0.3s ease;
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
