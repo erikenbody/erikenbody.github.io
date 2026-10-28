@@ -5,6 +5,7 @@ const navItems = [
   { path: '/research', label: 'Research' },
   { path: '/publications', label: 'Publications' },
   { path: '/team', label: 'Team' },
+  { path: '/news', label: 'News' },
   { path: '/opportunities', label: 'Opportunities' }
 ];
 
@@ -16,9 +17,13 @@ const Navigation = ({ isScrolled }) => {
     setIsMenuOpen(false);
   }, [location.pathname]);
 
+  const isActivePath = (itemPath) =>
+    location.pathname === itemPath ||
+    (itemPath === '/research' && location.pathname.startsWith('/research/')) ||
+    (itemPath === '/news' && location.pathname.startsWith('/news/'));
+
   const linkClass = (item) => {
-    const isActive = location.pathname === item.path ||
-      (item.path === '/research' && location.pathname.startsWith('/research/'));
+    const isActive = isActivePath(item.path);
 
     return `link-underline transition-colors ${
       isActive ? 'text-stone-100' : 'text-stone-400 hover:text-stone-100'
@@ -26,7 +31,7 @@ const Navigation = ({ isScrolled }) => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,backdrop-filter,padding] duration-500 ${
       isScrolled || isMenuOpen ? 'nav-blur bg-stone-950/90 py-3' : 'py-5'
     }`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex justify-between items-center">

@@ -172,7 +172,7 @@ const HomePage = () => {
             <a href="https://gradschool.cornell.edu/academics/fields-of-study/field/computational-biology/" target="_blank" rel="noopener noreferrer" className="font-body text-sm px-5 py-3 border border-stone-700 text-stone-300 hover:border-[#9CAF88]/50 transition-colors">
               Cornell Graduate Program - Computational Biology
             </a>
-            <a href="https://gradschool.cornell.edu/academics/fields-of-study/field/genetics-genomics-and-development/" target="_blank" rel="noopener noreferrer" className="font-body text-sm px-5 py-3 border border-stone-700 text-stone-300 hover:border-[#9CAF88]/50 transition-colors">
+            <a href="https://cals.cornell.edu/molecular-biology-genetics/academics/graduate/genetics-genomics-and-development" target="_blank" rel="noopener noreferrer" className="font-body text-sm px-5 py-3 border border-stone-700 text-stone-300 hover:border-[#9CAF88]/50 transition-colors">
               Cornell Graduate Program - GGD
             </a>
             <a href="https://www.ccgproject.org/" target="_blank" rel="noopener noreferrer" className="font-body text-sm px-5 py-3 border border-stone-700 text-stone-300 hover:border-[#9CAF88]/50 transition-colors">

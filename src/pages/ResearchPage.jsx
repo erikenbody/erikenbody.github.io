@@ -36,24 +36,34 @@ const ResearchPage = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="space-y-32">
             {researchAreas.map((area, index) => (
-              <div 
-                key={area.id} 
-                id={area.id} 
+              <div
+                key={area.id}
+                id={area.id}
                 ref={el => sectionRefs.current[area.id] = el}
                 className="scroll-mt-24"
               >
-                <AnimatedSection>
-                  <div className={`grid lg:grid-cols-2 gap-12 items-start ${index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
-                    <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
+                <div className={`grid lg:grid-cols-2 gap-12 items-start ${index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
+                  <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
+                    {/*
+                      disableTransform: a transform on this wrapper while it
+                      animates in would become the containing block for the
+                      `position: sticky` image inside it, breaking its
+                      sticky behavior while scrolling. It still fades in
+                      with the same timing as everything else - just opacity,
+                      no slide.
+                    */}
+                    <AnimatedSection disableTransform>
                       <div className="aspect-[4/3] overflow-hidden sticky top-24">
                         <img src={area.image} alt={area.title} loading="lazy" decoding="async" className="w-full h-full object-cover" />
                       </div>
-                    </div>
-                    <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
+                    </AnimatedSection>
+                  </div>
+                  <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
+                    <AnimatedSection>
                       <h2 className="font-display text-3xl md:text-4xl font-semibold mb-2">{area.title}</h2>
                       <p className="font-body text-sm teal-accent mb-6">{area.subtitle}</p>
                       <p className="font-body text-stone-300 leading-relaxed mb-8">{area.description}</p>
-                      
+
                       {area.sections.map((section, i) => (
                         <div key={i} className="mb-8">
                           <h3 className="font-display text-xl font-medium mb-3">{section.title}</h3>
@@ -83,7 +93,7 @@ const ResearchPage = () => {
                           <h4 className="font-body text-xs tracking-[0.2em] uppercase text-stone-500 mb-4">Genome Assemblies</h4>
                           <div className="flex flex-wrap gap-2">
                             {area.genomes.map((genome, i) => (
-                              <a 
+                              <a
                                 key={i}
                                 href={genome.link}
                                 target="_blank"
@@ -96,7 +106,7 @@ const ResearchPage = () => {
                           </div>
                         </div>
                       )}
-                      
+
                       <h4 className="font-body text-xs tracking-[0.2em] uppercase text-stone-500 mb-4">Selected Publications</h4>
                       <div className="space-y-3">
                         {area.publications.map((pub, i) => (
@@ -119,9 +129,9 @@ const ResearchPage = () => {
                           </div>
                         ))}
                       </div>
-                    </div>
+                    </AnimatedSection>
                   </div>
-                </AnimatedSection>
+                </div>
               </div>
             ))}
           </div>

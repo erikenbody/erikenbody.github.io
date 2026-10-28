@@ -31,21 +31,30 @@ const PublicationsPage = () => {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           {years.map((year, yearIndex) => (
-            <AnimatedSection key={year} delay={yearIndex * 50}>
-              <div className="mb-16">
+            <div key={year} className="mb-16">
+              {/*
+                disableTransform: a transform on this wrapper while it
+                animates in would become the containing block for this
+                `position: sticky` heading, breaking its sticky behavior
+                while scrolling. It still fades in with the same timing as
+                everything else - just opacity, no slide.
+              */}
+              <AnimatedSection disableTransform delay={yearIndex * 50}>
                 <h2 className="font-display text-3xl font-semibold sage-accent mb-8 sticky top-20 bg-stone-950 py-2 z-10">
                   {year}
                 </h2>
+              </AnimatedSection>
+              <AnimatedSection delay={yearIndex * 50}>
                 <div className="space-y-6">
                   {publications.filter(p => p.year === year).map((pub, index) => (
-                    <article 
-                      key={index} 
+                    <article
+                      key={index}
                       className="pl-5 border-l-2 border-stone-800 hover:border-[#9CAF88]/60 transition-colors"
                     >
                       {pub.link ? (
-                        <a 
-                          href={pub.link} 
-                          target="_blank" 
+                        <a
+                          href={pub.link}
+                          target="_blank"
                           rel="noopener noreferrer"
                           className="font-display text-lg font-medium mb-2 leading-snug block hover:text-[#9CAF88] transition-colors"
                         >
@@ -66,8 +75,8 @@ const PublicationsPage = () => {
                     </article>
                   ))}
                 </div>
-              </div>
-            </AnimatedSection>
+              </AnimatedSection>
+            </div>
           ))}
         </div>
       </section>

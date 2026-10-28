@@ -11,11 +11,31 @@
 // { type: "link", href: "https://example.com", label: "Read more" }
 
 export const news = [
+    {
+      slug: "welcome-rachel-davis",
+      date: "October 2026",
+      type: "Welcome!",
+      title: "Welcome Rachel!",
+
+      description:
+        "Rachel Davis joins the lab as a K. Lisa Yang Wildlife Health PhD Fellow.",
+
+      image: "/images/DavisRachel2026.jpeg",
+      cardImagePosition: "50% 0%",
+      heroImageAspect: "portrait",
+
+      content: [
+        "Rachel Davis joined the Enbody Lab as a K. Lisa Yang Wildlife Health PhD Fellow, working at the intersection of conservation and molecular tools.",
+        "She earned her M.S. in Biology at William & Mary, where her published research examined the impact of chronic methylmercury on avian telomeres.",
+        "She later trained at the Okinawa Institute of Science and Technology (OIST) in genome assembly and genetic health monitoring for the critically endangered spoon-billed sandpiper, work she continues to advance in the Enbody Lab.",
+        "We are excited to welcome Rachel to the lab!"
+      ],
+    },
       {
       slug: "enbody-lab-meet-the-grants",
       date: "September 2026",
       type: "Events",
-      title: "The Enbody Lab meets the Grants",
+      title: "The Grants visit the Enbody Lab",
 
       description:
         "Drs. Peter and Rosemary Grants visited the Enbody Lab at Cornell University to discuss Darwin's finches and their long-term research on Daphne Major.",
@@ -51,7 +71,7 @@ export const news = [
 
         {
           type: "image",
-          src: "/images/grants_stage.png",
+          src: "/images/grants_stage.jpg",
           alt: "Drs. Peter and Rosemary Grants presenting at Cornell",
           caption:
             "Drs. Peter and Rosemary Grants presenting at Cornell.",
@@ -74,7 +94,7 @@ export const news = [
       title: "The Enbody Lab at AOS 2026",
 
       description:
-        "The Enbody Lab at AOS 2026 in Amherst, Massachusetts.",
+        "We attended AOS 2026 in Amherst, Massachusetts.",
 
       image: "/images/Amanda_AOS.jpg", // image shown on News & Updates card
 
@@ -333,6 +353,7 @@ export const news = [
       title: "Welcome Gerardo!",
       description: "Gerardo Cendejas Mendoza joins the lab as a PhD student in Computational Biology and Fulbright Scholar.",
       image: "/images/gerardo.jpg",
+      heroImageAspect: "portrait",
       content: [
         "Gerardo Cendejas Mendoza joined the Enbody Lab as a PhD student in Computational Biology and as a Fulbright Scholar.",
         "His work focuses on evolutionary biology and phylogenetics.",
@@ -346,6 +367,7 @@ export const news = [
       title: "Welcome Luke!",
       description: "Luke Anderson joins the lab as a Rose Postdoctoral Fellow.",
       image: "/images/Luke_A.jpeg",
+      heroImageAspect: "portrait",
       content: [
         "Luke Anderson joined the Enbody Lab as a Rose Postdoctoral Fellow.",
         "Luke is investigating the genomics of adaptation, speciation, and hybridization in Darwin's finches on the Galápagos Islands.",
@@ -359,6 +381,7 @@ export const news = [
       title: "Welcome to the lab Amanda!",
       description: "Amanda joins the lab as a PhD student from the GGD field.",
       image: "/images/A_Sun.jpg",
+      heroImageAspect: "portrait",
       content: [
         "Amanda Sun joined the Enbody Lab as a PhD student in Cornell's Genetics, Genomics and Development graduate field.",
         "Her work focuses on evolutionary and population genomics, with an emphasis on understanding complex traits and structural variation in Darwin's finches.",
@@ -397,6 +420,7 @@ export const news = [
       title: "Welcome to the lab Rachel!",
       description: "Rachel joins the lab as a PhD student co-advised with Philipp Messer.",
       image: "/images/Rachel_G_crop.jpg",
+      heroImageAspect: "portrait",
       content: [
         "Rachel joined the Enbody Lab as a PhD student co-advised by Erik Enbody and Philipp Messer.",
         "She studies patterns of introgressive hybridization in Darwin's finches on Daphne Major, a small island in the Galápagos.",
@@ -409,7 +433,7 @@ export const news = [
       type: "Lab opening",
       title: "The Enbody Lab is Open!",
       description: "The Enbody Lab is officially open at Cornell University! Erik is joining the faculty in the Department of Computational Biology.",
-      image: "/images/atkinson.png",
+      image: "/images/atkinson.jpg",
       content: [
         "The Enbody Lab officially opened at Cornell University in 2025.",
         "Erik joined the faculty in the Department of Computational Biology, where the lab studies evolutionary genomics, adaptation, speciation and conservation.",
