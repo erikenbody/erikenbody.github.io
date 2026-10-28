@@ -12,6 +12,36 @@
 
 export const news = [
     {
+      slug: "slim-workshop-2026",
+      date: "October 2026",
+      type: "Workshop",
+      title: "Hosting the SLiM Workshop",
+
+      description:
+        "Erik helped host the SLiM Workshop at Cornell, and members of the Enbody Lab attended.",
+
+      image: "/images/slim_workshop.jpg",
+      heroImageAspect: "standard",
+
+      content: [
+        "Erik helped host the SLiM Workshop at Cornell University, held October 5-9, 2026 in Ithaca, NY. Members of the Enbody Lab attended too, joining researchers from around the world to learn SLiM, a widely used forward genetic simulation framework.",
+        "One of the highlights of the week was getting to meet and host visiting students from Universidad San Francisco de Quito (USFQ) in Quito, who traveled to Ithaca to take part in the workshop.",
+        "SLiM was originally developed by Philipp Messer, now a faculty member at Cornell, and has continued to be developed and improved by Messer and Research Associate Benjamin C. Haller, making it one of the most widely used tools for forward genetic simulation in evolutionary biology.",
+        {
+          type: "image",
+          src: "/images/SLiM_logo.jpg",
+          alt: "SLiM logo",
+          caption: "SLiM, the forward genetic simulation software at the center of the workshop.",
+          aspect: "square"
+        },
+        {
+          type: "link",
+          href: "https://messerlab.org/slim/#Workshops",
+          label: "Learn more about SLiM Workshops"
+        }
+      ],
+    },
+    {
       slug: "welcome-rachel-davis",
       date: "October 2026",
       type: "Welcome!",
