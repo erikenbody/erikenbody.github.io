@@ -133,8 +133,10 @@ const HomePage = () => {
         </AnimatedSection>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {visibleNews.map((item) => (
-            <NewsCard key={item.slug} item={item} />
+          {visibleNews.map((item, index) => (
+            <AnimatedSection key={item.slug} delay={index * 100}>
+              <NewsCard item={item} />
+            </AnimatedSection>
           ))}
         </div>
       </div>

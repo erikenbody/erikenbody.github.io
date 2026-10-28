@@ -30,12 +30,21 @@ const Navigation = ({ isScrolled }) => {
     }`;
   };
 
+  const handleHomeClick = () => {
+    // The route doesn't change when we're already on "/", so App.jsx's
+    // scroll-to-top-on-route-change effect never fires. Scroll manually in
+    // that one case so the logo always acts like a "back to top" button.
+    if (location.pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,backdrop-filter,padding] duration-500 ${
       isScrolled || isMenuOpen ? 'nav-blur bg-stone-950/90 py-3' : 'py-5'
     }`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex justify-between items-center">
-        <Link to="/" className="flex items-center gap-3 group">
+        <Link to="/" onClick={handleHomeClick} className="flex items-center gap-3 group">
           <span className="font-display text-base lg:text-lg font-semibold teal-accent group-hover:text-[#b8c4a8] transition-colors">
             Enbody Lab
           </span>
