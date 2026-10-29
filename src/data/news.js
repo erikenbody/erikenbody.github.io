@@ -13,7 +13,7 @@
 export const news = [
     {
       slug: "welcome-jaime-ortiz-pachar",
-      date: "October 2026",
+      date: "2026",
       type: "Welcome!",
       title: "Welcome Jaime!",
 
