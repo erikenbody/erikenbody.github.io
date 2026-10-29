@@ -130,7 +130,7 @@ const TeamPage = () => (
                 <div className="lg:col-span-3">
                   <p className="font-body text-xs tracking-[0.2em] uppercase teal-accent mb-2">{member.role}</p>
                   <h3 className="font-display text-2xl font-semibold mb-2">{member.name}</h3>
-                  <p className="font-body text-sm text-stone-400 mb-4">{member.note}</p>
+                  <p className="font-body text-base text-stone-400 leading-relaxed mb-5">{member.note}</p>
                   <p className="font-body text-xs text-stone-600">{member.years}</p>
                 </div>
               </div>

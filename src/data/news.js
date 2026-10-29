@@ -12,6 +12,40 @@
 
 export const news = [
     {
+      slug: "welcome-jaime-ortiz-pachar",
+      date: "October 2026",
+      type: "Welcome!",
+      title: "Welcome Jaime!",
+
+      description:
+        "Jaime Ortiz Pachar joins the lab as a Cornell K. Lisa Yang Center for Wildlife Health Postdoctoral Fellow, studying the genomics of Galápagos mangrove resilience.",
+
+      image: "/images/Jaime.jpeg",
+      cardImagePosition: "50% 20%",
+      heroImageAspect: "portrait",
+
+      content: [
+        "Jaime's passion for wildlife conservation is deeply rooted in his upbringing on the Galápagos Islands. He focuses on conservation genomics, combining cutting-edge molecular analyses with practical management efforts to address pressing challenges in nature conservation.",
+        "Jaime is currently a Cornell K. Lisa Yang Center for Wildlife Health Postdoctoral Fellow. He completed his Ph.D. at Cornell, where, as a graduate student, he assembled the first genome for the endangered brown sea cucumber in partnership with the Charles Darwin Foundation, the Galápagos National Park Directorate, and the artisanal fishing sector. He has also worked as a bioinformatics intern at Illumina and held leadership roles at the Charles Darwin Foundation, where he advised Ecuador's congress on evidence-based reforms to the Galápagos Special Law.",
+        {
+          type: "heading",
+          text: "Mapping genomic resilience in Galápagos mangroves"
+        },
+        "As a postdoctoral fellow, Jaime's research focuses on using genomics to understand how Galápagos mangroves adapt to and survive environmental stress. Working with the Charles Darwin Foundation and the Galápagos National Park Directorate, his project will first generate reference genomes for key mangrove species, then sequence 150–200 individual trees across the archipelago to map gene flow and identify climate-resilient genotypes that can guide restoration and management.",
+        {
+          type: "quote",
+          text: "Protecting these ecosystems means protecting the millions of livelihoods that depend on them.",
+          attribution: "Jaime Ortiz Pachar"
+        },
+        "We are thrilled to welcome Jaime to the lab, where he'll be co-advised by Erik and Dr. Nina Overgaard Therkildsen!",
+        {
+          type: "link",
+          href: "https://wildlife.cornell.edu/news/cornell-k-lisa-yang-postdoctoral-fellow-wildlife-health-map-genomic-resilience-galapagos",
+          label: "Read more from the Cornell K. Lisa Yang Center for Wildlife Health"
+        }
+      ],
+    },
+    {
       slug: "slim-workshop-2026",
       date: "October 2026",
       type: "Workshop",
